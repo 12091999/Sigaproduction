@@ -42,21 +42,30 @@ const categories = [
 ]
 
 export default function ServiceCategories() {
-  return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5 sm:gap-4">
-      {categories.map((category) => (
-        <Link
-          key={category.title}
-          href={category.href}
-          className="group flex flex-col items-center text-center p-3 sm:p-4 rounded-lg transition-all hover:bg-muted"
-        >
-          <div className={cn("p-2 sm:p-3 rounded-full mb-2 sm:mb-3", category.color)}>
-            <category.icon className="h-5 w-5 sm:h-6 sm:w-6" />
-          </div>
-          <h3 className="font-medium text-sm sm:text-base">{category.title}</h3>
-          <p className="text-xs sm:text-sm text-muted-foreground">{category.description}</p>
-        </Link>
-      ))}
-    </div>
-  )
+	return (
+		<div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5 sm:gap-4">
+			{categories.map((category) => (
+				<Link
+					key={category.title}
+					href={category.href}
+					className="group flex flex-col items-center text-center p-3 sm:p-4 rounded-lg transition-all hover:bg-muted"
+				>
+					<div
+						className={cn(
+							"p-2 sm:p-3 rounded-full mb-2 sm:mb-3",
+							category.color
+						)}
+					>
+						<category.icon className="h-5 w-5 sm:h-6 sm:w-6" />
+					</div>
+					<h3 className="font-medium text-sm sm:text-base">
+						{category.title}
+					</h3>
+					<p className="text-xs sm:text-sm text-muted-foreground">
+						{category.description}
+					</p>
+				</Link>
+			))}
+		</div>
+	)
 }
