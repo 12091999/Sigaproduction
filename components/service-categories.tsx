@@ -1,27 +1,27 @@
 import Link from "next/link"
-import { Car, Compass, Hotel, Home, ShoppingBag } from "lucide-react"
+import { Camera, Event, Hotel, Music, ShoppingBag } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
 const categories = [
   {
     title: "Products",
-    description: "Shop Simagerch products",
+    description: "Shop Sigamerch products",
     icon: ShoppingBag,
     href: "/products",
     color: "bg-rose-100 text-rose-700",
   },
   {
-    title: "Taxi Services",
-    description: "Explore Nilgiri hills",
-    icon: Car,
+    title: "SIGMA",
+    description: "Studio Tiga Movie And Art",
+    icon: Camera,
     href: "/services/taxi",
     color: "bg-amber-100 text-amber-700",
   },
   {
-    title: "Tourism",
-    description: "Discover Nilgiri beauty",
-    icon: Compass,
+    title: "SIGAPRO EO",
+    description: "Discover Sigaproduction Event Organizer",
+    icon: Event,
     href: "/services/tourism",
     color: "bg-emerald-100 text-emerald-700",
   },
@@ -33,9 +33,9 @@ const categories = [
     color: "bg-sky-100 text-sky-700",
   },
   {
-    title: "Cottages",
+    title: "Studio Music",
     description: "Cozy Nilgiri retreats",
-    icon: Home,
+    icon: Music,
     href: "/services/cottages",
     color: "bg-purple-100 text-purple-700",
   },
