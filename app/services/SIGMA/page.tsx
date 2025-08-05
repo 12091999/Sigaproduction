@@ -19,40 +19,36 @@ export const metadata: Metadata = {
 const taxiServices = [
   {
     id: 1,
-    name: "Film",
-    description: "Reliable Filming to movie art official music video",
-    price: 2799,
+    name: "Gandrung Edition",
+    description: "The word (Gandrung) is interpreted as the fascination of the agrarian Blambangan people with Dewi Sri as the Goddess of Rice.",
+    price: 150000,
     rating: 4.8,
-    image: "/images/taxi-service.jpg",
-    features: ["Fixed price", "24/7 availability", "Flight tracking"],
+    image: "/images/siga3.jpeg",
   },
   {
     id: 2,
-    name: "Nilgiri Hills Tour",
-    description: "Explore the beautiful Nilgiri hills with a knowledgeable driver",
-    price: 3599,
+    name: "Seblang Edition",
+    description: "The Seblang ritual is one of the Osing people's ceremonial rituals which can only be found in two villages in the Glagah sub-district of Banyuwangi.",
+    price: 100000,
     rating: 4.7,
-    image: "/images/city-tour.jpg",
-    features: ["Hourly rate", "Customizable stops", "Local insights"],
+    image: "/images/siga4.jpeg",
   },
   {
     id: 3,
-    name: "Nilgiri Mountain Travel",
-    description: "Comfortable transportation between mountain towns",
-    price: 60,
+    name: "Brotherhood Edition",
+    description: "The Limited Edition, Brotherhood Merch Bundling",
+    price: 115000,
     priceUnit: "per km",
     rating: 4.9,
-    image: "/images/airport-taxi.jpg",
-    features: ["Comfortable vehicles", "Experienced drivers", "Stops on request"],
+    image: "/images/brotherhood.jpeg",
   },
   {
     id: 4,
-    name: "Nilgiri Group Transfer",
-    description: "Spacious vehicles for group transportation around Nilgiri district",
-    price: 4999,
+    name: "Mental Disoder",
+    description: "Damage or harm to human mental health or human psychological suffering",
+    price: 100000,
     rating: 4.6,
-    image: "/images/taxi-service.jpg",
-    features: ["Up to 8 passengers", "Luggage space", "Air conditioning"],
+    image: "/images/siga1.jpeg",
   },
 ]
 
@@ -63,7 +59,7 @@ export default function TaxiServicesPage() {
         <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:pr-6">
           <div className="sticky top-24 space-y-6">
             <div>
-              <h2 className="text-xl font-semibold mb-4">Book a Taxi in The Nilgiris</h2>
+              <h2 className="text-xl font-semibold mb-4">Pre Order The Merch</h2>
               <Card>
                 <CardContent className="pt-6 space-y-4">
                   <div className="space-y-2">
@@ -84,7 +80,7 @@ export default function TaxiServicesPage() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="date">Date</Label>
+                      <Label htmlFor="date">Availbe Until</Label>
                       <div className="relative">
                         <Calendar className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                         <Input id="date" type="date" className="pl-8" />
@@ -100,16 +96,16 @@ export default function TaxiServicesPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="service-type">Service Type</Label>
-                    <Select defaultValue="standard">
+                    <Label htmlFor="service-type">Type Edition</Label>
+                    <Select defaultValue="Select">
                       <SelectTrigger id="service-type">
-                        <SelectValue placeholder="Select service type" />
+                        <SelectValue placeholder="Select Merch type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="standard">Standard Taxi</SelectItem>
-                        <SelectItem value="premium">Premium Sedan</SelectItem>
-                        <SelectItem value="suv">SUV</SelectItem>
-                        <SelectItem value="van">Minivan</SelectItem>
+                        <SelectItem value="standard">Culture</SelectItem>
+                        <SelectItem value="premium">Mental Disoder</SelectItem>
+                        <SelectItem value="Bundle">Brotherhood</SelectItem>
+                        <SelectItem value="Limited">Player</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -123,9 +119,9 @@ export default function TaxiServicesPage() {
 
         <div className="md:w-2/3 lg:w-3/4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Nilgiri Taxi Services</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Sigamerch ORDER</h1>
             <p className="text-muted-foreground mb-6">
-              Reliable transportation for all your needs in the Nilgiri hills
+              See Availble Product And Pre-Order T-shirt and the Bundle
             </p>
           </div>
 
@@ -153,22 +149,13 @@ export default function TaxiServicesPage() {
                       <span className="text-sm font-medium">{service.rating} rating</span>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-4">
-                      {service.features.map((feature, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                          <Car className="h-4 w-4 text-emerald-600" />
-                          <span className="text-sm">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
                     <div className="flex items-center justify-between mt-4">
                       <div className="font-bold text-lg">
-                        ₹{service.price.toLocaleString("en-IN")}
+                        Rp{service.price.toLocaleString("in-IN")}
                         {service.priceUnit && <span className="text-sm font-normal"> {service.priceUnit}</span>}
                       </div>
                       <Button asChild>
-                        <Link href={`/services/taxi/${service.id}`}>Book Now</Link>
+                        <Link href={`/services/taxi/${service.id}`}>Pre-Order</Link>
                       </Button>
                     </div>
                   </div>

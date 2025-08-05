@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Car, Home, Hotel, MapPin } from "lucide-react"
+import { ArrowRight, User, Home, Hotel, MapPin } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
@@ -55,16 +55,16 @@ export default function HomePage() {
           <Card className="overflow-hidden">
             <div className="relative h-40 w-full">
               <Image
-                src="/images/sigma.jpeg"
-                alt="Studio Tiga Movie And Art"
+                src="/images/studio3.jpg"
+                alt="Sigaproductions"
                 fill
                 className="object-cover brightness-[0.85]"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-4 text-white">
-                <Car className="h-6 w-6 md:h-8 md:w-8 mb-2" />
-                <h3 className="text-lg md:text-xl font-bold">Event Organizer</h3>
+                <User className="h-6 w-6 md:h-8 md:w-8 mb-2" />
+                <h3 className="text-lg md:text-xl font-bold">Sigaproductions</h3>
                 <p className="text-xs md:text-sm text-white/80">Find The Popular Offer From Sigaproduction</p>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function HomePage() {
             </CardContent>
             <CardFooter>
               <Button variant="outline" asChild className="w-full text-xs md:text-sm h-8 md:h-10">
-                <Link href="/services/taxi">Explore Sigaproduction</Link>
+                <Link href="/services/taxi">See Sigaproduction</Link>
               </Button>
             </CardFooter>
           </Card>
@@ -83,8 +83,8 @@ export default function HomePage() {
           <Card className="overflow-hidden">
             <div className="relative h-40 w-full">
               <Image
-                src="/images/ooty-tourism.png"
-                alt="Tourism in The Nilgiris"
+                src="/images/studio 1.jpeg"
+                alt="Music Studio"
                 fill
                 className="object-cover brightness-[0.85]"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -92,19 +92,18 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-4 text-white">
                 <MapPin className="h-6 w-6 md:h-8 md:w-8 mb-2" />
-                <h3 className="text-lg md:text-xl font-bold">Tourism</h3>
-                <p className="text-xs md:text-sm text-white/80">Discover Nilgiri's beauty</p>
+                <h3 className="text-lg md:text-xl font-bold">Music Studio</h3>
+                <p className="text-xs md:text-sm text-white/80">Discover Best Music Studio in Banyuwangi</p>
               </div>
             </div>
             <CardContent className="pt-4">
               <p className="text-xs md:text-sm">
-                Discover the beauty of The Nilgiris' tea gardens, botanical gardens, and scenic viewpoints with expert
-                local guides.
+                There are rent for music studio for your musician skill, Usable for recording and take a video clip.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" asChild className="w-full text-xs md:text-sm h-8 md:h-10">
-                <Link href="/services/tourism">Explore Tourism</Link>
+                <Link href="/services/tourism">See Our Studio</Link>
               </Button>
             </CardFooter>
           </Card>
@@ -112,8 +111,8 @@ export default function HomePage() {
           <Card className="overflow-hidden">
             <div className="relative h-40 w-full">
               <Image
-                src="/images/ooty-hotel.png"
-                alt="Hotels & Lodges in The Nilgiris"
+                src="/images/sigaEO.jpeg"
+                alt="Studio Tiga Event Organizer"
                 fill
                 className="object-cover brightness-[0.85]"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -121,19 +120,18 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-4 text-white">
                 <Hotel className="h-6 w-6 md:h-8 md:w-8 mb-2" />
-                <h3 className="text-lg md:text-xl font-bold">Hotels & Lodges</h3>
-                <p className="text-xs md:text-sm text-white/80">Luxury stays in the hills</p>
+                <h3 className="text-lg md:text-xl font-bold">SIGAPRO EO</h3>
+                <p className="text-xs md:text-sm text-white/80">Discover Event Organizer</p>
               </div>
             </div>
             <CardContent className="pt-4">
               <p className="text-xs md:text-sm">
-                Find the perfect accommodation for your stay in The Nilgiris, from heritage hotels to modern luxury
-                resorts.
+                Find the perfect Event Organizer, we're can make your event elegant and effective.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" asChild className="w-full text-xs md:text-sm h-8 md:h-10">
-                <Link href="/services/accommodations">Find Accommodations</Link>
+                <Link href="/services/accommodations">See Our Offer</Link>
               </Button>
             </CardFooter>
           </Card>
@@ -141,8 +139,8 @@ export default function HomePage() {
           <Card className="overflow-hidden">
             <div className="relative h-40 w-full">
               <Image
-                src="/images/ooty-cottage.png"
-                alt="Cottages in The Nilgiris"
+                src="/images/areatiga.jpeg"
+                alt="Musiclopedia"
                 fill
                 className="object-cover brightness-[0.85]"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -150,18 +148,18 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-4 text-white">
                 <Home className="h-6 w-6 md:h-8 md:w-8 mb-2" />
-                <h3 className="text-lg md:text-xl font-bold">Cottages</h3>
-                <p className="text-xs md:text-sm text-white/80">Cozy retreats in nature</p>
+                <h3 className="text-lg md:text-xl font-bold">AREATIGA</h3>
+                <p className="text-xs md:text-sm text-white/80">Musiclopedia</p>
               </div>
             </div>
             <CardContent className="pt-4">
               <p className="text-xs md:text-sm">
-                Enjoy a serene retreat in our beautiful cottages nestled in the Nilgiri hills with stunning views.
+                increase knowledge about world music and musicians.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" asChild className="w-full text-xs md:text-sm h-8 md:h-10">
-                <Link href="/services/cottages">View Cottages</Link>
+                <Link href="/services/cottages">View AREATIGA</Link>
               </Button>
             </CardFooter>
           </Card>

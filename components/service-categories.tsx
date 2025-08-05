@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Camera, Event, Hotel, Music, ShoppingBag } from "lucide-react"
+import { Camera, Home, Hotel, Music, ShoppingBag } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -21,13 +21,13 @@ const categories = [
   {
     title: "SIGAPRO EO",
     description: "Discover Sigaproduction Event Organizer",
-    icon: Event,
+    icon: Home,
     href: "/services/tourism",
     color: "bg-emerald-100 text-emerald-700",
   },
   {
-    title: "Hotels & Lodges",
-    description: "Luxury stays in The Nilgiris",
+    title: "AREATIGA",
+    description: "Discover Musiclopedia",
     icon: Hotel,
     href: "/services/accommodations",
     color: "bg-sky-100 text-sky-700",

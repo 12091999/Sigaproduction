@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Car, Compass, Hotel, HomeIcon, Menu, ShoppingCart, User } from "lucide-react"
+import { Shirt, Music, Camera, Home, Menu, ShoppingCart, User } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -51,24 +51,24 @@ export function MainNav() {
       active: pathname === "/services" || pathname.startsWith("/services/"),
       children: [
         {
-          href: "/services/taxi",
-          label: "Taxi Services",
-          icon: Car,
+          href: "/services/merch",
+          label: "Merch",
+          icon: Shirt,
         },
         {
-          href: "/services/tourism",
-          label: "Tourism",
-          icon: Compass,
+          href: "/services/studiomusic",
+          label: "Music Studio",
+          icon: Music,
         },
         {
-          href: "/services/accommodations",
-          label: "Hotels & Lodges",
-          icon: Hotel,
+          href: "/services/SIGMA",
+          label: "SIGMA",
+          icon: Camera,
         },
         {
-          href: "/services/cottages",
-          label: "Cottages",
-          icon: HomeIcon,
+          href: "/services/sigaproEO",
+          label: "SIGAPRO EO",
+          icon: Home,
         },
       ],
     },

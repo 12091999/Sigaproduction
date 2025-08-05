@@ -85,9 +85,9 @@ export function RevenueChart({ metrics }: RevenueChartProps) {
   }
 
   const formatTooltipValue = (value: number) => {
-    return new Intl.NumberFormat("en-US", {
+    return new Intl.NumberFormat("id-ID", {
       style: "currency",
-      currency: "USD",
+      currency: "Rupiah",
     }).format(value)
   }
 
