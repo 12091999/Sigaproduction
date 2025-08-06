@@ -19,24 +19,24 @@ export const metadata: Metadata = {
 const taxiServices = [
   {
     id: 1,
-    name: "Gandrung Edition",
-    description: "The word (Gandrung) is interpreted as the fascination of the agrarian Blambangan people with Dewi Sri as the Goddess of Rice.",
+    name: "Brotherhood",
+    description: "Brotherhood is an annual event held to commemorate the anniversary of Studio Tiga Banyuwangi.",
     price: 150000,
     rating: 4.8,
     image: "/images/sigaproeo1.jpeg",
   },
   {
     id: 2,
-    name: "Seblang Edition",
-    description: "The Seblang ritual is one of the Osing people's ceremonial rituals which can only be found in two villages in the Glagah sub-district of Banyuwangi.",
+    name: "Music Festival",
+    description: "a regular music festival organized by a school, university, or certain government agency.",
     price: 100000,
     rating: 4.7,
     image: "/images/sigaproeo2.jpeg",
   },
   {
     id: 3,
-    name: "Brotherhood Edition",
-    description: "The Limited Edition, Brotherhood Merch Bundling",
+    name: "Banyuwangi Festival",
+    description: "an annual event commemorating Banyuwangi's anniversary which is held in the middle of the year and is located at Gesibu Belambangan",
     price: 115000,
     priceUnit: "per km",
     rating: 4.9,
@@ -44,8 +44,8 @@ const taxiServices = [
   },
   {
     id: 4,
-    name: "Mental Disoder",
-    description: "Damage or harm to human mental health or human psychological suffering",
+    name: "Student Music Festival",
+    description: "A music festival for students which is usually held by the Department of Education to fill the series of events for Banyuwangi's anniversary every year.",
     price: 100000,
     rating: 4.6,
     image: "/images/sigaproeo4.jpeg",
@@ -71,10 +71,10 @@ export default function TaxiServicesPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="destination">Destination</Label>
+                    <Label htmlFor="destination">Event Location</Label>
                     <div className="relative">
                       <Home className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="destination" placeholder="Enter destination in The Nilgiris" className="pl-8" />
+                      <Input id="Event Location" placeholder="Enter Event Location in the SIGAPRO_EO" className="pl-8" />
                     </div>
                   </div>
 
@@ -96,16 +96,16 @@ export default function TaxiServicesPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="service-type">Type Edition</Label>
+                    <Label htmlFor="service-type">Type Event</Label>
                     <Select defaultValue="Select">
                       <SelectTrigger id="service-type">
-                        <SelectValue placeholder="Select Merch type" />
+                        <SelectValue placeholder="Select Event type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="standard">Culture</SelectItem>
-                        <SelectItem value="premium">Mental Disoder</SelectItem>
-                        <SelectItem value="Bundle">Brotherhood</SelectItem>
-                        <SelectItem value="Limited">Player</SelectItem>
+                        <SelectItem value="standard">Music</SelectItem>
+                        <SelectItem value="premium">Festival</SelectItem>
+                        <SelectItem value="Bundle">Event Organize</SelectItem>
+                        <SelectItem value="Limited">Ect</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
