@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { Calendar, Car, Clock, MapPin, Star } from "lucide-react"
+import { Calendar, Car, Clock, Home, Star } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardTitle } from "@/components/ui/card"
@@ -23,7 +23,7 @@ const taxiServices = [
     description: "The word (Gandrung) is interpreted as the fascination of the agrarian Blambangan people with Dewi Sri as the Goddess of Rice.",
     price: 150000,
     rating: 4.8,
-    image: "/images/siga3.jpeg",
+    image: "/images/sigaproeo1.jpeg",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const taxiServices = [
     description: "The Seblang ritual is one of the Osing people's ceremonial rituals which can only be found in two villages in the Glagah sub-district of Banyuwangi.",
     price: 100000,
     rating: 4.7,
-    image: "/images/siga4.jpeg",
+    image: "/images/sigaproeo2.jpeg",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const taxiServices = [
     price: 115000,
     priceUnit: "per km",
     rating: 4.9,
-    image: "/images/brotherhood.jpeg",
+    image: "/images/sigaproeo3.jpeg",
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const taxiServices = [
     description: "Damage or harm to human mental health or human psychological suffering",
     price: 100000,
     rating: 4.6,
-    image: "/images/siga1.jpeg",
+    image: "/images/sigaproeo4.jpeg",
   },
 ]
 
@@ -63,17 +63,17 @@ export default function TaxiServicesPage() {
               <Card>
                 <CardContent className="pt-6 space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="pickup">Pickup Location</Label>
+                    <Label htmlFor="Event">Event</Label>
                     <div className="relative">
-                      <MapPin className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="pickup" placeholder="Enter pickup address in The Nilgiris" className="pl-8" />
+                      <Home className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                      <Input id="Event" placeholder="Enter event address in The SIGAPRO_EO" className="pl-8" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="destination">Destination</Label>
                     <div className="relative">
-                      <MapPin className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                      <Home className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                       <Input id="destination" placeholder="Enter destination in The Nilgiris" className="pl-8" />
                     </div>
                   </div>
@@ -133,7 +133,7 @@ export default function TaxiServicesPage() {
                 <div className="md:flex">
                   <div className="relative h-48 md:h-auto md:w-1/3">
                     <Image
-                      src={service.image || "/placeholder.svg"}
+                      src={service.image || "images/sigaproeo.jpeg"}
                       alt={service.name}
                       fill
                       className="object-cover"
