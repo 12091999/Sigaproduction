@@ -8,47 +8,47 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export const metadata: Metadata = {
-  title: "Sigaproduction Services - SIGAMERCH",
-  description: "Book Our Service",
+  title: "Studio Tiga Video And Art - SIGMA",
+  description: "Book Our Services",
 }
 
 // Sample taxi services data with rupee pricing
 const taxiServices = [
   {
     id: 1,
-    name: "Gandrung Edition",
-    description: "The word (Gandrung) is interpreted as the fascination of the agrarian Blambangan people with Dewi Sri as the Goddess of Rice.",
-    price: 150000,
+    name: "Official Video Clip",
+    description: "A hardcore band from Banyuwangi that has been around since 2018 and has traveled the world from stage to stage.",
+    price: 1000000,
     rating: 4.8,
-    image: "/images/siga3.jpeg",
+    image: "/images/sigma1.jpg",
   },
   {
     id: 2,
-    name: "Seblang Edition",
-    description: "The Seblang ritual is one of the Osing people's ceremonial rituals which can only be found in two villages in the Glagah sub-district of Banyuwangi.",
-    price: 100000,
+    name: "Official Lyrics Video",
+    description: "Cukup Official Lyrics Video by Sena&Friend, This Lyrics Video made by hand of commposer and best editor we have.",
+    price: 955000,
     rating: 4.7,
-    image: "/images/siga4.jpeg",
+    image: "/images/sigma2.png",
   },
   {
     id: 3,
-    name: "Brotherhood Edition",
-    description: "The Limited Edition, Brotherhood Merch Bundling",
+    name: "Hellowen ART",
+    description: "The Limited Design for Hellowen, This Design is made by our best designer. Always be ready next Sigamerch project.",
     price: 115000,
-    priceUnit: "per km",
+    priceUnit: "per design",
     rating: 4.9,
-    image: "/images/brotherhood.jpeg",
+    image: "/images/sigma3.jpeg",
   },
   {
     id: 4,
-    name: "Mental Disoder",
-    description: "Damage or harm to human mental health or human psychological suffering",
-    price: 100000,
+    name: "Critical Dogma ART",
+    description: "will be released for the next clothing brand, stay tuned",
+    price: 225000,
+    priceUnit: "per design",
     rating: 4.6,
-    image: "/images/siga1.jpeg",
+    image: "/images/sigma4.jpeg",
   },
 ]
 
@@ -59,28 +59,28 @@ export default function TaxiServicesPage() {
         <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:pr-6">
           <div className="sticky top-24 space-y-6">
             <div>
-              <h2 className="text-xl font-semibold mb-4">Pre Order The Merch</h2>
+              <h2 className="text-xl font-semibold mb-4">Choose The Location For Movie</h2>
               <Card>
                 <CardContent className="pt-6 space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="pickup">Pickup Location</Label>
+                    <Label htmlFor="pickup">Take Location</Label>
                     <div className="relative">
                       <MapPin className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="pickup" placeholder="Enter pickup address in The Nilgiris" className="pl-8" />
+                      <Input id="Take Location" placeholder="Enter Take Location" className="pl-8" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="destination">Destination</Label>
+                    <Label htmlFor="destination">Second Choose</Label>
                     <div className="relative">
                       <MapPin className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="destination" placeholder="Enter destination in The Nilgiris" className="pl-8" />
+                      <Input id="Second Choose" placeholder="Enter second choose" className="pl-8" />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="date">Availbe Until</Label>
+                      <Label htmlFor="date">When </Label>
                       <div className="relative">
                         <Calendar className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                         <Input id="date" type="date" className="pl-8" />
@@ -95,21 +95,6 @@ export default function TaxiServicesPage() {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="service-type">Type Edition</Label>
-                    <Select defaultValue="Select">
-                      <SelectTrigger id="service-type">
-                        <SelectValue placeholder="Select Merch type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="standard">Culture</SelectItem>
-                        <SelectItem value="premium">Mental Disoder</SelectItem>
-                        <SelectItem value="Bundle">Brotherhood</SelectItem>
-                        <SelectItem value="Limited">Player</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
                   <Button className="w-full">Check Availability</Button>
                 </CardContent>
               </Card>
@@ -119,9 +104,9 @@ export default function TaxiServicesPage() {
 
         <div className="md:w-2/3 lg:w-3/4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Sigamerch ORDER</h1>
+            <h1 className="text-3xl font-bold tracking-tight">SIGMA</h1>
             <p className="text-muted-foreground mb-6">
-              See Availble Product And Pre-Order T-shirt and the Bundle
+            You Can Pre Order Studio Tiga Movie And Art for make your Expresion Easy 
             </p>
           </div>
 

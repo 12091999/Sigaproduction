@@ -206,7 +206,7 @@ export function MainNav() {
           <SheetHeader className="mb-4">
             <div className="flex items-center gap-2">
               <Image
-                src="images/sigamerch.png"
+                src="images/sigamerch.jpg"
                 alt="sigamerch"
                 width={40}
                 height={40}
