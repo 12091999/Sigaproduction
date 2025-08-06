@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export const metadata: Metadata = {
-  title: "Sigaproduction Services - SIGAMERCH",
+  title: "SIGAPRO EO - SIGAPRO_EO",
   description: "Book Our Service",
 }
 
@@ -59,7 +59,7 @@ export default function TaxiServicesPage() {
         <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:pr-6">
           <div className="sticky top-24 space-y-6">
             <div>
-              <h2 className="text-xl font-semibold mb-4">Pre Order The Merch</h2>
+              <h2 className="text-xl font-semibold mb-4">Book Our Services</h2>
               <Card>
                 <CardContent className="pt-6 space-y-4">
                   <div className="space-y-2">
@@ -119,9 +119,9 @@ export default function TaxiServicesPage() {
 
         <div className="md:w-2/3 lg:w-3/4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Sigamerch ORDER</h1>
+            <h1 className="text-3xl font-bold tracking-tight">SIGAPRO EO</h1>
             <p className="text-muted-foreground mb-6">
-              See Availble Product And Pre-Order T-shirt and the Bundle
+                Book Our Event Organizer Services for your special occasions. We provide professional event management services to make your events memorable.
             </p>
           </div>
 
