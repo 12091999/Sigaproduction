@@ -155,7 +155,7 @@ export default function TaxiServicesPage() {
                         {service.priceUnit && <span className="text-sm font-normal"> {service.priceUnit}</span>}
                       </div>
                       <Button asChild>
-                        <Link href={`/services/taxi/${service.id}`}>Pre-Order</Link>
+                        <Link href={`/services/sigaproEO/${service.id}`}>Pre-Order</Link>
                       </Button>
                     </div>
                   </div>
