@@ -103,7 +103,7 @@ export default function PropertiesPage() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Properties</h1>
-          <p className="text-muted-foreground">Browse properties for rent and sale in The Nilgiris region</p>
+          <p className="text-muted-foreground">Browse properties for rent and sale in The Sigamerch</p>
         </div>
         <Button className="mt-4 md:mt-0" asChild>
           <Link href="/properties/add">
@@ -119,7 +119,7 @@ export default function PropertiesPage() {
             <h2 className="font-semibold mb-4">Search Properties</h2>
             <div className="space-y-4">
               <div>
-                <Input placeholder="Search by location or keyword" />
+                <Input placeholder="Search by item's or keyword" />
               </div>
               <div>
                 <Select defaultValue="all">
