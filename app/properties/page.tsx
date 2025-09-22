@@ -36,7 +36,7 @@ const properties = [
     location: "Kotagiri, The Nilgiris",
     price: 7500000,
     priceType: "total",
-    type: "Sale",
+    type: "Rent",
     bedrooms: 2,
     bathrooms: 1,
     area: 1200,
@@ -62,7 +62,7 @@ const properties = [
     location: "Coonoor, The Nilgiris",
     price: 12500000,
     priceType: "total",
-    type: "Sale",
+    type: "Rent",
     bedrooms: 4,
     bathrooms: 3,
     area: 2500,
@@ -88,7 +88,7 @@ const properties = [
     location: "Ooty, The Nilgiris",
     price: 5500000,
     priceType: "total",
-    type: "Sale",
+    type: "Rent",
     bedrooms: 0,
     bathrooms: 1,
     area: 1200,
@@ -195,7 +195,7 @@ export default function PropertiesPage() {
             <TabsContent value="sale" className="mt-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {properties
-                  .filter((property) => property.type === "Sale")
+                  .filter((property) => property.type === "Rent")
                   .map((property) => (
                     <PropertyCard key={property.id} property={property} />
                   ))}
