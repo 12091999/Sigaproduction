@@ -128,11 +128,11 @@ export default function PropertiesPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Properties</SelectItem>
-                    <SelectItem value="house">House</SelectItem>
-                    <SelectItem value="apartment">Apartment</SelectItem>
-                    <SelectItem value="villa">Villa</SelectItem>
-                    <SelectItem value="cottage">Cottage</SelectItem>
-                    <SelectItem value="commercial">Commercial</SelectItem>
+                    <SelectItem value="house">Guitar</SelectItem>
+                    <SelectItem value="apartment">Bass</SelectItem>
+                    <SelectItem value="villa">Drum</SelectItem>
+                    <SelectItem value="cottage">Sound</SelectItem>
+                    <SelectItem value="commercial">Full Set</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -143,10 +143,10 @@ export default function PropertiesPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">Any Price</SelectItem>
-                    <SelectItem value="0-20000">₹0 - ₹20,000/month</SelectItem>
-                    <SelectItem value="20000-40000">₹20,000 - ₹40,000/month</SelectItem>
-                    <SelectItem value="40000-60000">₹40,000 - ₹60,000/month</SelectItem>
-                    <SelectItem value="60000+">₹60,000+/month</SelectItem>
+                    <SelectItem value="0-20000">Rp0 - Rp20,000/day</SelectItem>
+                    <SelectItem value="20000-40000">Rp20,000 - Rp40,000/day</SelectItem>
+                    <SelectItem value="40000-60000">Rp40,000 - Rp60,000/day</SelectItem>
+                    <SelectItem value="60000+">Rp60,000+/day</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -235,8 +235,8 @@ function PropertyCard({ property }: { property: any }) {
         </div>
         <h3 className="font-semibold text-lg mb-2 line-clamp-1">{property.title}</h3>
         <div className="font-bold text-lg mb-3">
-          ₹{property.price.toLocaleString("en-IN")}
-          {property.priceType === "month" ? "/month" : ""}
+          Rp{property.price.toLocaleString("in-IN")}
+          {property.priceType === "day" ? "/day" : ""}
         </div>
         <div className="flex items-center justify-between text-sm">
           <div className="flex items-center">
