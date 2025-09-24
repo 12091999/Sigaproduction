@@ -52,7 +52,7 @@ export function MainNav() {
       children: [
         {
           href: "/services/merch",
-          label: "Merch",
+          label: "Sigamerch",
           icon: Shirt,
         },
         {
