@@ -10,8 +10,8 @@ import { RecentSales } from "@/components/admin/recent-sales"
 import { Overview } from "@/components/admin/overview"
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard - Nanga Market",
-  description: "Admin dashboard for Nanga Market",
+  title: "Admin Dashboard - Sigaproductions",
+  description: "Admin dashboard for Sigaproductions",
 }
 
 export default function AdminDashboardPage() {

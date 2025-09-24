@@ -27,8 +27,8 @@ export default function HeroSection() {
         <div className="container mx-auto px-3 md:px-4 text-center">
           <div className="flex justify-center mb-4 md:mb-6">
             <Image
-              src="images/sigamerch.jpg"
-              alt="sigamerch Logo"
+              src="images/sigaproeo.jpeg"
+              alt="sigaproe Logo"
               width={160}
               height={160}
               className="w-28 h-28 md:w-40 md:h-40 lg:w-52 lg:h-52 rounded-full border-4 border-white/20 shadow-lg"
@@ -36,7 +36,7 @@ export default function HeroSection() {
             />
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-3 md:mb-6">
-            Welcome to Sigamerch
+            Welcome to Sigaproductions
           </h1>
           <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
             Your one-stop destination for local products, EO, Movie Art, and Music Studio

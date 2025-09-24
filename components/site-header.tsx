@@ -12,13 +12,13 @@ export function SiteHeader() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-2 md:mr-6 flex items-center">
           <Image
-            src="images/sigamerch.jpg"
-            alt="sigamerch"
+            src="images/sigaproeo.jpeg"
+            alt="sigaproeo"
             width={40}
             height={40}
             className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-muted"
           />
-          <span className="text-lg md:text-xl font-bold hidden md:inline-block ml-2 md:ml-3">Sigamerch</span>
+          <span className="text-lg md:text-xl font-bold hidden md:inline-block ml-2 md:ml-3">Sigaproduction</span>
         </Link>
         <MainNav />
         <div className="ml-auto flex items-center space-x-1 sm:space-x-2 md:space-x-4">
