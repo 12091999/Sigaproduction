@@ -11,8 +11,8 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export const metadata: Metadata = {
-  title: "Properties for Rent & Sale - Nanga Market",
-  description: "Browse properties available for rent and sale in the Nilgiris region",
+  title: "Properties for Rent & Sale - Sigamerch",
+  description: "Browse properties available for rent and sale in the Sigamerch",
 }
 
 // Sample properties data
