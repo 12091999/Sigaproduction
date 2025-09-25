@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import HeroSection from "@/components/hero-sectionEO"
 
 export const metadata: Metadata = {
   title: "SIGAPRO EO - SIGAPRO_EO",
@@ -54,6 +55,8 @@ const taxiServices = [
 
 export default function TaxiServicesPage() {
   return (
+    <>
+    <HeroSection />
     <div className="container py-8">
       <div className="flex flex-col gap-2 md:flex-row md:items-start">
         <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:pr-6">
@@ -166,5 +169,6 @@ export default function TaxiServicesPage() {
         </div>
       </div>
     </div>
+    </>
   )
 }
