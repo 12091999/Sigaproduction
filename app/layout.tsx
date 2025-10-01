@@ -12,7 +12,7 @@ import { ThemeHandler } from "@/components/theme-handler"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SIGAMERCH",
+  title: "Sigaproduction",
   description: "Your Music Clothing for local products...",
 };
 
