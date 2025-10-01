@@ -4,12 +4,19 @@ import { Camera, Home, Hotel, Music, ShoppingBag } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const categories = [
-  {
-    title: "Products",
-    description: "Shop Sigamerch products",
-    icon: ShoppingBag,
-    href: "/products",
-    color: "bg-rose-100 text-rose-700",
+{
+    title: "STUDIO 3 MUSIC STUDIO",
+    description: "Music Studio",
+    icon: Music,
+    href: "/services/cottages",
+    color: "bg-purple-100 text-purple-700",
+  },
+{
+    title: "SIGAPRO EO",
+    description: "Event Organizer",
+    icon: Home,
+    href: "/services/tourism",
+    color: "bg-emerald-100 text-emerald-700",
   },
   {
     title: "SIGMA",
@@ -18,12 +25,12 @@ const categories = [
     href: "/services/taxi",
     color: "bg-amber-100 text-amber-700",
   },
-  {
-    title: "SIGAPRO EO",
-    description: "Discover Sigaproduction Event Organizer",
-    icon: Home,
-    href: "/services/tourism",
-    color: "bg-emerald-100 text-emerald-700",
+{
+    title: "SIGAMERCH",
+    description: "Merchandise",
+    icon: ShoppingBag,
+    href: "/products",
+    color: "bg-rose-100 text-rose-700",
   },
   {
     title: "AREATIGA",
@@ -31,13 +38,6 @@ const categories = [
     icon: Hotel,
     href: "/services/accommodations",
     color: "bg-sky-100 text-sky-700",
-  },
-  {
-    title: "Studio Music",
-    description: "Cozy Nilgiri retreats",
-    icon: Music,
-    href: "/services/cottages",
-    color: "bg-purple-100 text-purple-700",
   },
 ]
 
