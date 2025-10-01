@@ -28,7 +28,7 @@ export default function HomePage() {
         <div className="flex flex-col items-center text-center space-y-2 md:space-y-4 px-2">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Featured Products</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-[700px]">
-            Explore our handpicked selection of the finest local products and services from the Nilgiri region.
+            Explore our handpicked selection of the finest local products and services from the Sigaproduction.
           </p>
         </div>
 
