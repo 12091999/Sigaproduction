@@ -1,0 +1,195 @@
+import { Facebook, Twitter, Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react"
+import Link from "next/link"
+
+export default function Footer() {
+  return (
+    <footer className="bg-white border-t">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Logo and Description Section */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                  <div className="text-xs font-bold text-blue-900">LOGO</div>
+                </div>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-gray-900">CV.Sigaproduction</h3>
+                <p className="text-sm text-gray-600">Studio Tiga Banyuwangi</p>
+              </div>
+            </div>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Sekolah Tinggi Ilmu Komputer PGRI Banyuwangi adalah institusi pendidikan tinggi yang berfokus pada
+              pengembangan ilmu komputer dan teknologi informasi.
+            </p>
+            <div className="flex gap-4">
+              <Link href="#" className="text-gray-600 hover:text-blue-900 transition-colors">
+                <Facebook className="w-5 h-5" />
+              </Link>
+              <Link href="#" className="text-gray-600 hover:text-blue-900 transition-colors">
+                <Twitter className="w-5 h-5" />
+              </Link>
+              <Link href="#" className="text-gray-600 hover:text-blue-900 transition-colors">
+                <Instagram className="w-5 h-5" />
+              </Link>
+              <Link href="#" className="text-gray-600 hover:text-blue-900 transition-colors">
+                <Youtube className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Link Cepat Section */}
+          <div>
+            <h3 className="font-bold text-lg text-gray-900 mb-4">Link Cepat</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Beranda
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Tentang Kami
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Program Studi
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Berita
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Galeri
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Kontak
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Informasi Section */}
+          <div>
+            <h3 className="font-bold text-lg text-gray-900 mb-4">Informasi</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Penerimaan Mahasiswa Baru
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Kalender Akademik
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Beasiswa
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Penelitian
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Pengabdian Masyarakat
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                >
+                  <span className="text-gray-400">›</span> Karir
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Kontak Section */}
+          <div>
+            <h3 className="font-bold text-lg text-gray-900 mb-4">Kontak</h3>
+            <ul className="space-y-4">
+              <li className="flex gap-3">
+                <MapPin className="w-5 h-5 text-blue-900 flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-gray-600">
+                  Jl. Karimun Jawa No. 15 Lateng, Kec. Banyuwangi Kabpaten Banyuwangi, Jawa Timur 68413
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <Phone className="w-5 h-5 text-blue-900 flex-shrink-0" />
+                <span className="text-sm text-gray-600">0819-3487-2954</span>
+              </li>
+              <li className="flex gap-3">
+                <Mail className="w-5 h-5 text-blue-900 flex-shrink-0" />
+                <span className="text-sm text-gray-600">Sigaproduction03@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Google Maps Section */}
+        <div className="mb-8">
+          <h3 className="font-bold text-lg text-gray-900 mb-4">Lokasi Kami</h3>
+          <div className="w-full h-[400px] rounded-lg overflow-hidden border">
+            <iframe
+              src="https://www.google.com/maps/place/Studio+3+Banyuwangi/@-8.1978794,114.3766804,19z/data=!4m6!3m5!1s0x2dd1451edf736e05:0x5f862c984e83a149!8m2!3d-8.1978803!4d114.3769809!16s%2Fg%2F11fy4swywp?entry=ttu&g_ep=EgoyMDI1MDkyOS4wIKXMDSoASAFQAw%3D%3D"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="STUDIO TIGA Banyuwangi Location"
+            />
+          </div>
+        </div>
+
+        {/* Copyright Section */}
+      </div>
+    </footer>
+  )
+}

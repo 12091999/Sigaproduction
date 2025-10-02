@@ -23,11 +23,11 @@ export default function HeroSection() {
 
   return (
     <section className="relative">
-      <div className="bg-gradient-to-r from-red-600 to-blue-600 py-12 md:py-20 lg:py-28">
+      <div className="bg-[url('/images/sigaproeo.jpeg')] bg-cover bg-center py-12 md:py-20 lg:py-28">
         <div className="container mx-auto px-3 md:px-4 text-center">
           <div className="flex justify-center mb-4 md:mb-6">
             <Image
-              src="images/sigaproeo.jpeg"
+              src="images/SP.jpg"
               alt="sigaproeo Logo"
               width={160}
               height={160}
@@ -47,7 +47,7 @@ export default function HeroSection() {
 
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto px-2">
             <Select defaultValue="all" onValueChange={setSearchCategory}>
-              <SelectTrigger className="w-full sm:w-[180px] bg-white">
+              <SelectTrigger className="w-full sm:w-[180px] bg-black">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent>

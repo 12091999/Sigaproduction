@@ -7,6 +7,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import FeaturedProducts from "@/components/featured-products"
 import HeroSection from "@/components/hero-section"
 import ServiceCategories from "@/components/service-categories"
+import Footer from "@/components/footer"
 
 export default function HomePage() {
   return (
@@ -42,129 +43,7 @@ export default function HomePage() {
           </Button>
         </div>
       </section>
-
-      <section className="container py-8 md:py-12 space-y-4 md:space-y-6">
-        <div className="flex flex-col items-center text-center space-y-2 md:space-y-4 px-2">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Popular Categories in The Sigamerch Colection's</h2>
-          <p className="text-sm md:text-base text-muted-foreground max-w-[700px]">
-            Find exactly what you need with our most popular service categories in The SIGAMERCH district.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <Card className="overflow-hidden">
-            <div className="relative h-40 w-full">
-              <Image
-                src="/images/studio3.jpg"
-                alt="Sigaproductions"
-                fill
-                className="object-cover brightness-[0.85]"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-4 text-white">
-                <User className="h-6 w-6 md:h-8 md:w-8 mb-2" />
-                <h3 className="text-lg md:text-xl font-bold">Sigaproductions</h3>
-                <p className="text-xs md:text-sm text-white/80">Find The Popular Offer From Sigaproduction</p>
-              </div>
-            </div>
-            <CardContent className="pt-4">
-              <p className="text-xs md:text-sm">
-                Book We're Service About Music Event, Recording, Filming, ect.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button variant="outline" asChild className="w-full text-xs md:text-sm h-8 md:h-10">
-                <Link href="/services/taxi">See Sigaproduction</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-
-          <Card className="overflow-hidden">
-            <div className="relative h-40 w-full">
-              <Image
-                src="/images/studio 1.jpeg"
-                alt="Music Studio"
-                fill
-                className="object-cover brightness-[0.85]"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-4 text-white">
-                <MapPin className="h-6 w-6 md:h-8 md:w-8 mb-2" />
-                <h3 className="text-lg md:text-xl font-bold">Music Studio</h3>
-                <p className="text-xs md:text-sm text-white/80">Discover Best Music Studio in Banyuwangi</p>
-              </div>
-            </div>
-            <CardContent className="pt-4">
-              <p className="text-xs md:text-sm">
-                There are rent for music studio for your musician skill, Usable for recording and take a video clip.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button variant="outline" asChild className="w-full text-xs md:text-sm h-8 md:h-10">
-                <Link href="/services/tourism">See Our Studio</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-
-          <Card className="overflow-hidden">
-            <div className="relative h-40 w-full">
-              <Image
-                src="/images/sigaEO.jpeg"
-                alt="Studio Tiga Event Organizer"
-                fill
-                className="object-cover brightness-[0.85]"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-4 text-white">
-                <Hotel className="h-6 w-6 md:h-8 md:w-8 mb-2" />
-                <h3 className="text-lg md:text-xl font-bold">SIGAPRO EO</h3>
-                <p className="text-xs md:text-sm text-white/80">Discover Event Organizer</p>
-              </div>
-            </div>
-            <CardContent className="pt-4">
-              <p className="text-xs md:text-sm">
-                Find the perfect Event Organizer, we're can make your event elegant and effective.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button variant="outline" asChild className="w-full text-xs md:text-sm h-8 md:h-10">
-                <Link href="/services/accommodations">See Our Offer</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-
-          <Card className="overflow-hidden">
-            <div className="relative h-40 w-full">
-              <Image
-                src="/images/areatiga.jpeg"
-                alt="Musiclopedia"
-                fill
-                className="object-cover brightness-[0.85]"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-4 text-white">
-                <Home className="h-6 w-6 md:h-8 md:w-8 mb-2" />
-                <h3 className="text-lg md:text-xl font-bold">AREATIGA</h3>
-                <p className="text-xs md:text-sm text-white/80">Musiclopedia</p>
-              </div>
-            </div>
-            <CardContent className="pt-4">
-              <p className="text-xs md:text-sm">
-                increase knowledge about world music and musicians.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button variant="outline" asChild className="w-full text-xs md:text-sm h-8 md:h-10">
-                <Link href="/services/cottages">View AREATIGA</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        </div>
-      </section>
+    <Footer />
     </div>
   )
 }

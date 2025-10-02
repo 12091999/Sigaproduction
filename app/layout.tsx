@@ -37,7 +37,7 @@ export default function RootLayout({
             <footer className="border-t py-4 md:py-6">
               <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                 <p className="text-center text-xs md:text-sm leading-loose text-muted-foreground md:text-left">
-                  © {new Date().getFullYear()} SIGAMERCH. All rights reserved.
+                  © {new Date().getFullYear()} Sigaproduction. All rights reserved.
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 text-xs md:text-sm text-muted-foreground">
                   <Link href="/terms">Terms</Link>
