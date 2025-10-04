@@ -20,8 +20,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed">
-              Sekolah Tinggi Ilmu Komputer PGRI Banyuwangi adalah institusi pendidikan tinggi yang berfokus pada
-              pengembangan ilmu komputer dan teknologi informasi.
+              Studio Tiga Banyuwangi adalah tempat dan wadah bagi pemusik local banyuwangi
+              dan mencetak karya-karya musik yang berkualitas.
             </p>
             <div className="flex gap-4">
               <Link href="#" className="text-gray-600 hover:text-blue-900 transition-colors">
@@ -176,11 +176,11 @@ export default function Footer() {
           <h3 className="font-bold text-lg text-gray-900 mb-4">Lokasi Kami</h3>
           <div className="w-full h-[400px] rounded-lg overflow-hidden border">
             <iframe
-              src="https://www.google.com/maps/place/Studio+3+Banyuwangi/@-8.1978794,114.3766804,19z/data=!4m6!3m5!1s0x2dd1451edf736e05:0x5f862c984e83a149!8m2!3d-8.1978803!4d114.3769809!16s%2Fg%2F11fy4swywp?entry=ttu&g_ep=EgoyMDI1MDkyOS4wIKXMDSoASAFQAw%3D%3D"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d987.2620995697481!2d114.3766804!3d-8.1978794!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd1451edf736e05%3A0x5f862c984e83a149!2sStudio%203%20Banyuwangi!5e0!3m2!1sen!2sid!4v1759616877830!5m2!1sen!2sid"
               width="100%"
               height="100%"
               style={{ border: 0 }}
-              allowFullScreen
+              allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="STUDIO TIGA Banyuwangi Location"
