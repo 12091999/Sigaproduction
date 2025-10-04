@@ -136,7 +136,7 @@ export default function TaxiServicesPage() {
                 <div className="md:flex">
                   <div className="relative h-48 md:h-auto md:w-1/3">
                     <Image
-                      src={service.image || "/sigaproeo.jpeg"}
+                      src={service.image || "images/sigaproeo.jpeg"}
                       alt={service.name}
                       fill
                       className="object-cover"
