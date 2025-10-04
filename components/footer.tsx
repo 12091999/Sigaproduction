@@ -56,7 +56,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
                 >
-                  <span className="text-gray-400">›</span> Tentang Kami
+                  <span className="text-gray-400">›</span> Tentang Studio 3
                 </Link>
               </li>
               <li>
@@ -64,7 +64,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
                 >
-                  <span className="text-gray-400">›</span> Program Studi
+                  <span className="text-gray-400">›</span> Service
                 </Link>
               </li>
               <li>
@@ -72,7 +72,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
                 >
-                  <span className="text-gray-400">›</span> Berita
+                  <span className="text-gray-400">›</span> Rent & Sales
                 </Link>
               </li>
               <li>
@@ -81,14 +81,6 @@ export default function Footer() {
                   className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
                 >
                   <span className="text-gray-400">›</span> Galeri
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-gray-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
-                >
-                  <span className="text-gray-400">›</span> Kontak
                 </Link>
               </li>
             </ul>

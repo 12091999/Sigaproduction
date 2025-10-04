@@ -66,22 +66,6 @@ export default function TaxiServicesPage() {
               <h2 className="text-xl font-semibold mb-4">Pre Order The Merch</h2>
               <Card>
                 <CardContent className="pt-6 space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="pickup">Pickup Location</Label>
-                    <div className="relative">
-                      <MapPin className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="pickup" placeholder="Enter pickup address in The Nilgiris" className="pl-8" />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="destination">Destination</Label>
-                    <div className="relative">
-                      <MapPin className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="destination" placeholder="Enter destination in The Nilgiris" className="pl-8" />
-                    </div>
-                  </div>
-
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="date">Availbe Until</Label>
