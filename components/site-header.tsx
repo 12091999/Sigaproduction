@@ -12,7 +12,7 @@ export function SiteHeader() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-2 md:mr-6 flex items-center">
           <Image
-            src="images/sigaproeo.jpeg"
+            src="/images/sigaproeo.jpeg"
             alt="sigaproeo"
             width={40}
             height={40}

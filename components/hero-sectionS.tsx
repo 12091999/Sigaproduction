@@ -27,7 +27,7 @@ export default function HeroSection() {
         <div className="container mx-auto px-3 md:px-4 text-center">
           <div className="flex justify-center mb-4 md:mb-6">
             <Image
-              src="images/studio3.jpg"
+              src="/images/studio3.jpg"
               alt="studio3 Logo"
               width={160}
               height={160}
