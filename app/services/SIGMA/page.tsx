@@ -103,7 +103,7 @@ export default function TaxiServicesPage() {
                         {service.priceUnit && <span className="text-sm font-normal"> {service.priceUnit}</span>}
                       </div>
                       <Button asChild>
-                        <Link href={`/services/taxi/${service.id}`}>Pre-Order</Link>
+                        <Link href="https://api.whatsapp.com/send/?phone=6281934872954">Pre-Order</Link>
                       </Button>
                     </div>
                   </div>
