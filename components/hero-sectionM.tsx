@@ -44,7 +44,7 @@ export default function HeroSection() {
 
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto px-2">
             <Select defaultValue="all" onValueChange={setSearchCategory}>
-              <SelectTrigger className="w-full sm:w-[180px] bg-white">
+              <SelectTrigger className="w-full sm:w-[180px] bg-black">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent>
