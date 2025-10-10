@@ -35,7 +35,8 @@ export function Hero() {
             <Image
               src="/dark-ui-dashboard-preview.jpg"
               alt="Pratinjau karya dan produksi CV.Sigaproduction"
-              fill
+              width={800}
+              height={600}
               className="h-full w-full object-cover"
             />
           </Card>
