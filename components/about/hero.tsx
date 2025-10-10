@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Hero() {
   return (
@@ -31,8 +32,8 @@ export function Hero() {
             aria-label="Kolase karya CV.Sigaproduction"
             className="relative overflow-hidden border bg-card p-0"
           >
-            <img
-              src="/images/dark ui dashboard preview.jpg"
+            <Image
+              src="/dark-ui-dashboard-preview.jpg"
               alt="Pratinjau karya dan produksi CV.Sigaproduction"
               className="h-full w-full object-cover"
             />
