@@ -85,62 +85,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Informasi Section */}
-          <div>
-            <h3 className="font-bold text-lg text-white-900 mb-4">Informasi</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#"
-                  className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
-                >
-                  <span className="text-white-400">›</span> Penerimaan Mahasiswa Baru
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
-                >
-                  <span className="text-white-400">›</span> Kalender Akademik
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
-                >
-                  <span className="text-white-400">›</span> Beasiswa
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
-                >
-                  <span className="text-white-400">›</span> Penelitian
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
-                >
-                  <span className="text-white-400">›</span> Pengabdian Masyarakat
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
-                >
-                  <span className="text-white-400">›</span> Karir
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Kontak Section */}
           <div>
             <h3 className="font-bold text-lg text-white-900 mb-4">Kontak</h3>
