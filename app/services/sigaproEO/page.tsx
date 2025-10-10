@@ -57,70 +57,15 @@ export default function TaxiServicesPage() {
   return (
     <>
     <HeroSection />
-    <div className="container py-8">
-      <div className="flex flex-col gap-2 md:flex-row md:items-start">
-        <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:pr-6">
+    <div className="flex justify-center mb-4 md:mb-6">
+      <div className="w-full md:w-11/12 lg:w-4/5 text-center">
+        <div className="text-center">
           <div className="sticky top-24 space-y-6">
             <div>
-              <h2 className="text-xl font-semibold mb-4">Book Our Services</h2>
-              <Card>
-                <CardContent className="pt-6 space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="Event">Event</Label>
-                    <div className="relative">
-                      <Home className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="Event" placeholder="Enter event address in The SIGAPRO_EO" className="pl-8" />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="destination">Event Location</Label>
-                    <div className="relative">
-                      <Home className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="Event Location" placeholder="Enter Event Location in the SIGAPRO_EO" className="pl-8" />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="date">Availbe Until</Label>
-                      <div className="relative">
-                        <Calendar className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                        <Input id="date" type="date" className="pl-8" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="time">Time</Label>
-                      <div className="relative">
-                        <Clock className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                        <Input id="time" type="time" className="pl-8" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="service-type">Type Event</Label>
-                    <Select defaultValue="Select">
-                      <SelectTrigger id="service-type">
-                        <SelectValue placeholder="Select Event type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="standard">Music</SelectItem>
-                        <SelectItem value="premium">Festival</SelectItem>
-                        <SelectItem value="Bundle">Event Organize</SelectItem>
-                        <SelectItem value="Limited">Ect</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <Button className="w-full">Check Availability</Button>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
-
-        <div className="md:w-2/3 lg:w-3/4">
+        <div className="md:w-2/3 lg:w-3/4 mx-auto py-10">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">SIGAPRO EO</h1>
             <p className="text-muted-foreground mb-6">

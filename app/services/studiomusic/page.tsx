@@ -41,53 +41,16 @@ export default function TaxiServicesPage() {
   return (
     <>
     <HeroSection />
-    <div className="container py-8">
-      <div className="flex flex-col gap-2 md:flex-row md:items-start">
-        <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:pr-6">
+    <div className="flex justify-center mb-4 md:mb-6">
+      <div className="w-full md:w-11/12 lg:w-4/5 text-center">
+        <div className="text-center">
           <div className="sticky top-24 space-y-6">
             <div>
-              <h2 className="text-xl font-semibold mb-4">Book The Studio</h2>
-              <Card>
-                <CardContent className="pt-6 space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="pickup">Name</Label>
-                    <div className="relative">
-                      <User className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="Name" placeholder="Enter your name" className="pl-8" />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="destination">Destination</Label>
-                    <div className="relative">
-                      <User className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                      <Input id="destination" placeholder="Enter destination in The Nilgiris" className="pl-8" />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="date">Open At</Label>
-                      <div className="relative">
-                        <Calendar className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                        <Input id="date" type="date" className="pl-8" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="time">Time</Label>
-                      <div className="relative">
-                        <Clock className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                        <Input id="time" type="time" className="pl-8" />
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
+        <div className="md:w-2/3 lg:w-3/4 mx-auto py-10">
 
-        <div className="md:w-2/3 lg:w-3/4">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Music Studio</h1>
             <p className="text-muted-foreground mb-6">
@@ -125,7 +88,7 @@ export default function TaxiServicesPage() {
                         {service.priceUnit && <span className="text-sm font-normal"> {service.priceUnit}</span>}
                       </div>
                       <Button asChild>
-                        <Link href={`/services/taxi/${service.id}`}>Book Now</Link>
+                        <Link href="https://api.whatsapp.com/send/?phone=6281934872954">Book Now</Link>
                       </Button>
                     </div>
                   </div>
