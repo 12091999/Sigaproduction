@@ -83,7 +83,7 @@ export function MainNav() {
 
     const secondaryRoutes: Route[] = [ 
     {
-      href: "/components/about",
+      href: "/about",
       label: "About",
       active: pathname === "/about",
     },
