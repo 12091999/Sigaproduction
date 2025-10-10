@@ -32,7 +32,7 @@ export function Hero() {
             className="relative overflow-hidden border bg-card p-0"
           >
             <img
-              src="/dark-ui-dashboard-preview.jpg"
+              src="/images/dark ui dashboard preview.jpg"
               alt="Pratinjau karya dan produksi CV.Sigaproduction"
               className="h-full w-full object-cover"
             />
