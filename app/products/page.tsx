@@ -139,7 +139,7 @@ export default function ProductsPage() {
             </CardContent>
             <CardFooter className="p-4 pt-0">
               <Button asChild className="w-full">
-                <Link href={`/products/${product.id}`}>View Details</Link>
+                <Link href="https://shopee.co.id/">View Details</Link>
               </Button>
             </CardFooter>
           </Card>
