@@ -60,7 +60,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/about"
                   className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
                 >
                   <span className="text-white-400">›</span> Tentang Studio 3
@@ -84,9 +84,11 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
-                  className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
-                >
+                    href="https://www.instagram.com/sigaproduction/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+                    >
                   <span className="text-white-400">›</span> Galeri
                 </Link>
               </li>
