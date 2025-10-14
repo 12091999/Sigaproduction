@@ -68,7 +68,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/services"
                   className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
                 >
                   <span className="text-white-400">›</span> Service
