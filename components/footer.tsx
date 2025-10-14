@@ -1,5 +1,6 @@
 import { Facebook, Twitter, Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -9,9 +10,15 @@ export default function Footer() {
           {/* Logo and Description Section */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <div className="text-xs font-bold text-red-900">LOGO</div>
+              <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full overflow-hidden">
+                    <Image
+                    src="images/SP.jpg" 
+                    alt="Logo Sigaproduction"
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full"
+                    />
                 </div>
               </div>
               <div>
