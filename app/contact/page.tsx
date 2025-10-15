@@ -14,7 +14,9 @@ export default function ContactPage() {
     <main className="min-h-dvh">
       <header className="bg-secondary">
         <div className="container mx-auto px-4 py-12 md:py-16">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-pretty">Kontak CV.Sigaproductions</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-pretty">
+            Kontak CV.Sigaproductions
+          </h1>
           <p className="mt-3 text-muted-foreground text-pretty max-w-2xl">
             Butuh proposal, konsultasi, atau ingin berdiskusi proyek? Tim kami siap membantu Anda.
           </p>
@@ -42,6 +44,45 @@ export default function ContactPage() {
 
         <div className="mt-12">
           <ContactMap />
+        </div>
+
+        {/* === BAGIAN LEGALITAS (EDITABLE) === */}
+        <div className="mt-16 bg-secondary/30 rounded-lg p-8">
+          <h2 className="text-2xl font-semibold mb-6">LEGALITAS</h2>
+          <div className="grid md:grid-cols-2 gap-10">
+            <div className="space-y-4 text-sm">
+              <p><strong>CV. SIGA PRODUCTION</strong></p>
+              <p><strong>DIREKTUR:</strong><br/>M. W. SENA SUBRATA</p>
+              <p><strong>WAKIL DIREKTUR:</strong><br/>BERLIANDA OKTAVIANI Y.</p>
+              <p className="mt-6 font-semibold">OUR OFFICE</p>
+              <p>
+                BANYUWANGI<br/>
+                JL. KARIMUNJAWA NO.15 A<br/>
+                LATENG, BANYUWANGI<br/>
+                JAWA TIMUR<br/>
+                68413
+              </p>
+            </div>
+
+            <div className="space-y-6 text-sm">
+              <div>
+                <p className="font-semibold">NPWP</p>
+                <p>66.078.407.5-627.000</p>
+              </div>
+              <div>
+                <p className="font-semibold">NIB</p>
+                <p>9120312031076</p>
+              </div>
+              <div>
+                <p className="font-semibold">SK KEMENKUMHAM</p>
+                <p>AHU-0082481-AH.01.15</p>
+              </div>
+              <div>
+                <p className="font-semibold">NOTARIS</p>
+                <p>DIAN PERTIWI S.H., M.Kn.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
