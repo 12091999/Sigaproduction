@@ -1,20 +1,16 @@
-// app/layout.tsx
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
+import type React from "react"
 import { Analytics } from "@vercel/analytics/next"
+import { Suspense } from "react"
 
-export const metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-}
-
-export default function RootLayout({ children }) {
+export default function AboutLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" className="scroll-smooth light">
-      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans`}>
-        {children}
-        <Analytics />
-      </body>
-    </html>
+    <>
+      <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      <Analytics />
+    </>
   )
 }
