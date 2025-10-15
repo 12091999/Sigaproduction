@@ -1,0 +1,33 @@
+<li className="relative group">
+  {/* Menu Utama */}
+  <Link
+    href="/services"
+    className="text-white-600 hover:text-blue-900 transition-colors text-sm flex items-center gap-2"
+  >
+    <span className="text-white-400">›</span> Service
+  </Link>
+
+  {/* Submenu */}
+  <ul className="absolute left-0 mt-2 hidden group-hover:block bg-white shadow-md rounded-md py-2 w-48 z-50">
+    <li>
+      <Link href="/services/merch" className="block px-4 py-2 hover:bg-gray-100">
+        Sigamerch
+      </Link>
+    </li>
+    <li>
+      <Link href="/services/studiomusic" className="block px-4 py-2 hover:bg-gray-100">
+        Music Studio
+      </Link>
+    </li>
+    <li>
+      <Link href="/services/SIGMA" className="block px-4 py-2 hover:bg-gray-100">
+        SIGMA
+      </Link>
+    </li>
+    <li>
+      <Link href="/services/sigaproEO" className="block px-4 py-2 hover:bg-gray-100">
+        SIGAPRO EO
+      </Link>
+    </li>
+  </ul>
+</li>
