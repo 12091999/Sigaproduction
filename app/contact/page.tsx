@@ -23,68 +23,68 @@ export default function ContactPage() {
         </div>
       </header>
 
-        {/* === BAGIAN LEGALITAS DIPINDAH KE ATAS === */}
         <section className="container mx-auto px-4 pt-10 md:pt-14">
         <div
             className="rounded-lg p-8"
             style={{ backgroundColor: "#7A1818" }}
-        >
-            <div
-            className="border-t-4 pt-6"
-            style={{ borderColor: "#B22222" }}
-            >
-            <h2 className="text-2xl font-semibold mb-6 text-white">
+  >
+            {/* Garis bawah judul LEGALITAS */}
+            <div className="pb-2" style={{ borderBottom: "#B22222",width:"fit-content", }}>
+            <h2 className="text-2xl font-semibold text-white">
                 LEGALITAS
             </h2>
+            </div>
 
-            {/* Grid Utama */}
-            <div className="grid md:grid-cols-2 gap-10 text-white items-start">
-                
-                {/* Kolom Kiri */}
-                <div className="space-y-4 text-sm">
+            <div className="grid md:grid-cols-2 gap-10 text-white mt-6 items-start">
+            
+            {/* Kolom Kiri dengan garis kanan */}
+            <div
+                className="space-y-4 text-sm pr-6"
+                style={{ borderRight: "4px solid #B22222" }}
+            >
                 <p><strong>CV. SIGA PRODUCTION</strong></p>
                 <p>
-                    <strong>DIREKTUR:</strong><br />
-                    M. W. SENA SUBRATA
+                <strong>DIREKTUR:</strong><br />
+                M. W. SENA SUBRATA
                 </p>
                 <p>
-                    <strong>WAKIL DIREKTUR:</strong><br />
-                    BERLIANDA OKTAVIANI Y.
+                <strong>WAKIL DIREKTUR:</strong><br />
+                BERLIANDA OKTAVIANI Y.
                 </p>
                 <p className="mt-6 font-semibold">OUR OFFICE</p>
                 <p>
-                    BANYUWANGI<br />
-                    JL. KARIMUNJAWA NO.15 A<br />
-                    LATENG, BANYUWANGI<br />
-                    JAWA TIMUR<br />
-                    68413
+                BANYUWANGI<br />
+                JL. KARIMUNJAWA NO.15 A<br />
+                LATENG, BANYUWANGI<br />
+                JAWA TIMUR<br />
+                68413
                 </p>
-                </div>
-
-                {/* Kolom Kanan (Disetarakan dari atas) */}
-                <div className="space-y-6 text-sm pt-1">
-                <div>
-                    <p className="font-semibold">NPWP</p>
-                    <p>66.078.407.5-627.000</p>
-                </div>
-                <div>
-                    <p className="font-semibold">NIB</p>
-                    <p>9120312031076</p>
-                </div>
-                <div>
-                    <p className="font-semibold">SK KEMENKUMHAM</p>
-                    <p>AHU-0082481-AH.01.15</p>
-                </div>
-                <div>
-                    <p className="font-semibold">NOTARIS</p>
-                    <p>DIAN PERTIWI S.H., M.Kn.</p>
-                </div>
-                </div>
-
             </div>
+
+            {/* Kolom Kanan */}
+            <div className="space-y-6 text-sm pl-6">
+                <div className="border-t-4 pt-4" style={{ borderColor: "#B22222" }}>
+                <p className="font-semibold">NPWP</p>
+                <p>66.078.407.5-627.000</p>
+                </div>
+                <div className="border-t-4 pt-4" style={{ borderColor: "#B22222" }}>
+                <p className="font-semibold">NIB</p>
+                <p>9120312031076</p>
+                </div>
+                <div className="border-t-4 pt-4" style={{ borderColor: "#B22222" }}>
+                <p className="font-semibold">SK KEMENKUMHAM</p>
+                <p>AHU-0082481-AH.01.15</p>
+                </div>
+                <div className="border-t-4 pt-4" style={{ borderColor: "#B22222" }}>
+                <p className="font-semibold">NOTARIS</p>
+                <p>DIAN PERTIWI S.H., M.Kn.</p>
+                </div>
+            </div>
+
             </div>
         </div>
         </section>
+
 
 
       {/* === FORM & KONTAK === */}
