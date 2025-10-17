@@ -1,9 +1,9 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Search } from "lucide-react"
 import Image from "next/image"
 
@@ -14,10 +14,35 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 export default function HeroSection() {
   const [searchCategory, setSearchCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
+  const router = useRouter()
+
+  // Redirect saat memilih kategori
+  const handleCategoryChange = (value: string) => {
+    setSearchCategory(value)
+
+    switch (value) {
+      case "Studio 3 Music Studio":
+        router.push("/studio-music")
+        break
+      case "EO":
+        router.push("/eo")
+        break
+      case "Sigamerch":
+        router.push("/sigamerch")
+        break
+      case "Movie Art":
+        router.push("/sigma-bwx")
+        break
+      case "Area Tiga":
+        router.push("/area-tiga")
+        break
+      default:
+        router.push("/")
+    }
+  }
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, this would redirect to search results
     console.log(`Searching for ${searchQuery} in ${searchCategory}`)
   }
 
@@ -42,11 +67,11 @@ export default function HeroSection() {
             CV.SIGA PRODUCTION
           </h1>
           <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
-            Explore us. Enjoy the Best of What We Do.
+            Explore us. Enjoy the Best of What We Do.
           </p>
 
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto px-2">
-            <Select defaultValue="all" onValueChange={setSearchCategory}>
+            <Select defaultValue="all" onValueChange={handleCategoryChange}>
               <SelectTrigger className="w-full sm:w-[180px] bg-black">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
