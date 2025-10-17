@@ -23,7 +23,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative">
-      <div className="bg-[url('/images/sigaproeo.jpeg')] bg-cover bg-center py-12 md:py-20 lg:py-28">
+      <div className="bg-[url('/images/photo-collage.png')] bg-cover bg-center py-12 md:py-20 lg:py-28">
         <div className="container mx-auto px-3 md:px-4 text-center">
           <div className="flex justify-center mb-4 md:mb-6">
             <Image
