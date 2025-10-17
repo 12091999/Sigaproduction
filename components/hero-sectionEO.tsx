@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Search } from "lucide-react"
 import Image from "next/image"
@@ -12,13 +12,35 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function HeroSection() {
-  const [searchCategory, setSearchCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
+  const router = useRouter()
+
+  // Fungsi handle untuk redirect berdasarkan item yang dipilih
+  const handleCategoryChange = (value: string) => {
+    switch (value) {
+      case "Studio 3 Music Studio":
+        router.push("services/studiomusic")
+        break
+      case "EO":
+        router.push("services/eo")
+        break
+      case "Sigamerch":
+        router.push("services/sigamerch")
+        break
+      case "Movie Art":
+        router.push("services/sigma-bwx")
+        break
+      case "Area Tiga":
+        router.push("services/area-tiga")
+        break
+      default:
+        router.push("/")
+    }
+  }
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, this would redirect to search results
-    console.log(`Searching for ${searchQuery} in ${searchCategory}`)
+    console.log(`Searching for ${searchQuery}`)
   }
 
   return (
@@ -35,7 +57,8 @@ export default function HeroSection() {
               priority
             />
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-3 md:mb-6">
+
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:6xl font-bold text-white mb-3 md:mb-6">
             Welcome to Sigaproductions
           </h1>
           <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
@@ -43,12 +66,12 @@ export default function HeroSection() {
           </p>
 
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto px-2">
-            <Select defaultValue="all" onValueChange={setSearchCategory}>
+            <Select onValueChange={handleCategoryChange}>
               <SelectTrigger className="w-full sm:w-[180px] bg-black">
-                <SelectValue placeholder="Category" />
+                <SelectValue placeholder="Select Category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Categories</SelectItem>
+                <SelectItem value="/">All Categories</SelectItem>
                 <SelectItem value="Sigamerch Products">Sigamerch Products</SelectItem>
                 <SelectItem value="Siga Service">Siga Services</SelectItem>
                 <SelectItem value="Movie Art">Movie Art</SelectItem>
@@ -60,7 +83,7 @@ export default function HeroSection() {
             <div className="relative flex-1">
               <Input
                 type="text"
-                placeholder="Search for products, services, or offer in Sigma..."
+                placeholder="Search for products, services, or offers..."
                 className="w-full pl-10"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -81,7 +104,7 @@ export default function HeroSection() {
               <Link href="/services/taxi">Book a Sigaproduction</Link>
             </Button>
             <Button asChild variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
-              <Link href="/services/accommodations">Find Youre Offer</Link>
+              <Link href="/services/accommodations">Find Your Offer</Link>
             </Button>
           </div>
         </div>
