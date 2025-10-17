@@ -25,7 +25,7 @@ export default function HeroSection() {
         router.push("services/studiomusic")
         break
       case "EO":
-        router.push("services/eo")
+        router.push("services/sigaproEO")
         break
       case "Sigamerch":
         router.push("services/sigamerch")
