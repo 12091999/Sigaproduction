@@ -74,7 +74,7 @@ export function MainNav() {
     },
     {
       href: "/properties",
-      label: "Rent & Sales",
+      label: "Rent",
       active: pathname === "/properties" || pathname.startsWith("/properties/"),
     },
   ]
