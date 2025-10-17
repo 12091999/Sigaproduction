@@ -52,11 +52,11 @@ export default function HeroSection() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
-                <SelectItem value="Sigamerch Products">Sigamerch Products</SelectItem>
-                <SelectItem value="Siga Service">Siga Services</SelectItem>
-                <SelectItem value="Movie Art">Movie Art</SelectItem>
-                <SelectItem value="Studio Music">Studio Music</SelectItem>
-                <SelectItem value="EO">EO</SelectItem>
+                <SelectItem value="Studio 3 Music Studio">Studio 3 Music Studio</SelectItem>
+                <SelectItem value="EO">Sigapro EO</SelectItem>
+                <SelectItem value="Sigamerch">Sigamerch</SelectItem>
+                <SelectItem value="Movie Art">Sigma Bwx</SelectItem>
+                <SelectItem value="Area Tiga">Area Tiga</SelectItem>
               </SelectContent>
             </Select>
 
