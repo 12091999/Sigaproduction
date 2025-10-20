@@ -76,6 +76,7 @@ export default function HeroSection() {
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent>
+                <SelectItem value="all">All Categories</SelectItem>
                 <SelectItem value="Studio 3 Music Studio">Studio 3 Music Studio</SelectItem>
                 <SelectItem value="EO">Sigapro EO</SelectItem>
                 <SelectItem value="Sigamerch">Sigamerch</SelectItem>
