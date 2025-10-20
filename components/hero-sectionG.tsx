@@ -1,9 +1,9 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Search } from "lucide-react"
 import Image from "next/image"
 
@@ -14,11 +14,35 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 export default function HeroSection() {
   const [searchCategory, setSearchCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
+  const router = useRouter()
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, this would redirect to search results
     console.log(`Searching for ${searchQuery} in ${searchCategory}`)
+  }
+
+  const handleSelect = (value: string) => {
+    setSearchCategory(value)
+    // Redirect berdasarkan nilai yang dipilih
+    switch (value) {
+      case "Sigamerch Products":
+        router.push("/products")
+        break
+      case "Siga Service":
+        router.push("/services")
+        break
+      case "Movie Art":
+        router.push("/movie-art")
+        break
+      case "Studio Music":
+        router.push("/studio-music")
+        break
+      case "EO":
+        router.push("/eo")
+        break
+      default:
+        break
+    }
   }
 
   return (
@@ -43,7 +67,7 @@ export default function HeroSection() {
           </p>
 
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto px-2">
-            <Select defaultValue="all" onValueChange={setSearchCategory}>
+            <Select defaultValue="all" onValueChange={handleSelect}>
               <SelectTrigger className="w-full sm:w-[180px] bg-black">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
