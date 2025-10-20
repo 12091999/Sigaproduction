@@ -22,7 +22,7 @@ export default function HeroSection() {
     // ✅ Redirect sesuai value
     switch (value) {
       case "Sigamerch Products":
-        router.push("/products")
+        router.push("/merch")
         break
       case "Siga Service":
         router.push("/services")
