@@ -19,19 +19,19 @@ export default function HeroSection() {
   const handleCategoryChange = (value: string) => {
     switch (value) {
       case "Studio 3 Music Studio":
-        router.push("services/studiomusic")
+        router.push("/services/studiomusic")
         break
       case "EO":
-        router.push("services/sigaproEO")
+        router.push("/services/sigaproEO")
         break
       case "Sigamerch":
-        router.push("services/merch")
+        router.push("/services/merch")
         break
       case "Sigma Bwx":
-        router.push("services/SIGMA")
+        router.push("/services/SIGMA")
         break
       case "Area Tiga":
-        router.push("services/area-tiga")
+        router.push("/services/area-tiga")
         break
       default:
         router.push("/")
