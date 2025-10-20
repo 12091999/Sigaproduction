@@ -66,7 +66,7 @@ export default function HeroSection() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-red-600 mb-3 md:mb-6">
             CV.SIGA PRODUCTION
           </h1>
-          <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
+          <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2 text-outline-red">
             Explore us. Enjoy the Best of What We Do.
           </p>
 
