@@ -24,21 +24,21 @@ const taxiServices = [
     name: "Hijau Daun",
     description:
       "Hijau Daun merupakan grup musik asal Indonesia yang berasal dari Bandar Lampung.",
-    videoUrl: "https://www.instagram.com/reel/VIDEO_ID_2/",
+    videoUrl: "https://www.instagram.com/stories/highlights/18145397218401597/",
   },
   {
     id: 3,
     name: "Matley Crue",
     description:
       "Matley Crue adalah grup musik heavy metal Amerika yang dibentuk di Los Angeles.",
-    videoUrl: "https://www.instagram.com/reel/VIDEO_ID_3/",
+    videoUrl: "https://www.instagram.com/stories/highlights/18145397218401597/",
   },
   {
     id: 4,
     name: "Scar Symmetry",
     description:
       "Scar Symmetry adalah band death metal melodi asal Swedia yang dibentuk pada tahun 2004 di Avesta.",
-    videoUrl: "https://www.instagram.com/reel/VIDEO_ID_4/",
+    videoUrl: "https://www.instagram.com/stories/highlights/18145397218401597/",
   },
 ]
 
