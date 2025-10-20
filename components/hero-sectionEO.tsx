@@ -72,7 +72,6 @@ export default function HeroSection() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="Studio 3 Music Studio">Studio 3 Music Studio</SelectItem>
-                <SelectItem value="EO">Sigapro EO</SelectItem>
                 <SelectItem value="Sigamerch">Sigamerch</SelectItem>
                 <SelectItem value="Movie Art">Sigma Bwx</SelectItem>
                 <SelectItem value="Area Tiga">Area Tiga</SelectItem>
