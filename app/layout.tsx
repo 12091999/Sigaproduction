@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import Link from "next/link"
 import "./globals.css"
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { SiteHeader } from "@/components/site-header"
 import { Providers } from "@/components/providers"
 import { ThemeHandler } from "@/components/theme-handler"
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth light">
       <body className={inter.className}>
         <Providers>
+            <SpeedInsights />
           <ThemeHandler>
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
