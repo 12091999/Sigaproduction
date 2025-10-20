@@ -73,9 +73,31 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+
+      /* ✅ Tambahan untuk outline teks */
+      textShadow: {
+        'outline-red': `
+          -2px -2px 0 #b22222,
+           2px -2px 0 #b22222,
+          -2px  2px 0 #b22222,
+           2px  2px 0 #b22222
+        `,
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+
+  /* ✅ Plugin untuk register class .text-outline-red */
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities, theme }) {
+      const newUtilities = {};
+      const shadows = theme('textShadow');
+      for (const key in shadows) {
+        newUtilities[`.text-${key}`] = { textShadow: shadows[key] };
+      }
+      addUtilities(newUtilities);
+    },
+  ],
 } satisfies Config
 
 export default module.exports as Config
