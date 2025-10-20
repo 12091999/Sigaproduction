@@ -18,32 +18,32 @@ const taxiServices = [
     name: "Breaking Benjamin",
     description:
       "Breaking Benjamin adalah band rock asal Wilkes-Barre, Pennsylvania.",
-    videoUrl: "https://www.instagram.com/reel/VIDEO_ID_1/",
-    image: "/images/sigma1.jpg",
+    videoUrl: "https://www.instagram.com/stories/highlights/18145397218401597/",
+    image: "/images/1.png",
   },
   {
     id: 2,
     name: "Hijau Daun",
     description:
       "Hijau Daun merupakan grup musik asal Indonesia yang berasal dari Bandar Lampung.",
-    videoUrl: "https://www.instagram.com/reel/VIDEO_ID_2/",
-    image: "/images/sigma2.png",
+    videoUrl: "https://www.instagram.com/stories/highlights/18145397218401597/",
+    image: "/images/2.png",
   },
   {
     id: 3,
     name: "Matley Crue",
     description:
       "Matley Crue adalah grup musik heavy metal Amerika yang dibentuk di Los Angeles.",
-    videoUrl: "https://www.instagram.com/reel/VIDEO_ID_3/",
-    image: "/images/sigma3.jpeg",
+    videoUrl: "https://www.instagram.com/stories/highlights/18145397218401597/",
+    image: "/images/3.png",
   },
   {
     id: 4,
     name: "Scar Symmetry",
     description:
       "Scar Symmetry adalah band death metal melodi asal Swedia yang dibentuk pada tahun 2004 di Avesta.",
-    videoUrl: "https://www.instagram.com/reel/VIDEO_ID_4/",
-    image: "/images/sigma4.jpeg",
+    videoUrl: "https://www.instagram.com/stories/highlights/18145397218401597/",
+    image: "/images/4.png",
   },
 ]
 
