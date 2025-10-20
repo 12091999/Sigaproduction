@@ -12,8 +12,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import HeroSection from "@/components/hero-sectionEO"
 
 export const metadata: Metadata = {
-  title: "SIGAPRO EO - SIGAPRO_EO",
-  description: "Book Our Service",
+  title: "AREATIGA - AREATIGA",
+  description: "this for Music Education",
 }
 
 // Sample taxi services data with rupee pricing
