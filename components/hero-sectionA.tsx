@@ -62,7 +62,7 @@ export default function HeroSection() {
             Welcome to AREATIGA
           </h1>
           <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
-            Your one-stop destination for local products, EO, Movie Art, and Music Studio
+            Your one-stop destination for Music Encyclopedia
           </p>
 
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto px-2">
