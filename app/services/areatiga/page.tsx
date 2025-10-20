@@ -8,10 +8,10 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
-import HeroSection from "@/components/hero-sectionG"
+import HeroSection from "@/components/hero-sectionA"
 
 export const metadata: Metadata = {
-  title: "Studio Tiga Video And Art - SIGMA",
+  title: "AREATIGA - AREATIGA",
   description: "Book Our Services",
 }
 
