@@ -53,7 +53,7 @@ export default function HeroSection() {
           <div className="flex justify-center mb-4 md:mb-6">
             <Image
               src="images/areatiga.jpg"
-              alt="sigaproeo Logo"
+              alt="areatiga Logo"
               width={160}
               height={160}
               className="w-28 h-28 md:w-40 md:h-40 lg:w-52 lg:h-52 rounded-full border-4 border-white/20 shadow-lg"
@@ -64,7 +64,7 @@ export default function HeroSection() {
             Welcome to
           </h1>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-red-600 mb-3 md:mb-6">
-            CV.SIGA PRODUCTION
+            AREATIGA
           </h1>
           <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
             Explore us. Enjoy the Best of What We Do.
