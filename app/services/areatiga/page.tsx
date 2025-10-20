@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import HeroSection from "@/components/hero-sectionEO"
+import HeroSection from "@/components/hero-sectionA"
 
 export const metadata: Metadata = {
   title: "AREATIGA - AREATIGA",
