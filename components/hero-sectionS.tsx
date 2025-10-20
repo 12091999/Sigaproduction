@@ -52,7 +52,6 @@ export default function HeroSection() {
                 <SelectItem value="Sigamerch Products">Sigamerch Products</SelectItem>
                 <SelectItem value="Siga Service">Siga Services</SelectItem>
                 <SelectItem value="Movie Art">Movie Art</SelectItem>
-                <SelectItem value="Studio Music">Studio Music</SelectItem>
                 <SelectItem value="EO">EO</SelectItem>
               </SelectContent>
             </Select>
