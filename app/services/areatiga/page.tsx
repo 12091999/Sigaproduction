@@ -67,7 +67,7 @@ export default function TaxiServicesPage() {
         </div>
         <div className="md:w-2/3 lg:w-3/4 mx-auto py-10">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">SIGAPRO EO</h1>
+            <h1 className="text-3xl font-bold tracking-tight">AREATIGA</h1>
             <p className="text-muted-foreground mb-6">
                 Book Our Event Organizer Services for your special occasions. We provide professional event management services to make your events memorable.
             </p>
@@ -81,7 +81,7 @@ export default function TaxiServicesPage() {
                 <div className="md:flex">
                   <div className="relative h-48 md:h-auto md:w-1/3">
                     <Image
-                      src={service.image || "images/sigaproeo.jpeg"}
+                      src={service.image || "images/areatiga.jpg"}
                       alt={service.name}
                       fill
                       className="object-cover"
