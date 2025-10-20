@@ -21,17 +21,17 @@ export default function HeroSection() {
 
     // ✅ Redirect sesuai value
     switch (value) {
-      case "Sigamerch Products":
-        router.push("/merch")
+      case "Studio 3 music studio":
+        router.push("services/musicstudio")
         break
       case "Sigapro EO":
         router.push("services/sigaproEO")
         break
-      case "SIGMA Bwx":
-        router.push("services/SIGMA")
+      case "Sigamerch":
+        router.push("services/Sigamerch")
         break
-      case "Studio Music":
-        router.push("services/studio-music")
+      case "Sigma Bwx":
+        router.push("services/SIGMA")
         break
       case "Area Tiga":
         router.push("services/areatiga")
