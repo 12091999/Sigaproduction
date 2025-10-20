@@ -73,7 +73,6 @@ export default function HeroSection() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="/">All Categories</SelectItem>
-                <SelectItem value="Sigamerch Products">Sigamerch Products</SelectItem>
                 <SelectItem value="Siga Service">Siga Services</SelectItem>
                 <SelectItem value="Movie Art">Movie Art</SelectItem>
                 <SelectItem value="Studio Music">Studio Music</SelectItem>
