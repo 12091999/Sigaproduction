@@ -19,7 +19,6 @@ export default function HeroSection() {
   const handleCategoryChange = (value: string) => {
     setSearchCategory(value)
 
-    // ✅ Redirect sesuai value
     switch (value) {
       case "Studio 3 music studio":
         router.push("services/musicstudio")
