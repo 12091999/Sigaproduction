@@ -19,7 +19,7 @@ export default function HeroSection() {
   const handleCategoryChange = (value: string) => {
     switch (value) {
       case "Sigamerch Products":
-        router.push("services/products")
+        router.push("services/merch")
         break
       case "Siga Service":
         router.push("/services")
