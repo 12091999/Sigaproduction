@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import { useRouter } from "next/navigation" // ✅ Tambahan
 import Link from "next/link"
 import { Search } from "lucide-react"
 import Image from "next/image"
@@ -12,12 +12,37 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function HeroSection() {
+  const router = useRouter() // ✅ untuk redirect halaman
   const [searchCategory, setSearchCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
 
+  const handleCategoryChange = (value: string) => {
+    setSearchCategory(value)
+
+    // ✅ Redirect sesuai value
+    switch (value) {
+      case "Sigamerch Products":
+        router.push("/products")
+        break
+      case "Siga Service":
+        router.push("/services")
+        break
+      case "Movie Art":
+        router.push("/movie-art")
+        break
+      case "Studio Music":
+        router.push("/studio-music")
+        break
+      case "EO":
+        router.push("/eo")
+        break
+      default:
+        break
+    }
+  }
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, this would redirect to search results
     console.log(`Searching for ${searchQuery} in ${searchCategory}`)
   }
 
@@ -35,6 +60,7 @@ export default function HeroSection() {
               priority
             />
           </div>
+
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-3 md:mb-6">
             Welcome to Studio Tiga Music
           </h1>
@@ -43,7 +69,7 @@ export default function HeroSection() {
           </p>
 
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto px-2">
-            <Select defaultValue="all" onValueChange={setSearchCategory}>
+            <Select defaultValue="all" onValueChange={handleCategoryChange}>
               <SelectTrigger className="w-full sm:w-[180px] bg-black">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
@@ -52,6 +78,7 @@ export default function HeroSection() {
                 <SelectItem value="Sigamerch Products">Sigamerch Products</SelectItem>
                 <SelectItem value="Siga Service">Siga Services</SelectItem>
                 <SelectItem value="Movie Art">Movie Art</SelectItem>
+                <SelectItem value="Studio Music">Studio Music</SelectItem>
                 <SelectItem value="EO">EO</SelectItem>
               </SelectContent>
             </Select>
