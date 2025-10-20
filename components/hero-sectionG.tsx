@@ -25,20 +25,20 @@ export default function HeroSection() {
     setSearchCategory(value)
     // Redirect berdasarkan nilai yang dipilih
     switch (value) {
-      case "Sigamerch Products":
-        router.push("services/products")
+      case "Studio 3 music studio":
+        router.push("services/studiomusic")
         break
-      case "Siga Service":
+      case "SigaproEO":
+        router.push("services/sigaproEO")
+        break
+      case "Sigamerch":
+        router.push("services/merch")
+        break
+      case "Sigma Bwx":
         router.push("services/SIGMA")
         break
-      case "Movie Art":
-        router.push("services/movie-art")
-        break
-      case "Studio Music":
-        router.push("services/studio-music")
-        break
-      case "EO":
-        router.push("services/sigaproEO")
+      case "Area Tiga":
+        router.push("services/areatiga")
         break
       default:
         break
@@ -73,11 +73,11 @@ export default function HeroSection() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
-                <SelectItem value="Sigamerch Products">Sigamerch Products</SelectItem>
-                <SelectItem value="Siga Service">Siga Services</SelectItem>
-                <SelectItem value="Movie Art">Movie Art</SelectItem>
-                <SelectItem value="Studio Music">Studio Music</SelectItem>
-                <SelectItem value="EO">EO</SelectItem>
+                <SelectItem value="Studio 3 Music Studio">Studio 3 Music Studio</SelectItem>
+                <SelectItem value="SigaproEO">SigaproEO</SelectItem>
+                <SelectItem value="Sigamerch">Sigamerch</SelectItem>
+                <SelectItem value="Sigama Bwx">Sigma Bwx</SelectItem>
+                <SelectItem value="Area Tiga">Area Tiga</SelectItem>
               </SelectContent>
             </Select>
 
