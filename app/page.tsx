@@ -18,7 +18,7 @@ export default function HomePage() {
         <div className="flex flex-col items-center text-center space-y-2 md:space-y-4 px-2">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Our Services</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-[700px]">
-            Discover everything Merch From SIGA PRODUCTION'S has to offer in The SIGAMERCH from local products.
+           Where needs meet solutions.
           </p>
         </div>
 
