@@ -59,7 +59,7 @@ export default function HeroSection() {
           </div>
 
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:6xl font-bold text-white mb-3 md:mb-6">
-            Welcome to Sigaproductions
+            Welcome to AREATIGA
           </h1>
           <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
             Your one-stop destination for local products, EO, Movie Art, and Music Studio
