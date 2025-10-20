@@ -69,7 +69,7 @@ export default function TaxiServicesPage() {
           <div>
             <h1 className="text-3xl font-bold tracking-tight">SIGMA</h1>
             <p className="text-muted-foreground mb-6">
-            You Can Pre Order Studio Tiga Movie And Art for make your Expresion Easy 
+            You Can Search Music encyclopedia
             </p>
           </div>
 
@@ -103,7 +103,7 @@ export default function TaxiServicesPage() {
                         {service.priceUnit && <span className="text-sm font-normal"> {service.priceUnit}</span>}
                       </div>
                       <Button asChild>
-                        <Link href="https://api.whatsapp.com/send/?phone=6281934872954">Pre-Order</Link>
+                        <Link href="https://www.instagram.com/stories/highlights/18145397218401597/">Search</Link>
                       </Button>
                     </div>
                   </div>
