@@ -24,17 +24,17 @@ export default function HeroSection() {
       case "Sigamerch Products":
         router.push("/merch")
         break
-      case "Siga Service":
-        router.push("/services")
+      case "Sigapro EO":
+        router.push("services/sigaproEO")
         break
-      case "Movie Art":
-        router.push("/movie-art")
+      case "SIGMA Bwx":
+        router.push("services/SIGMA")
         break
       case "Studio Music":
-        router.push("/studio-music")
+        router.push("services/studio-music")
         break
-      case "EO":
-        router.push("/eo")
+      case "Area Tiga":
+        router.push("services/areatiga")
         break
       default:
         break
