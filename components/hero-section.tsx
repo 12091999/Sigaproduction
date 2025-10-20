@@ -60,10 +60,10 @@ export default function HeroSection() {
               priority
             />
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-red mb-3 md:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-red-600 mb-3 md:mb-6">
             Welcome to
           </h1>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-red mb-3 md:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-red-600 mb-3 md:mb-6">
             CV.SIGA PRODUCTION
           </h1>
           <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
