@@ -51,24 +51,29 @@ export function MainNav() {
       active: pathname === "/services" || pathname.startsWith("/services/"),
       children: [
         {
+          href: "/services/studiomusic",
+          label: "Studio 3 Music Studio",
+          icon: Music,
+        },
+        {
+          href: "/services/sigaproEO",
+          label: "Sigapro EO",
+          icon: Home,
+        },
+        {
           href: "/services/merch",
           label: "Sigamerch",
           icon: Shirt,
         },
         {
-          href: "/services/studiomusic",
-          label: "Music Studio",
-          icon: Music,
-        },
-        {
           href: "/services/SIGMA",
-          label: "SIGMA",
-          icon: Camera,
+          label: "SIGMA Bwx",
+          icon: Home,
         },
         {
-          href: "/services/sigaproEO",
-          label: "SIGAPRO EO",
-          icon: Home,
+          href: "/services/areatiga",
+          label: "Area Tiga",
+          icon: Camera,
         },
       ],
     },
