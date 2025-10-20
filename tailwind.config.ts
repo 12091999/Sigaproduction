@@ -89,8 +89,8 @@ module.exports = {
   /* ✅ Plugin untuk register class .text-outline-red */
   plugins: [
     require("tailwindcss-animate"),
-    function ({ addUtilities, theme }) {
-      const newUtilities = {};
+    function ({ addUtilities, theme }: { addUtilities: (utilities: Record<string, any>) => void, theme: (path: string) => Record<string, string> }) {
+      const newUtilities: Record<string, { textShadow: string }> = {};
       const shadows = theme('textShadow');
       for (const key in shadows) {
         newUtilities[`.text-${key}`] = { textShadow: shadows[key] };
