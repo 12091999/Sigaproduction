@@ -34,7 +34,7 @@ export default function HeroSection() {
         router.push("services/SIGMA")
         break
       case "Area Tiga":
-        router.push("services/area-tiga")
+        router.push("services/areatiga")
         break
       default:
         router.push("/")
