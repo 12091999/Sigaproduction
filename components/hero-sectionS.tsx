@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import { useRouter } from "next/navigation" // ✅ Tambahan
+import { useRouter } from "next/navigation" 
 import Link from "next/link"
 import { Search } from "lucide-react"
 import Image from "next/image"
@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function HeroSection() {
-  const router = useRouter() // ✅ untuk redirect halaman
+  const router = useRouter() // 
   const [searchCategory, setSearchCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
 
