@@ -31,7 +31,7 @@ export default function HeroSection() {
         router.push("services/merch")
         break
       case "Movie Art":
-        router.push("services/sigma-bwx")
+        router.push("services/SIGMA")
         break
       case "Area Tiga":
         router.push("services/area-tiga")
