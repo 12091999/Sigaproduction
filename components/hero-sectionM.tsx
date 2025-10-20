@@ -18,20 +18,20 @@ export default function HeroSection() {
   // Redirect berdasarkan pilihan SelectItem
   const handleCategoryChange = (value: string) => {
     switch (value) {
-      case "Sigamerch Products":
+      case "Studio 3 music Studio":
+        router.push("services/studiomusic")
+        break
+      case "Sigarpro EO":
+        router.push("services/sigaproEO")
+        break
+      case "Sigamerch":
         router.push("services/merch")
         break
-      case "Siga Service":
-        router.push("/services")
+      case "Sigma Bwx":
+        router.push("services/SIGMA")
         break
-      case "Movie Art":
-        router.push("/movie-art")
-        break
-      case "Studio Music":
-        router.push("/studio-music")
-        break
-      case "EO":
-        router.push("/eo")
+      case "Area Tiga":
+        router.push("services/areatiga")
         break
       default:
         router.push("/")
@@ -73,10 +73,10 @@ export default function HeroSection() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="/">All Categories</SelectItem>
-                <SelectItem value="Siga Service">Siga Services</SelectItem>
-                <SelectItem value="Movie Art">Movie Art</SelectItem>
-                <SelectItem value="Studio Music">Studio Music</SelectItem>
-                <SelectItem value="EO">EO</SelectItem>
+                <SelectItem value="sigaproEO">Sigapro EO</SelectItem>
+                <SelectItem value="Sigamerch">Sigamerch</SelectItem>
+                <SelectItem value="Sigma Bwx">Sigma Bwx</SelectItem>
+                <SelectItem value="Area Tiga">Area Tiga</SelectItem>
               </SelectContent>
             </Select>
 
