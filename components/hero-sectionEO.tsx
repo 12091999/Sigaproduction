@@ -19,7 +19,7 @@ export default function HeroSection() {
   const handleCategoryChange = (value: string) => {
     switch (value) {
       case "Studio 3 Music Studio":
-        router.push("/studiomusic")
+        router.push("services/studiomusic")
         break
       case "EO":
         router.push("services/sigaproEO")
