@@ -21,19 +21,19 @@ export default function HeroSection() {
 
     switch (value) {
       case "Studio 3 Music Studio":
-        router.push("services/studiomusic")
+        router.push("/services/studiomusic")
         break
       case "sigaproEO":
-        router.push("services/sigaproEO")
+        router.push("/services/sigaproEO")
         break
       case "Sigamerch":
-        router.push("services/merch")
+        router.push("/services/merch")
         break
       case "Sigma Bwx":
-        router.push("services/SIGMA")
+        router.push("/services/SIGMA")
         break
       case "Area Tiga":
-        router.push("services/areatiga")
+        router.push("/services/areatiga")
         break
       default:
         router.push("/")
