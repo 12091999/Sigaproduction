@@ -129,6 +129,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
       user: {
         name: "You",
         avatar: "/placeholder.svg",
+        isOwner: false,
       },
       text: newComment,
       date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
@@ -159,6 +160,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
               user: {
                 name: "You",
                 avatar: "/placeholder.svg",
+                isOwner: false,
               },
               text: replyText[commentId],
               date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
