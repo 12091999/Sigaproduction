@@ -74,9 +74,9 @@ export default function HeroSection() {
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
                 <SelectItem value="Studio 3 Music Studio">Studio 3 Music Studio</SelectItem>
-                <SelectItem value="SigaproEO">SigaproEO</SelectItem>
+                <SelectItem value="EO">Sigapro EO</SelectItem>
                 <SelectItem value="Sigamerch">Sigamerch</SelectItem>
-                <SelectItem value="Sigama Bwx">Sigma Bwx</SelectItem>
+                <SelectItem value="Sigma Bwx">Sigma Bwx</SelectItem>
                 <SelectItem value="Area Tiga">Area Tiga</SelectItem>
               </SelectContent>
             </Select>
