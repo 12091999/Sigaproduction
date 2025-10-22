@@ -5,13 +5,10 @@ import Link from "next/link"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import {
-  Bath,
-  Bed,
   Calendar,
   ChevronLeft,
   ChevronRight,
   Clock,
-  Home,
   MapPin,
   Phone,
   Send,
@@ -39,18 +36,8 @@ const property = {
   priceType: "month",
   type: "Rent",
   propertyType: "Villa",
-  bedrooms: 3,
-  bathrooms: 2,
-  area: 1800,
   features: [
-    "Garden",
-    "Parking",
-    "Furnished",
-    "Mountain View",
-    "Security",
-    "24/7 Water Supply",
-    "Power Backup",
-    "Modular Kitchen",
+
   ],
   images: [
     "/placeholder.svg?height=600&width=800",
@@ -256,24 +243,6 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   onClick={() => setCurrentImageIndex(index)}
                 />
               ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-4 py-4">
-            <div className="flex flex-col items-center justify-center p-3 bg-muted rounded-lg">
-              <Bed className="h-5 w-5 mb-1 text-muted-foreground" />
-              <span className="font-semibold">{property.bedrooms}</span>
-              <span className="text-sm text-muted-foreground">Bedrooms</span>
-            </div>
-            <div className="flex flex-col items-center justify-center p-3 bg-muted rounded-lg">
-              <Bath className="h-5 w-5 mb-1 text-muted-foreground" />
-              <span className="font-semibold">{property.bathrooms}</span>
-              <span className="text-sm text-muted-foreground">Bathrooms</span>
-            </div>
-            <div className="flex flex-col items-center justify-center p-3 bg-muted rounded-lg">
-              <Home className="h-5 w-5 mb-1 text-muted-foreground" />
-              <span className="font-semibold">{property.area}</span>
-              <span className="text-sm text-muted-foreground">sq.ft</span>
             </div>
           </div>
 
