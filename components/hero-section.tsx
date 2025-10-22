@@ -33,7 +33,7 @@ export default function HeroSection() {
       case "Sigma Bwx":
         router.push("services/SIGMA")
         break
-      case "Area Tiga":
+      case "Areatiga":
         router.push("services/areatiga")
         break
       default:
@@ -81,7 +81,7 @@ export default function HeroSection() {
                 <SelectItem value="sigaproEO">Sigapro EO</SelectItem>
                 <SelectItem value="Sigamerch">Sigamerch</SelectItem>
                 <SelectItem value="Sigma Bwx">Sigma Bwx</SelectItem>
-                <SelectItem value="Area Tiga">Area Tiga</SelectItem>
+                <SelectItem value="Areatiga">Area Tiga</SelectItem>
               </SelectContent>
             </Select>
 
