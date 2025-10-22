@@ -25,7 +25,7 @@ export function SiteHeader() {
           <Button variant="outline" size="sm" asChild className="hidden sm:flex">
             <Link href="/properties">
               <Home className="h-4 w-4 mr-2" />
-              Rent & Sales
+              Rent
             </Link>
           </Button>
           <ThemeToggle />
