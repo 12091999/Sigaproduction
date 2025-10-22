@@ -220,20 +220,6 @@ function PropertyCard({ property }: { property: any }) {
           Rp{property.price.toLocaleString("in-IN")}
           {property.priceType === "day" ? "/day" : ""}
         </div>
-        <div className="flex items-center justify-between text-sm">
-          <div className="flex items-center">
-            <Bed className="h-4 w-4 mr-1" />
-            <span>{property.bedrooms} Beds</span>
-          </div>
-          <div className="flex items-center">
-            <Bath className="h-4 w-4 mr-1" />
-            <span>{property.bathrooms} Baths</span>
-          </div>
-          <div className="flex items-center">
-            <Home className="h-4 w-4 mr-1" />
-            <span>{property.area} sq.ft</span>
-          </div>
-        </div>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex justify-between">
         <Button variant="outline" size="sm" asChild>
