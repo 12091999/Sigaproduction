@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { Bath, Bed, Home, MapPin, Plus, Share2 } from "lucide-react"
+import { Home, MapPin, Plus, Share2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export const metadata: Metadata = {
-  title: "Properties for Rent & Sale - Sigamerch",
+  title: "Properties for rent from Studio 3 Banyuwangi",
   description: "Browse properties available for rent and sale in the Sigamerch",
 }
 
@@ -24,9 +24,6 @@ const properties = [
     price: 45000,
     priceType: "month",
     type: "Rent",
-    bedrooms: 3,
-    bathrooms: 2,
-    area: 1800,
     images: ["/placeholder.svg?height=300&width=500"],
     featured: true,
   },
@@ -35,11 +32,8 @@ const properties = [
     title: "Cozy Cottage near Tea Gardens",
     location: "Kotagiri, The Nilgiris",
     price: 7500000,
-    priceType: "total",
+    priceType: "month",
     type: "Rent",
-    bedrooms: 2,
-    bathrooms: 1,
-    area: 1200,
     images: ["/placeholder.svg?height=300&width=500"],
     featured: false,
   },
@@ -50,9 +44,6 @@ const properties = [
     price: 35000,
     priceType: "month",
     type: "Rent",
-    bedrooms: 2,
-    bathrooms: 2,
-    area: 1500,
     images: ["/placeholder.svg?height=300&width=500"],
     featured: true,
   },
@@ -63,9 +54,6 @@ const properties = [
     price: 12500000,
     priceType: "total",
     type: "Rent",
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 2500,
     images: ["/placeholder.svg?height=300&width=500"],
     featured: true,
   },
@@ -76,9 +64,6 @@ const properties = [
     price: 18000,
     priceType: "month",
     type: "Rent",
-    bedrooms: 1,
-    bathrooms: 1,
-    area: 800,
     images: ["/placeholder.svg?height=300&width=500"],
     featured: false,
   },
@@ -89,9 +74,6 @@ const properties = [
     price: 5500000,
     priceType: "total",
     type: "Rent",
-    bedrooms: 0,
-    bathrooms: 1,
-    area: 1200,
     images: ["/placeholder.svg?height=300&width=500"],
     featured: false,
   },
@@ -103,7 +85,7 @@ export default function PropertiesPage() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Properties</h1>
-          <p className="text-muted-foreground">Browse properties for rent and sale in The Sigamerch</p>
+          <p className="text-muted-foreground">Browse properties for rent in The Studio 3 Banyuwangi</p>
         </div>
         <Button className="mt-4 md:mt-0" asChild>
           <Link href="/properties/add">
