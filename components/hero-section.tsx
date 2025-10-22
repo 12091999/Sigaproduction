@@ -102,13 +102,13 @@ export default function HeroSection() {
           </form>
 
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-6 md:mt-8 px-2">
-            <Button asChild variant="outline" className="bg-white/10 text-white border-blue-500 hover:bg-white/20">
+            <Button asChild variant="outline" className="bg-white/10 text-white border-blue-500 hover:border-blue-400 hover">
               <Link href="/products">Shop Sigamerch Products</Link>
             </Button>
-            <Button asChild variant="outline" className="bg-white/10 text-white border-blue-500 hover:bg-white/20">
+            <Button asChild variant="outline" className="bg-white/10 text-white border-blue-500 hover:border-blue-400 hover">
               <Link href="/services/taxi">Book a Sigaproduction</Link>
             </Button>
-            <Button asChild variant="outline" className="bg-white/10 text-white border-blue-500 hover:bg-white/20">
+            <Button asChild variant="outline" className="bg-white/10 text-white border-blue-500 hover:border-blue-400 hover">
               <Link href="/services/accommodations">Find Youre Offer</Link>
             </Button>
           </div>
