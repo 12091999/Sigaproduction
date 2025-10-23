@@ -17,9 +17,9 @@ import { useToast } from "@/hooks/use-toast"
 // 🎸 Contoh data alat musik untuk disewakan
 const instrument = {
   id: 1,
-  title: "Yamaha Electric Guitar Set",
+  title: "Electric Guitar",
   description:
-    "Sewa gitar listrik Yamaha dengan ampli, kabel, dan stand. Cocok untuk latihan studio, event, atau konser kecil.\n\nDilengkapi dengan suara jernih, body solid, dan tone profesional. Bisa disewa harian atau mingguan sesuai kebutuhan.",
+    "Sewa gitar listrik. Cocok untuk latihan studio, event, atau konser kecil.\n\nDilengkapi dengan suara jernih, body solid, dan tone profesional. Bisa disewa harian atau mingguan sesuai kebutuhan.",
   location: "Banyuwangi, Jawa Timur",
   address: "Jl. Wijaya Kusuma No.21, Banyuwangi, Jawa Timur",
   price: 150000,
