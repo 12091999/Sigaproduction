@@ -218,7 +218,7 @@ function PropertyCard({ property }: { property: any }) {
         </div>
         <h3 className="font-semibold text-lg mb-2 line-clamp-1">{property.title}</h3>
         <div className="font-bold text-lg mb-3">
-          Rp{property.price.toLocaleString("in-IN")}
+          Rp{property.price.toLocaleString("in-ID")}
           {property.priceType === "day" ? "/day" : ""}
         </div>
       </CardContent>
