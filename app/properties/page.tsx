@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 // Sample properties data
 const properties = [
   {
-    id: 1,
+    slug: "Gitar",
     title: "Gitar",
     location: "Studio 3 Banyuwangi",
     price: 45000,
@@ -28,7 +28,7 @@ const properties = [
     featured: true,
   },
   {
-    id: 2,
+    slug: "Bass",
     title: "Bass",
     location: "Studio 3 Banyuwangi",
     price: 7500000,
@@ -38,7 +38,7 @@ const properties = [
     featured: false,
   },
   {
-    id: 3,
+    slug: "Drum-Set",
     title: "Drum Set",
     location: "Studio 3 Banyuwangi",
     price: 35000,
@@ -48,7 +48,7 @@ const properties = [
     featured: true,
   },
   {
-    id: 4,
+    slug: "keyboard",
     title: "Keyboard",
     location: "Studio 3 Banyuwangi",
     price: 12500000,
@@ -58,7 +58,7 @@ const properties = [
     featured: true,
   },
   {
-    id: 5,
+    slug: "Amplifier-for-Events" ,
     title: "Amplifier for Events",
     location: "Studio 3 Banyuwangi",
     price: 18000,
@@ -68,7 +68,7 @@ const properties = [
     featured: false,
   },
   {
-    id: 6,
+    slug: "Effect",
     title: "Effect",
     location: "Studio 3 Banyuwangi",
     price: 5500000,
@@ -112,6 +112,7 @@ export default function PropertiesPage() {
                     <SelectItem value="all">All Properties</SelectItem>
                     <SelectItem value="Gitar">Guitar</SelectItem>
                     <SelectItem value="Bass">Bass</SelectItem>
+                    <SelectItem value="keyboard">Keyboard</SelectItem>
                     <SelectItem value="Drum Set">Drum Set</SelectItem>
                     <SelectItem value="Amplifer for Event">Sound</SelectItem>
                     <SelectItem value="Effect">Effect</SelectItem>
@@ -223,7 +224,7 @@ function PropertyCard({ property }: { property: any }) {
       </CardContent>
       <CardFooter className="p-4 pt-0 flex justify-between">
         <Button variant="outline" size="sm" asChild>
-          <Link href={`/properties/${property.id}`}>View Details</Link>
+          <Link href={`/properties/${property.slug}`}>View Details</Link>
         </Button>
         <Button variant="ghost" size="icon">
           <Share2 className="h-4 w-4" />
