@@ -58,7 +58,7 @@ const properties = [
     featured: true,
   },
   {
-    slug: "Amplifier-for-Events" ,
+    slug: "amplifier-for-Events" ,
     title: "Amplifier for Events",
     location: "Studio 3 Banyuwangi",
     price: 180000,
