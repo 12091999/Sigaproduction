@@ -14,28 +14,28 @@ import { Textarea } from "@/components/ui/textarea"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useToast } from "@/hooks/use-toast"
 
-// 🎸 Contoh data alat musik untuk disewakan
+// 🎸 Data penyewaan Bass
 const instrument = {
-  id: 1,
-  title: "Electric Guitar",
+  id: 2,
+  title: "Bass Elektrik",
   description:
-    "Sewa gitar listrik. Cocok untuk latihan studio, event, atau konser kecil.\n\nDilengkapi dengan suara jernih, body solid, dan tone profesional. Bisa disewa harian atau mingguan sesuai kebutuhan.",
+    "Sewa bass elektrik dengan kualitas studio profesional. Cocok untuk latihan band, recording, maupun performance live.\n\nBass ini memiliki suara yang tebal, low-end kuat, serta nyaman dimainkan dalam berbagai genre musik. Dapat disewa harian atau mingguan sesuai kebutuhan.",
   location: "Banyuwangi, Jawa Timur",
   address: "Jl. Wijaya Kusuma No.21, Banyuwangi, Jawa Timur",
-  price: 150000,
+  price: 75000,
   priceType: "day",
   type: "Rent",
-  category: "Gitar Elektrik",
+  category: "Bass Elektrik",
   features: [
-    "Body solid untuk sustain maksimal",
-    "Pickup humbucker ganda",
-    "Neck maple dengan fingerboard rosewood",
-    "Termasuk kabel",
+    "4 String – cocok untuk pemula maupun profesional",
+    "Pickup aktif untuk tone yang tebal",
+    "Body solid alder, neck maple",
+    "Free kabel & strap selama masa sewa",
   ],
   images: [
-    "/images/gitar1.jpg",
-    "/images/gitar2.jpg",
-    "/images/gitar3.jpg",
+    "/images/bass1.jpg",
+    "/images/bass2.jpg",
+    "/images/bass3.jpg",
   ],
   contact: {
     name: "Studio 3 Music Team",
@@ -43,7 +43,7 @@ const instrument = {
     email: "studio3music@gmail.com",
     hours: "09.00 - 21.00 WIB",
   },
-  listedOn: "Oktober 20, 2025",
+  listedOn: "Oktober 21, 2025",
   featured: true,
 }
 
@@ -51,17 +51,17 @@ const instrument = {
 const initialComments = [
   {
     id: 1,
-    user: { name: "Rian Setiawan", avatar: "/placeholder.svg" },
-    text: "Apakah bisa sewa untuk acara 3 hari sekaligus?",
+    user: { name: "Dani Pratama", avatar: "/placeholder.svg" },
+    text: "Apakah bass ini bisa digunakan untuk rekaman studio juga?",
     date: "Okt 21, 2025",
-    time: "10:30 AM",
+    time: "09:45 AM",
     replies: [
       {
         id: 101,
         user: { name: "Studio 3 Music", avatar: "/placeholder.svg", isOwner: true },
-        text: "Bisa banget! Kami juga bisa antar ke lokasi event jika diperlukan.",
+        text: "Tentu saja! Bass ini sering digunakan untuk recording dan hasilnya sangat jernih.",
         date: "Okt 21, 2025",
-        time: "11:00 AM",
+        time: "10:15 AM",
       },
     ],
   },
