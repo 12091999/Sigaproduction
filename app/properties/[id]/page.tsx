@@ -83,7 +83,7 @@ export default function RentInstrumentPage() {
     if (!newComment.trim()) return
     const newCommentObj = {
       id: comments.length + 1,
-      user: { name: "You", avatar: "/placeholder.svg" },
+      user: { name: "You", avatar: "/placeholder.svg", isOwner: false },
       text: newComment,
       date: new Date().toLocaleDateString("id-ID"),
       time: new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" }),
@@ -104,7 +104,7 @@ export default function RentInstrumentPage() {
             ...comment.replies,
             {
               id: Date.now(),
-              user: { name: "You", avatar: "/placeholder.svg" },
+              user: { name: "You", avatar: "/placeholder.svg", isOwner: false },
               text: replyText[commentId],
               date: new Date().toLocaleDateString("id-ID"),
               time: new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" }),
