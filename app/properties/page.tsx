@@ -114,7 +114,7 @@ export default function PropertiesPage() {
                     <SelectItem value="Bass">Bass</SelectItem>
                     <SelectItem value="keyboard">Keyboard</SelectItem>
                     <SelectItem value="Drum Set">Drum Set</SelectItem>
-                    <SelectItem value="amplifier-for-event">Sound</SelectItem>
+                    <SelectItem value="amplifier-for-events">Amplifier for Event</SelectItem>
                     <SelectItem value="Effect">Effect</SelectItem>
                     <SelectItem value="commercial">Full Set</SelectItem>
                   </SelectContent>
