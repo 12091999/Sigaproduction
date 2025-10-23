@@ -27,10 +27,10 @@ const instrument = {
   type: "Rent",
   category: "Gitar Elektrik",
   features: [
-    "Termasuk ampli & kabel",
-    "Stand gitar gratis",
-    "Perawatan rutin",
-    "Tersedia pengantaran area kota",
+    "Body solid untuk sustain maksimal",
+    "Pickup humbucker ganda",
+    "Neck maple dengan fingerboard rosewood",
+    "Termasuk kabel",
   ],
   images: [
     "/images/gitar1.jpg",
