@@ -59,7 +59,7 @@ const properties = [
   },
   {
     slug: "amplifier-for-events" ,
-    title: "amplifier for events",
+    title: "amplifier-for-events",
     location: "Studio 3 Banyuwangi",
     price: 180000,
     priceType: "day",
