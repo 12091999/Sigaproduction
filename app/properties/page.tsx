@@ -32,7 +32,7 @@ const properties = [
     title: "Bass",
     location: "Studio 3 Banyuwangi",
     price: 7500000,
-    priceType: "Day",
+    priceType: "day",
     type: "Rent",
     images: ["/placeholder.svg?height=300&width=500"],
     featured: false,
