@@ -19,60 +19,60 @@ export const metadata: Metadata = {
 const properties = [
   {
     id: 1,
-    title: "Modern Villa with Mountain View",
-    location: "Coonoor, The Nilgiris",
+    title: "Gitar",
+    location: "Studio 3 Banyuwangi",
     price: 45000,
-    priceType: "month",
+    priceType: "day",
     type: "Rent",
     images: ["/placeholder.svg?height=300&width=500"],
     featured: true,
   },
   {
     id: 2,
-    title: "Cozy Cottage near Tea Gardens",
-    location: "Kotagiri, The Nilgiris",
+    title: "Bass",
+    location: "Studio 3 Banyuwangi",
     price: 7500000,
-    priceType: "month",
+    priceType: "Day",
     type: "Rent",
     images: ["/placeholder.svg?height=300&width=500"],
     featured: false,
   },
   {
     id: 3,
-    title: "Luxury Apartment in City Center",
-    location: "Ooty, The Nilgiris",
+    title: "Drum Set",
+    location: "Studio 3 Banyuwangi",
     price: 35000,
-    priceType: "month",
+    priceType: "Day",
     type: "Rent",
     images: ["/placeholder.svg?height=300&width=500"],
     featured: true,
   },
   {
     id: 4,
-    title: "Heritage Bungalow with Garden",
-    location: "Coonoor, The Nilgiris",
+    title: "Keyboard",
+    location: "Studio 3 Banyuwangi",
     price: 12500000,
-    priceType: "total",
+    priceType: "Day",
     type: "Rent",
     images: ["/placeholder.svg?height=300&width=500"],
     featured: true,
   },
   {
     id: 5,
-    title: "Studio Apartment near Market",
-    location: "Ooty, The Nilgiris",
+    title: "Amplifier for Events",
+    location: "Studio 3 Banyuwangi",
     price: 18000,
-    priceType: "month",
+    priceType: "Day",
     type: "Rent",
     images: ["/placeholder.svg?height=300&width=500"],
     featured: false,
   },
   {
     id: 6,
-    title: "Commercial Space for Business",
-    location: "Ooty, The Nilgiris",
+    title: "Effect",
+    location: "Studio 3 Banyuwangi",
     price: 5500000,
-    priceType: "total",
+    priceType: "Day",
     type: "Rent",
     images: ["/placeholder.svg?height=300&width=500"],
     featured: false,
@@ -110,10 +110,11 @@ export default function PropertiesPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Properties</SelectItem>
-                    <SelectItem value="house">Guitar</SelectItem>
-                    <SelectItem value="apartment">Bass</SelectItem>
-                    <SelectItem value="villa">Drum</SelectItem>
-                    <SelectItem value="cottage">Sound</SelectItem>
+                    <SelectItem value="Gitar">Guitar</SelectItem>
+                    <SelectItem value="Bass">Bass</SelectItem>
+                    <SelectItem value="Drum Set">Drum Set</SelectItem>
+                    <SelectItem value="Amplifer for Event">Sound</SelectItem>
+                    <SelectItem value="Effect">Effect</SelectItem>
                     <SelectItem value="commercial">Full Set</SelectItem>
                   </SelectContent>
                 </Select>
