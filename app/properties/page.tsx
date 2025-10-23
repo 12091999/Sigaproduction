@@ -31,7 +31,7 @@ const properties = [
     slug: "Bass",
     title: "Bass",
     location: "Studio 3 Banyuwangi",
-    price: 7500000,
+    price: 75000,
     priceType: "day",
     type: "Rent",
     images: ["/placeholder.svg?height=300&width=500"],
