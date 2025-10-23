@@ -58,7 +58,7 @@ const properties = [
     featured: true,
   },
   {
-    slug: "Amplifer-for-Events" ,
+    slug: "Amplifier-for-Events" ,
     title: "Amplifier for Events",
     location: "Studio 3 Banyuwangi",
     price: 180000,
@@ -114,7 +114,7 @@ export default function PropertiesPage() {
                     <SelectItem value="Bass">Bass</SelectItem>
                     <SelectItem value="keyboard">Keyboard</SelectItem>
                     <SelectItem value="Drum Set">Drum Set</SelectItem>
-                    <SelectItem value="Amplifer-for-Event">Sound</SelectItem>
+                    <SelectItem value="Amplifier-for-Event">Sound</SelectItem>
                     <SelectItem value="Effect">Effect</SelectItem>
                     <SelectItem value="commercial">Full Set</SelectItem>
                   </SelectContent>
