@@ -14,28 +14,28 @@ import { Textarea } from "@/components/ui/textarea"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useToast } from "@/hooks/use-toast"
 
-// 🎸 Contoh data alat musik untuk disewakan
+// 🎚️ Data penyewaan effect untuk event
 const instrument = {
-  id: 1,
-  title: "Electric Guitar",
+  id: 2,
+  title: "Sound Effect Processor - Event Grade",
   description:
-    "Sewa gitar listrik. Cocok untuk latihan studio, event, atau konser kecil.\n\nDilengkapi dengan suara jernih, body solid, dan tone profesional. Bisa disewa harian atau mingguan sesuai kebutuhan.",
+    "Sewa unit effect processor profesional untuk event, konser, dan live performance.\n\nMenawarkan kualitas efek audio yang jernih, delay & reverb premium, serta kompatibilitas dengan berbagai sistem mixer dan amplifier. Cocok untuk sound engineer, band, atau event organizer yang ingin hasil audio maksimal.",
   location: "Banyuwangi, Jawa Timur",
   address: "Jl. Wijaya Kusuma No.21, Banyuwangi, Jawa Timur",
-  price: 150000,
+  price: 250000,
   priceType: "day",
   type: "Rent",
-  category: "Gitar Elektrik",
+  category: "Audio Effect Processor",
   features: [
-    "Body solid untuk sustain maksimal",
-    "Pickup humbucker ganda",
-    "Neck maple dengan fingerboard rosewood",
-    "Termasuk kabel",
+    "Multi-effect digital (reverb, delay, chorus, compressor)",
+    "Output XLR & TRS",
+    "Rackmount 19-inch compatible",
+    "Tersedia kabel power & signal",
   ],
   images: [
-    "/images/gitar1.jpg",
-    "/images/gitar2.jpg",
-    "/images/gitar3.jpg",
+    "/images/effect1.jpg",
+    "/images/effect2.jpg",
+    "/images/effect3.jpg",
   ],
   contact: {
     name: "Studio 3 Music Team",
@@ -43,7 +43,7 @@ const instrument = {
     email: "studio3music@gmail.com",
     hours: "09.00 - 21.00 WIB",
   },
-  listedOn: "Oktober 20, 2025",
+  listedOn: "Oktober 22, 2025",
   featured: true,
 }
 
@@ -51,23 +51,23 @@ const instrument = {
 const initialComments = [
   {
     id: 1,
-    user: { name: "Rian Setiawan", avatar: "/placeholder.svg" },
-    text: "Apakah bisa sewa untuk acara 3 hari sekaligus?",
-    date: "Okt 21, 2025",
-    time: "10:30 AM",
+    user: { name: "Andika Pratama", avatar: "/placeholder.svg" },
+    text: "Apakah effect ini bisa disambungkan ke mixer Yamaha MG16XU?",
+    date: "Okt 22, 2025",
+    time: "09:20 AM",
     replies: [
       {
         id: 101,
         user: { name: "Studio 3 Music", avatar: "/placeholder.svg", isOwner: true },
-        text: "Bisa banget! Kami juga bisa antar ke lokasi event jika diperlukan.",
-        date: "Okt 21, 2025",
-        time: "11:00 AM",
+        text: "Bisa banget, tinggal gunakan output AUX ke input effect return pada mixer tersebut.",
+        date: "Okt 22, 2025",
+        time: "09:45 AM",
       },
     ],
   },
 ]
 
-export default function RentInstrumentPage() {
+export default function RentEffectPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [comments, setComments] = useState(initialComments)
   const [newComment, setNewComment] = useState("")
@@ -147,7 +147,7 @@ export default function RentInstrumentPage() {
           <div className="relative aspect-video rounded-lg overflow-hidden">
             <Image
               src={instrument.images[currentImageIndex] || "/placeholder.svg"}
-              alt={`Instrument image ${currentImageIndex + 1}`}
+              alt={`Effect image ${currentImageIndex + 1}`}
               fill
               className="object-cover"
             />
