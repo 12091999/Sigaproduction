@@ -73,7 +73,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     <div className="container py-8">
       {/* Detail Produk */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden">
+        <div className="relative w-full h-[400px] md:h-[600px] md:h-[600px] overflow-hidden rounded-xl">
           <Image
             src={product.image}
             alt={product.name}
