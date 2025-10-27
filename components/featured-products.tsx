@@ -10,7 +10,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 
 const featuredProducts = [
   {
-    slug: "Pernicious Humaniora",
+    slug: "PerniciousHumaniora",
     name: "Pernicious Humaniora",
     category: "Products",
     price: 150000,
