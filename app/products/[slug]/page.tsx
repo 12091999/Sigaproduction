@@ -19,7 +19,7 @@ const products = [
     badge: "Popular",
     description:
       "Kerusakan atau bahaya bagi kesehatan mental manusia atau penderita psikologis manusia.",
-    shopee: "https://shopee.co.id/product/1234567890", // link Shopee
+    shopee: "https://shopee.co.id/", // link Shopee
   },
   {
     slug: "Agorophobia",
@@ -31,7 +31,7 @@ const products = [
     badge: "Best Seller",
     description:
       "Ketakutan yang sangat kuat saat berada di tempat terbuka atau dalam situasi yang sulit untuk melarikan diri.",
-    shopee: "https://shopee.co.id/product/0987654321",
+    shopee: "https://shopee.co.id/",
   },
   {
     slug: "Gandrung",
@@ -43,7 +43,7 @@ const products = [
     badge: null,
     description:
       "‘Gandrung’ diartikan sebagai terpesonanya masyarakat Blambangan kepada Dewi Sri, Dewi Padi.",
-    shopee: "https://shopee.co.id/product/1122334455",
+    shopee: "https://shopee.co.id/",
   },
   {
     slug: "Seblang",
@@ -55,7 +55,7 @@ const products = [
     badge: "Reliable",
     description:
       "Ritual Seblang adalah upacara adat masyarakat Osing di dua desa di Kecamatan Glagah, Banyuwangi.",
-    shopee: "https://shopee.co.id/product/6677889900",
+    shopee: "https://shopee.co.id/",
   },
 ]
 
