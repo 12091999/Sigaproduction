@@ -28,14 +28,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth light">
+    <html lang="id" className="scroll-smooth light">
       <body className={inter.className}>
         <Providers>
             <SpeedInsights />
           <ThemeHandler>
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
-            <main className="flex-1">{children}</main>
+            <main className="min-h-screen container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+             {children}
+            </main>
             <footer className="border-t py-4 md:py-6">
               <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                 <p className="text-center text-xs md:text-sm leading-loose text-muted-foreground md:text-left">
