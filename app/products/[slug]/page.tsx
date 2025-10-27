@@ -1,14 +1,14 @@
-import { notFound } from "next/navigation"
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { useParams } from "next/navigation"
 import { Star } from "lucide-react"
-
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 
-// === Data Produk ===
-const featuredProducts = [
+// Data produk (bisa diganti dari database atau API nanti)
+const products = [
   {
     slug: "PerniciousHumaniora",
     name: "Pernicious Humaniora",
@@ -19,6 +19,7 @@ const featuredProducts = [
     badge: "Popular",
     description:
       "Kerusakan atau bahaya bagi kesehatan mental manusia atau penderita psikologis manusia.",
+    shopee: "https://shopee.co.id/product/1234567890", // link Shopee
   },
   {
     slug: "Agorophobia",
@@ -29,7 +30,8 @@ const featuredProducts = [
     image: "/images/siga2.jpg",
     badge: "Best Seller",
     description:
-      "Ketakutan yang sangat kuat saat berada di tempat terbuka atau dalam situasi yang mungkin sulit untuk melarikan diri.",
+      "Ketakutan yang sangat kuat saat berada di tempat terbuka atau dalam situasi yang sulit untuk melarikan diri.",
+    shopee: "https://shopee.co.id/product/0987654321",
   },
   {
     slug: "Gandrung",
@@ -40,7 +42,8 @@ const featuredProducts = [
     image: "/images/siga3.jpeg",
     badge: null,
     description:
-      "‘Gandrung’ diartikan sebagai terpesonanya masyarakat Blambangan yang agraris kepada Dewi Sri sebagai Dewi Padi.",
+      "‘Gandrung’ diartikan sebagai terpesonanya masyarakat Blambangan kepada Dewi Sri, Dewi Padi.",
+    shopee: "https://shopee.co.id/product/1122334455",
   },
   {
     slug: "Seblang",
@@ -51,76 +54,97 @@ const featuredProducts = [
     image: "/images/siga4.jpeg",
     badge: "Reliable",
     description:
-      "Ritual Seblang adalah upacara masyarakat Osing yang hanya dapat dijumpai di dua desa wilayah Glagah Banyuwangi.",
+      "Ritual Seblang adalah upacara adat masyarakat Osing di dua desa di Kecamatan Glagah, Banyuwangi.",
+    shopee: "https://shopee.co.id/product/6677889900",
   },
 ]
 
-// === Generate halaman dinamis ===
-export async function generateStaticParams() {
-  return featuredProducts.map((product) => ({
-    slug: product.slug,
-  }))
-}
+export default function ProductDetailPage() {
+  const { slug } = useParams()
+  const product = products.find((p) => p.slug === slug)
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-  const product = featuredProducts.find((p) => p.slug === params.slug)
-  if (!product) return notFound()
+  if (!product) {
+    return (
+      <div className="container py-20 text-center">
+        <h1 className="text-2xl font-bold">Produk tidak ditemukan</h1>
+        <p className="text-muted-foreground mt-2">Silakan kembali ke halaman utama.</p>
+        <Button asChild className="mt-4">
+          <Link href="/products">Kembali</Link>
+        </Button>
+      </div>
+    )
+  }
 
-  // Ambil produk lain selain yang sedang dilihat
-  const related = featuredProducts.filter((p) => p.slug !== params.slug).slice(0, 3)
+  // Rekomendasi produk selain produk yang sedang dilihat
+  const relatedProducts = products.filter((p) => p.slug !== product.slug).slice(0, 3)
 
   return (
     <div className="container py-8">
-      {/* Detail Produk */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div className="relative w-full h-[400px] md:h-[600px] md:h-[600px] overflow-hidden rounded-xl">
+      {/* --- Detail Produk --- */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] rounded-xl overflow-hidden shadow-lg">
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover rounded-xl"
             priority
+            className="object-cover"
           />
         </div>
+
         <div>
           <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
-          <div className="flex items-center gap-2 mb-4">
-            <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-            <span className="text-sm text-muted-foreground">{product.rating}</span>
-            {product.badge && <Badge className="bg-emerald-600">{product.badge}</Badge>}
+          <div className="flex items-center gap-2 mb-3">
+            <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
+            <span className="text-sm font-medium">{product.rating} / 5.0</span>
           </div>
-          <p className="text-muted-foreground mb-6">{product.description}</p>
-          <div className="text-2xl font-semibold mb-4">Rp{product.price.toLocaleString("id-ID")}</div>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-            Tambahkan ke Keranjang
+          <p className="text-muted-foreground mb-4">{product.description}</p>
+          <div className="text-2xl font-bold mb-4">
+            Rp{product.price.toLocaleString("id-ID")}
+          </div>
+
+          {/* Tombol ke Shopee */}
+          <Button
+            asChild
+            className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto h-11 px-6 text-sm font-semibold"
+          >
+            <a
+              href={product.shopee}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tambahkan ke Keranjang di Shopee 🛒
+            </a>
           </Button>
         </div>
       </div>
 
-      {/* Produk Terkait */}
-      <div>
-        <h2 className="text-2xl font-bold mb-4">Produk Terkait</h2>
+      {/* --- Produk Terkait --- */}
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold mb-6 text-center">Rekomendasi Produk Terkait</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {related.map((p) => (
-            <Card key={p.slug} className="overflow-hidden group">
-              <div className="relative h-48 w-full">
+          {relatedProducts.map((item) => (
+            <Card key={item.slug} className="overflow-hidden group h-full flex flex-col">
+              <div className="relative h-56 w-full overflow-hidden">
                 <Image
-                  src={p.image}
-                  alt={p.name}
+                  src={item.image}
+                  alt={item.name}
                   fill
                   className="object-cover transition-transform group-hover:scale-105"
                 />
-                {p.badge && <Badge className="absolute top-2 right-2 bg-emerald-600 text-xs">{p.badge}</Badge>}
               </div>
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-lg mb-1">{p.name}</h3>
-                <div className="text-sm text-muted-foreground mb-2">{p.category}</div>
-                <div className="font-bold text-base mb-2">Rp{p.price.toLocaleString("id-ID")}</div>
-                <p className="text-sm text-muted-foreground line-clamp-2">{p.description}</p>
+              <CardContent className="p-4 flex-grow">
+                <h3 className="font-semibold text-lg mb-1">{item.name}</h3>
+                <p className="text-sm text-muted-foreground line-clamp-2 mb-2">
+                  {item.description}
+                </p>
+                <div className="font-bold text-base">
+                  Rp{item.price.toLocaleString("id-ID")}
+                </div>
               </CardContent>
               <CardFooter className="p-4 pt-0">
-                <Button asChild variant="outline" className="w-full">
-                  <Link href={`/products/${p.slug}`}>View Details</Link>
+                <Button asChild variant="outline" className="w-full text-sm">
+                  <Link href={`/products/${item.slug}`}>Lihat Detail</Link>
                 </Button>
               </CardFooter>
             </Card>
