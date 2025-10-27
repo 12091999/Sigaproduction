@@ -10,7 +10,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 
 const featuredProducts = [
   {
-    slug: 1,
+    slug: "Pernicious Humaniora",
     name: "Pernicious Humaniora",
     category: "Products",
     price: 150000,
@@ -20,7 +20,7 @@ const featuredProducts = [
     description: "Kerusakan atau bahaya bagai kesehatan mental manusia atau penderita psikologis manusia",
   },
   {
-    slug: 2,
+    slug: "Agorophobia",
     name: "Agorophobia",
     category: "Product",
     price: 150000,
@@ -30,7 +30,7 @@ const featuredProducts = [
     description: "Ketakutan yang sangat kuat saat berada di tempat terbuka atau dalam situasi yang mungkin sulit untuk melarikan diri, atau di mana bantuan mungkin tidak tersedia",
   },
   {
-    slug: 3,
+    slug: "Gandrung",
     name: "Gandrung",
     category: "Product",
     price: 150000,
@@ -40,7 +40,7 @@ const featuredProducts = [
     description: "Kata 'Gandrung' diartikan sebagai terpesonanya masyarakat Blambangan yang agraris kepada Dewi Sri sebagai Dewi Padi",
   },
   {
-    slug: 4,
+    slug: "Seblang",
     name: "Seblang",
     category: "Product",
     price: 150000,
