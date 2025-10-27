@@ -89,13 +89,22 @@ module.exports = {
   /* ✅ Plugin untuk register class .text-outline-red */
   plugins: [
     require("tailwindcss-animate"),
-    function ({ addUtilities, theme }: { addUtilities: (utilities: Record<string, any>) => void, theme: (path: string) => Record<string, string> }) {
-      const newUtilities: Record<string, { textShadow: string }> = {};
-      const shadows = theme('textShadow');
+
+    // Plugin utilitas responsif otomatis
+    function ({ addVariant }: any) {
+      addVariant("portrait", "@media (orientation: portrait)");
+      addVariant("landscape", "@media (orientation: landscape)");
+      addVariant("retina", "@media (-webkit-min-device-pixel-ratio: 2)");
+    },
+
+    // Plugin custom untuk text outline
+    function ({ addUtilities, theme }: any) {
+      const newUtilities: Record<string, { textShadow: string }> = {}
+      const shadows = theme("textShadow")
       for (const key in shadows) {
-        newUtilities[`.text-${key}`] = { textShadow: shadows[key] };
+        newUtilities[`.text-${key}`] = { textShadow: shadows[key] }
       }
-      addUtilities(newUtilities);
+      addUtilities(newUtilities)
     },
   ],
 } satisfies Config
