@@ -35,7 +35,7 @@ export default function RootLayout({
           <ThemeHandler>
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
-            <main className="min-h-screen container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-screen-xl">
              {children}
             </main>
             <footer className="border-t py-4 md:py-6">
