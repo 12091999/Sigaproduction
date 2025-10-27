@@ -93,10 +93,36 @@ img {
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  html {
+    scroll-behavior: smooth;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply text-base sm:text-lg leading-relaxed bg-white text-gray-900;
+  }
+
+  h1 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-xl sm:text-2xl lg:text-3xl font-semibold;
+  }
+
+  img {
+    @apply w-full h-auto object-cover rounded-lg;
+  }
+
+  button {
+    @apply text-sm sm:text-base rounded-lg px-4 py-2;
+  }
+
+  .grid {
+    @apply gap-4 sm:gap-6;
+  }
+}
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
