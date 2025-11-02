@@ -4,6 +4,7 @@ import { useState } from "react"
 import {
   type ColumnDef,
   type ColumnFiltersState,
+  type Row,
   type SortingState,
   flexRender,
   getCoreRowModel,
@@ -58,8 +59,8 @@ export function MetricsTable({ data }: MetricsTableProps) {
       ? [
           {
             accessorKey: "userName",
-            header: "User",
-            cell: ({ row }) => <div>{row.getValue("userName")}</div>,
+            header: "User Name",
+            cell: ({ row }: { row: Row<BusinessMetric> }) => <div>{row.getValue("userName")}</div>,
           },
         ]
       : []),
