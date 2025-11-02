@@ -131,9 +131,9 @@ export default function DashboardPage() {
 
             <TabsContent value="accommodations" className="space-y-4">
               <div className="flex justify-between items-center">
-                <h2 className="text-xl font-semibold">Your Accommodations</h2>
+                <h2 className="text-xl font-semibold">Your Rent</h2>
                 <Button asChild>
-                  <a href="/dashboard/accommodations/new">Add New Accommodation</a>
+                  <a href="/dashboard/accommodations/new">Add New Rent</a>
                 </Button>
               </div>
               <RentList />
