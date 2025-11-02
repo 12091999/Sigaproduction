@@ -50,7 +50,7 @@ const BusinessTrackerContext = createContext<BusinessTrackerContextType | undefi
 // Mock data generator
 const generateMockData = (userId: string, userName: string, days: number): BusinessMetric[] => {
   const data: BusinessMetric[] = []
-  const categories = ["Products", "Taxi", "Accommodation", "Tourism"]
+  const categories = ["Products", "Services", "Rent", ]
 
   const today = new Date()
 
