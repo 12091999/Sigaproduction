@@ -105,9 +105,8 @@ export default function DashboardPage() {
           <Tabs defaultValue="products" className="space-y-4">
             <TabsList>
               <TabsTrigger value="products">Products</TabsTrigger>
-              <TabsTrigger value="taxis">Taxi Services</TabsTrigger>
-              <TabsTrigger value="accommodations">Accommodations</TabsTrigger>
-              <TabsTrigger value="tourism">Tourism</TabsTrigger>
+              <TabsTrigger value="taxis">Services</TabsTrigger>
+              <TabsTrigger value="accommodations">Rent</TabsTrigger>
             </TabsList>
 
             <TabsContent value="products" className="space-y-4">
