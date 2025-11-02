@@ -1,16 +1,30 @@
 "use client"
 
+import { signOut } from "next-auth/react" // ✅ gunakan ini kalau kamu pakai next-auth
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Edit } from "lucide-react"
 
 export default function AccountPage() {
+  const router = useRouter()
+
   const user = {
     name: "Muhammad Fajar Kurniawan",
     email: "fajar@example.com",
     role: "Admin",
-    avatar: "/images/avatar.jpg", // ganti dengan foto kamu
+    avatar: "/images/avatar.jpg",
+  }
+
+  // ✅ Logout handler — pilih salah satu versi sesuai kebutuhan
+  const handleLogout = () => {
+    // --- Versi 1: jika pakai next-auth ---
+    // signOut({ callbackUrl: "/login" })
+
+    // --- Versi 2: jika belum pakai auth (manual logout) ---
+    localStorage.removeItem("user") // hapus data user dari localStorage
+    router.push("/login") // arahkan ke halaman login
   }
 
   return (
@@ -55,7 +69,9 @@ export default function AccountPage() {
           </div>
           <div className="flex justify-between items-center">
             <span>Logout</span>
-            <Button variant="destructive">Logout</Button>
+            <Button variant="destructive" onClick={handleLogout}>
+              Logout
+            </Button>
           </div>
         </CardContent>
       </Card>
