@@ -24,7 +24,7 @@ export default function AccountPage() {
 
     // --- Versi 2: jika belum pakai auth (manual logout) ---
     localStorage.removeItem("user") // hapus data user dari localStorage
-    router.push("/login") // arahkan ke halaman login
+    router.push("/signup") // arahkan ke halaman login
   }
 
   return (
