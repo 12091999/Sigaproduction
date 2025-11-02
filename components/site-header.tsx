@@ -36,7 +36,7 @@ export function SiteHeader() {
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild className="hidden sm:flex">
-            <Link href="/account">
+            <Link href="/dashboard/account">
               <User className="h-5 w-5" />
               <span className="sr-only">Account</span>
             </Link>
