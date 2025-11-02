@@ -29,7 +29,7 @@ export function AdminHeader() {
             <div className="flex items-center gap-2 mb-6">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Nanga%20Market%20Logo.jpg-9YMH6kW08xe7CKD2UpboP6kUnI3QcK.jpeg"
-                alt="Nanga Market"
+                alt="Sigaproduction"
                 width={40}
                 height={40}
                 className="rounded-full border border-muted"
