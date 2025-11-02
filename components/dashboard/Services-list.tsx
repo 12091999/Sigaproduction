@@ -58,7 +58,7 @@ const services = [
   {
     id: "5",
     name: "Area Tiga",
-    image: "/images/area3.jpg",
+    image: "/images/areatiga.jpeg",
     price: 300000,
     features: ["Venue", "Mini Stage", "Café & Gathering Spot"],
     type: "Venue",
