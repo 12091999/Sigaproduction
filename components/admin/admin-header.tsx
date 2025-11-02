@@ -34,7 +34,7 @@ export function AdminHeader() {
                 height={40}
                 className="rounded-full border border-muted"
               />
-              <span className="font-semibold">Nanga Market Admin</span>
+              <span className="font-semibold">Sigaproduction Admin</span>
             </div>
             {/* Mobile navigation would go here */}
           </div>
@@ -44,12 +44,12 @@ export function AdminHeader() {
       <Link href="/admin/dashboard" className="flex items-center gap-2 font-semibold">
         <Image
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Nanga%20Market%20Logo.jpg-9YMH6kW08xe7CKD2UpboP6kUnI3QcK.jpeg"
-          alt="Nanga Market"
+          alt="Sigaproduction"
           width={32}
           height={32}
           className="rounded-full border border-muted hidden sm:block"
         />
-        <span className="hidden sm:inline-block">Nanga Market Admin</span>
+        <span className="hidden sm:inline-block">Sigaproduction</span>
       </Link>
 
       <div className="w-full flex-1 md:w-auto md:flex-none">
