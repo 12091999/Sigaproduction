@@ -1,78 +1,62 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Separator } from "@/components/ui/separator"
-import { Badge } from "@/components/ui/badge"
+import { Edit } from "lucide-react"
 
 export default function AccountPage() {
-  const [name, setName] = useState("Muhammad Fajar Kurniawan")
-  const [email, setEmail] = useState("fajar@example.com")
-  const [role] = useState("Administrator")
+  const user = {
+    name: "Muhammad Fajar Kurniawan",
+    email: "fajar@example.com",
+    role: "Admin",
+    avatar: "/images/avatar.jpg", // ganti dengan foto kamu
+  }
 
   return (
-    <div className="container max-w-3xl py-10">
-      <Card className="shadow-md">
+    <div className="p-6 space-y-6">
+      <h1 className="text-3xl font-bold mb-4">Account</h1>
+
+      <Card className="max-w-2xl">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold">Account Settings</CardTitle>
-          <p className="text-sm text-muted-foreground">Manage your personal information and profile.</p>
+          <CardTitle>Profile Information</CardTitle>
         </CardHeader>
-
-        <Separator />
-
-        <CardContent className="space-y-8 mt-6">
-          {/* Profile Section */}
-          <div className="flex items-center gap-6">
-            <div className="relative w-24 h-24">
-              <Image
-                src="/images/profile.jpg" // Ganti sesuai path profil kamu
-                alt="Profile Picture"
-                fill
-                className="rounded-full object-cover border border-gray-300"
-              />
-            </div>
-            <div>
-              <h2 className="text-xl font-semibold">{name}</h2>
-              <p className="text-sm text-muted-foreground">{email}</p>
-              <Badge variant="secondary" className="mt-2">{role}</Badge>
-            </div>
+        <CardContent className="flex items-center gap-6">
+          <div className="relative w-24 h-24">
+            <Image
+              src={user.avatar}
+              alt={user.name}
+              fill
+              className="rounded-full object-cover border"
+            />
           </div>
 
-          <Separator />
-
-          {/* Edit Info Form */}
-          <div className="grid gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="name">Full Name</Label>
-              <Input id="name" value={name} onChange={(e) => setName(e.target.value)} />
-            </div>
-
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            </div>
+          <div className="flex-1">
+            <h2 className="text-xl font-semibold">{user.name}</h2>
+            <p className="text-gray-500">{user.email}</p>
+            <p className="text-sm text-gray-400 mt-1">Role: {user.role}</p>
           </div>
+
+          <Button variant="outline">
+            <Edit className="mr-2 h-4 w-4" />
+            Edit Profile
+          </Button>
         </CardContent>
-
-        <CardFooter className="flex justify-between">
-          <Button variant="outline">Cancel</Button>
-          <Button>Save Changes</Button>
-        </CardFooter>
       </Card>
 
-      {/* Account Summary */}
-      <Card className="mt-8 shadow-sm">
+      <Card className="max-w-2xl">
         <CardHeader>
-          <CardTitle className="text-lg font-semibold">Account Summary</CardTitle>
+          <CardTitle>Account Settings</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <p><span className="font-medium">Member Since:</span> January 2024</p>
-          <p><span className="font-medium">Plan:</span> Premium</p>
-          <p><span className="font-medium">Last Login:</span> October 22, 2025</p>
+        <CardContent className="space-y-4">
+          <div className="flex justify-between items-center">
+            <span>Change Password</span>
+            <Button variant="secondary">Update</Button>
+          </div>
+          <div className="flex justify-between items-center">
+            <span>Logout</span>
+            <Button variant="destructive">Logout</Button>
+          </div>
         </CardContent>
       </Card>
     </div>
