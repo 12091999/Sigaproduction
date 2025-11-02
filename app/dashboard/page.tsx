@@ -100,6 +100,7 @@ export default function DashboardPage() {
                 <p className="text-xs text-muted-foreground">+0 added this month</p>
               </CardContent>
             </Card>
+          </div>
 
           <Tabs defaultValue="products" className="space-y-4">
             <TabsList>
