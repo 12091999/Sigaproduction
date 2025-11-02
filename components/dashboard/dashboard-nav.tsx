@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import {
   BarChart3,
-  Car,
+  Book,
   CreditCard,
   Hotel,
   LayoutDashboard,
@@ -42,22 +42,10 @@ export function DashboardNav() {
       active: pathname === "/dashboard/products" || pathname.startsWith("/dashboard/products/"),
     },
     {
-      label: "Taxi Services",
-      icon: Car,
+      label: "Services",
+      icon: Book,
       href: "/dashboard/taxis",
       active: pathname === "/dashboard/taxis" || pathname.startsWith("/dashboard/taxis/"),
-    },
-    {
-      label: "Tourism",
-      icon: Map,
-      href: "/dashboard/tourism",
-      active: pathname === "/dashboard/tourism" || pathname.startsWith("/dashboard/tourism/"),
-    },
-    {
-      label: "Accommodations",
-      icon: Hotel,
-      href: "/dashboard/accommodations",
-      active: pathname === "/dashboard/accommodations" || pathname.startsWith("/dashboard/accommodations/"),
     },
     {
       label: "Orders",
