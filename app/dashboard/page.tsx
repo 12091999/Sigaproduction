@@ -126,7 +126,7 @@ export default function DashboardPage() {
                   <a href="/dashboard/taxis/new">Add New Taxi Service</a>
                 </Button>
               </div>
-              <TaxisList />
+              <ServicesList />
             </TabsContent>
 
             <TabsContent value="accommodations" className="space-y-4">
