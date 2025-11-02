@@ -20,7 +20,7 @@ type AuthContextType = {
   login: (email: string, password: string) => Promise<void>
   signUp: (name: string, email: string, phone: string, password: string) => Promise<void>
   logout: () => void
-  sendOtp: (phone: string) => Promise<void>
+  sendOtp: (phone: string) => Promise<boolean>
   verifyOtp: (phone: string, otp: string) => Promise<boolean>
   isAdmin: boolean
 }
