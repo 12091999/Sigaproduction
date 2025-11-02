@@ -12,7 +12,7 @@ import { DashboardHeader } from "@/components/dashboard/dashboard-header"
 import { DashboardNav } from "@/components/dashboard/dashboard-nav"
 import { ProductsList } from "@/components/dashboard/products-list"
 import { ServicesList } from "@/components/dashboard/Services-list"
-import { AccommodationsList } from "@/components/dashboard/accommodations-list"
+import { RentItemsList } from "@/components/dashboard/rentItems-list"
 import { TourismList } from "@/components/dashboard/tourism-list"
 
 export default function DashboardPage() {
@@ -136,7 +136,7 @@ export default function DashboardPage() {
                   <a href="/dashboard/accommodations/new">Add New Accommodation</a>
                 </Button>
               </div>
-              <AccommodationsList />
+              <RentItemsList />
             </TabsContent>
 
             <TabsContent value="tourism" className="space-y-4">
