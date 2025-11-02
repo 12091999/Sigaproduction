@@ -17,58 +17,59 @@ import {
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 
-// Sample products data
-const products = [
+// 🧢 Data Produk Siga Merch
+const sigaProducts = [
   {
     id: "1",
-    name: "Handcrafted Basket",
-    image: "/placeholder.svg?height=40&width=40",
-    price: 45.99,
-    quantity: 12,
-    category: "Home Decor",
+    name: "Sigaproduction T-Shirt",
+    image: "/images/siga1.jpeg",
+    price: 150000,
+    quantity: 20,
+    category: "Apparel",
     status: "In Stock",
   },
   {
     id: "2",
-    name: "Traditional Jewelry Set",
-    image: "/placeholder.svg?height=40&width=40",
-    price: 89.99,
-    quantity: 5,
-    category: "Accessories",
+    name: "Sigaproduction Hoodie",
+    image: "/images/siga2.jpg",
+    price: 250000,
+    quantity: 8,
+    category: "Apparel",
     status: "Low Stock",
   },
   {
     id: "3",
-    name: "Organic Honey",
-    image: "/placeholder.svg?height=40&width=40",
-    price: 12.99,
-    quantity: 20,
-    category: "Food & Beverages",
+    name: "Sigaproduction Cap",
+    image: "/images/siga3.jpeg",
+    price: 100000,
+    quantity: 15,
+    category: "Accessories",
     status: "In Stock",
   },
   {
     id: "4",
-    name: "Handwoven Rug",
-    image: "/placeholder.svg?height=40&width=40",
-    price: 129.99,
-    quantity: 3,
-    category: "Home Decor",
-    status: "Low Stock",
+    name: "Sigaproduction Tote Bag",
+    image: "/images/siga4.jpeg",
+    price: 80000,
+    quantity: 0,
+    category: "Bags",
+    status: "Out of Stock",
   },
   {
     id: "5",
-    name: "Ceramic Vase",
-    image: "/placeholder.svg?height=40&width=40",
-    price: 35.99,
-    quantity: 0,
-    category: "Home Decor",
-    status: "Out of Stock",
+    name: "Sigaproduction Poster",
+    image: "/images/siga5.jpeg",
+    price: 45000,
+    quantity: 10,
+    category: "Posters",
+    status: "In Stock",
   },
 ]
 
-export function ProductsList() {
-  const [productsList, setProductsList] = useState(products)
+export function SigaProductsList() {
+  const [productsList, setProductsList] = useState(sigaProducts)
 
+  // 🌈 Warna badge status
   const getStatusColor = (status: string) => {
     switch (status) {
       case "In Stock":
@@ -82,8 +83,18 @@ export function ProductsList() {
     }
   }
 
+  // 🗑️ Hapus produk dari daftar
   const handleDelete = (id: string) => {
     setProductsList(productsList.filter((product) => product.id !== id))
+  }
+
+  // 💰 Format harga ke Rupiah
+  const formatRupiah = (value: number) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      minimumFractionDigits: 0,
+    }).format(value)
   }
 
   return (
@@ -99,6 +110,7 @@ export function ProductsList() {
             <TableHead className="text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
+
         <TableBody>
           {productsList.map((product) => (
             <TableRow key={product.id}>
@@ -115,14 +127,16 @@ export function ProductsList() {
                   <span className="font-medium">{product.name}</span>
                 </div>
               </TableCell>
+
               <TableCell>{product.category}</TableCell>
-              <TableCell>${product.price.toFixed(2)}</TableCell>
+              <TableCell>{formatRupiah(product.price)}</TableCell>
               <TableCell>{product.quantity}</TableCell>
               <TableCell>
                 <Badge className={getStatusColor(product.status)} variant="outline">
                   {product.status}
                 </Badge>
               </TableCell>
+
               <TableCell className="text-right">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -140,7 +154,10 @@ export function ProductsList() {
                         Edit
                       </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => handleDelete(product.id)} className="text-red-600">
+                    <DropdownMenuItem
+                      onClick={() => handleDelete(product.id)}
+                      className="text-red-600 cursor-pointer"
+                    >
                       <Trash className="mr-2 h-4 w-4" />
                       Delete
                     </DropdownMenuItem>
