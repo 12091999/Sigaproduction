@@ -18,7 +18,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge"
 
 // 🧢 Data Produk Siga Merch
-const sigaProducts = [
+const products = [
   {
     id: "1",
     name: "Sigaproduction T-Shirt",
@@ -66,8 +66,8 @@ const sigaProducts = [
   },
 ]
 
-export function SigaProductsList() {
-  const [productsList, setProductsList] = useState(sigaProducts)
+export function ProductsList() {
+  const [productsList, setProductsList] = useState(products)
 
   // 🌈 Warna badge status
   const getStatusColor = (status: string) => {
