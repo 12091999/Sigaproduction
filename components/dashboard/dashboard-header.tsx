@@ -48,7 +48,7 @@ export function DashboardHeader() {
 
       <Link href="/dashboard" className="flex items-center gap-2 font-semibold">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Nanga%20Market%20Logo.jpg-9YMH6kW08xe7CKD2UpboP6kUnI3QcK.jpeg"
+          src="/images/SP.jpg"
           alt="Nanga Market"
           width={32}
           height={32}
