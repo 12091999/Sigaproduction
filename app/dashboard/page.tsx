@@ -11,7 +11,7 @@ import { useAuth } from "@/contexts/auth-context"
 import { DashboardHeader } from "@/components/dashboard/dashboard-header"
 import { DashboardNav } from "@/components/dashboard/dashboard-nav"
 import { ProductsList } from "@/components/dashboard/products-list"
-import { ServicesList } from "@/components/dashboard/services-list"
+import { ServicesList } from "@/components/dashboard/Services-list"
 import { AccommodationsList } from "@/components/dashboard/accommodations-list"
 import { TourismList } from "@/components/dashboard/tourism-list"
 
