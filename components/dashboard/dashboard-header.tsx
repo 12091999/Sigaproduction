@@ -33,8 +33,8 @@ export function DashboardHeader() {
           <div className="flex flex-col h-full">
             <div className="flex items-center gap-2 mb-6">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Nanga%20Market%20Logo.jpg-9YMH6kW08xe7CKD2UpboP6kUnI3QcK.jpeg"
-                alt="Nanga Market"
+                src="/images/SP.jpg"
+                alt="Sigaproduction"
                 width={40}
                 height={40}
                 className="rounded-full border border-muted"
@@ -54,7 +54,7 @@ export function DashboardHeader() {
           height={32}
           className="rounded-full border border-muted"
         />
-        <span className="hidden sm:inline-block">Nanga Market Seller</span>
+        <span className="hidden sm:inline-block">Sigaproduction</span>
       </Link>
 
       <div className="w-full flex-1 md:w-auto md:flex-none">
