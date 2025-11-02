@@ -31,7 +31,7 @@ const services = [
   {
     id: "2",
     name: "Sigapro EO",
-    image: "/images/eo.jpg",
+    image: "/images/sigaproeo.jpeg",
     price: 500000,
     features: ["Event Organizer", "Stage Setup", "Sound System"],
     type: "Event Organizer",
@@ -40,7 +40,7 @@ const services = [
   {
     id: "3",
     name: "Sigamerch",
-    image: "/images/merch.jpg",
+    image: "/images/sigamerch.jpg",
     price: 75000,
     features: ["Merch Design", "T-Shirt", "Hoodie", "Accessories"],
     type: "Merchandise",
@@ -49,7 +49,7 @@ const services = [
   {
     id: "4",
     name: "SIGMA Bwx",
-    image: "/images/sigma.jpg",
+    image: "/images/sigma.jpeg",
     price: 200000,
     features: ["Photography", "Videography", "Editing"],
     type: "Creative Studio",
