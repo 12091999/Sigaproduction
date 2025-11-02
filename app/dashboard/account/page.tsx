@@ -1,6 +1,6 @@
 "use client"
 
-import { signOut } from "next-auth/react" // ✅ gunakan ini kalau kamu pakai next-auth
+// import { signOut } from "next-auth/react" // ✅ gunakan ini kalau kamu pakai next-auth
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
