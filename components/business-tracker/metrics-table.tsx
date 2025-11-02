@@ -38,7 +38,7 @@ export function MetricsTable({ data }: MetricsTableProps) {
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("id-ID", {
       style: "currency",
-      currency: "Rupiah",
+      currency: "IDR",
     }).format(value)
   }
 
