@@ -281,7 +281,7 @@ export function MainNav() {
                   Cart
                 </Link>
                 <Link
-                  href="/account"
+                  href="/signup"
                   className="flex items-center gap-2 py-2 text-base font-medium text-muted-foreground hover:text-primary"
                   onClick={() => setIsOpen(false)}
                 >
