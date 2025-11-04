@@ -49,7 +49,7 @@ export function DashboardHeader() {
       <Link href="/dashboard" className="flex items-center gap-2 font-semibold">
         <Image
           src="/images/SP.jpg"
-          alt="Nanga Market"
+          alt="Sigaproduction"
           width={32}
           height={32}
           className="rounded-full border border-muted"
