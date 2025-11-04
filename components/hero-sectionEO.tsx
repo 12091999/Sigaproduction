@@ -152,7 +152,7 @@ export default function HeroSection() {
           }
         }
         .animate-gradient {
-          animation: gradientMove 12s ease infinite;
+          animation: gradientMove 15s ease infinite;
         }
       `}</style>
     </section>
