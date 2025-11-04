@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="id" className="scroll-smooth light">
       <body className={inter.className}>
         <Providers>
-            <AuthProvider>{children}</AuthProvider>
+            <AuthProvider>
             <SpeedInsights />
           <ThemeHandler>
           <div className="relative flex min-h-screen flex-col">
@@ -56,6 +56,7 @@ export default function RootLayout({
             </footer>
           </div>
           </ThemeHandler>
+          </AuthProvider>
         </Providers>
       </body>
     </html>
