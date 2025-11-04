@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import Link from "next/link"
 import "./globals.css"
 
+import { AuthProvider } from "@/contexts/auth-context"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { SiteHeader } from "@/components/site-header"
 import { Providers } from "@/components/providers"
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="id" className="scroll-smooth light">
       <body className={inter.className}>
         <Providers>
+            <AuthProvider>{children}</AuthProvider>
             <SpeedInsights />
           <ThemeHandler>
           <div className="relative flex min-h-screen flex-col">

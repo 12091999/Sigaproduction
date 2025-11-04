@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import { Shirt, Music, Camera, Home, Menu, ShoppingCart, User } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { useAuth } from "@/components/context/AuthContext"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,

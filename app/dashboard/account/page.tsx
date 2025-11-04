@@ -1,30 +1,24 @@
 "use client"
 
-// import { signOut } from "next-auth/react" // ✅ gunakan ini kalau kamu pakai next-auth
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import { useAuth } from "@/components/context/AuthContext"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Edit } from "lucide-react"
 
 export default function AccountPage() {
+  const { user, logout } = useAuth()
   const router = useRouter()
 
-  const user = {
-    name: "Muhammad Fajar Kurniawan",
-    email: "fajar@example.com",
-    role: "Admin",
-    avatar: "/images/avatar.jpg",
+  const handleLogout = () => {
+    logout()
+    router.push("/login")
   }
 
-  // ✅ Logout handler — pilih salah satu versi sesuai kebutuhan
-  const handleLogout = () => {
-    // --- Versi 1: jika pakai next-auth ---
-    // signOut({ callbackUrl: "/login" })
-
-    // --- Versi 2: jika belum pakai auth (manual logout) ---
-    localStorage.removeItem("user") // hapus data user dari localStorage
-    router.push("/signup") // arahkan ke halaman login
+  if (!user) {
+    router.push("/login")
+    return null
   }
 
   return (
@@ -38,7 +32,7 @@ export default function AccountPage() {
         <CardContent className="flex items-center gap-6">
           <div className="relative w-24 h-24">
             <Image
-              src={user.avatar}
+              src="/images/avatar.jpg"
               alt={user.name}
               fill
               className="rounded-full object-cover border"
@@ -48,7 +42,6 @@ export default function AccountPage() {
           <div className="flex-1">
             <h2 className="text-xl font-semibold">{user.name}</h2>
             <p className="text-gray-500">{user.email}</p>
-            <p className="text-sm text-gray-400 mt-1">Role: {user.role}</p>
           </div>
 
           <Button variant="outline">
@@ -63,10 +56,6 @@ export default function AccountPage() {
           <CardTitle>Account Settings</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex justify-between items-center">
-            <span>Change Password</span>
-            <Button variant="secondary">Update</Button>
-          </div>
           <div className="flex justify-between items-center">
             <span>Logout</span>
             <Button variant="destructive" onClick={handleLogout}>
