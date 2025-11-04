@@ -17,6 +17,19 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 
+interface RouteChild {
+  href: string;
+  label: string;
+  icon: React.ElementType;
+}
+
+interface Route {
+  href: string;
+  label: string;
+  active: boolean;
+  children?: RouteChild[];
+}
+
 export function MainNav() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
@@ -33,7 +46,7 @@ export function MainNav() {
     window.location.href = "/" // balik ke halaman utama setelah logout
   }
 
-  const primaryRoutes = [
+  const primaryRoutes: Route[] = [
     { href: "/", label: "Home", active: pathname === "/" },
     { href: "/products", label: "Products", active: pathname.startsWith("/products") },
     {
@@ -51,12 +64,12 @@ export function MainNav() {
     { href: "/properties", label: "Rent", active: pathname.startsWith("/properties") },
   ]
 
-  const secondaryRoutes = [
+  const secondaryRoutes: Route[] = [
     { href: "/about", label: "About", active: pathname === "/about" },
     { href: "/contact", label: "Contact", active: pathname === "/contact" },
   ]
 
-  const allRoutes = [...primaryRoutes, ...secondaryRoutes]
+  const allRoutes: Route[] = [...primaryRoutes, ...secondaryRoutes]
 
   return (
     <div className="flex items-center">
