@@ -52,14 +52,15 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] overflow-hidden">
       {/* 🌈 Background animasi gradasi penuh layar */}
       <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-[length:400%_400%]"></div>
 
       {/* 🧭 Konten Hero */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center text-white py-20 md:py-28 lg:py-36 px-6">
+      <div className="relative z-10 py-16 md:py-24 lg:py-32 text-center text-white">
+         <div className="container mx-auto px-3 md:px-4"></div>
         {/* Logo */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-4 md:mb-6">
           <Image
             src="/images/studio3.jpg"
             alt="Studio 3 Logo"
