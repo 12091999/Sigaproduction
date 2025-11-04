@@ -2,29 +2,36 @@
 
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { useAuth } from "@/components/context/AuthContext"
+import { useAuth } from "@/contexts/auth-context" // ✅ pakai context yang benar
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Edit } from "lucide-react"
+import { useEffect } from "react"
 
 export default function AccountPage() {
   const { user, logout } = useAuth()
   const router = useRouter()
+
+  // ✅ Gunakan useEffect agar router.push() tidak dipanggil saat render
+  useEffect(() => {
+    if (!user) {
+      router.push("/login")
+    }
+  }, [user, router])
+
+  // Jika belum login, jangan render apa pun dulu
+  if (!user) return null
 
   const handleLogout = () => {
     logout()
     router.push("/login")
   }
 
-  if (!user) {
-    router.push("/login")
-    return null
-  }
-
   return (
     <div className="p-6 space-y-6">
       <h1 className="text-3xl font-bold mb-4">Account</h1>
 
+      {/* Profile Information */}
       <Card className="max-w-2xl">
         <CardHeader>
           <CardTitle>Profile Information</CardTitle>
@@ -33,7 +40,7 @@ export default function AccountPage() {
           <div className="relative w-24 h-24">
             <Image
               src="/images/avatar.jpg"
-              alt={user.name}
+              alt={user.name || "User Avatar"}
               fill
               className="rounded-full object-cover border"
             />
@@ -51,6 +58,7 @@ export default function AccountPage() {
         </CardContent>
       </Card>
 
+      {/* Account Settings */}
       <Card className="max-w-2xl">
         <CardHeader>
           <CardTitle>Account Settings</CardTitle>
