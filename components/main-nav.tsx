@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -32,6 +32,17 @@ interface Route {
 export function MainNav() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+    useEffect(() => {
+    const logged = localStorage.getItem("userLoggedIn") === "true"
+    setIsLoggedIn(logged)
+  }, [])
+
+  const handleLogout = () => {
+    localStorage.removeItem("userLoggedIn")
+    setIsLoggedIn(false)
+    window.location.href = "/" // redirect ke home
+  } // Placeholder for auth state
 
   // Primary navigation items to show on mobile
   const primaryRoutes = [
