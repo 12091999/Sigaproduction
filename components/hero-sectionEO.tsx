@@ -44,30 +44,42 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="w-full">
-      <div className="bg-gradient-to-r from-red-600 to-blue-600 py-12 md:py-20 lg:py-28">
-        <div className="container mx-auto px-3 md:px-4 text-center">
+    <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] overflow-hidden">
+      {/* Background gradient animasi */}
+      <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-[length:400%_400%]"></div>
+
+      {/* Konten utama */}
+      <div className="relative z-10 py-16 md:py-24 lg:py-32 text-center text-white">
+        <div className="container mx-auto px-3 md:px-4">
+          {/* Logo */}
           <div className="flex justify-center mb-4 md:mb-6">
             <Image
               src="/images/sigaproeo.jpeg"
               alt="sigaproeo Logo"
               width={160}
               height={160}
-              className="w-28 h-28 md:w-40 md:h-40 lg:w-52 lg:h-52 rounded-full border-4 border-white/20 shadow-lg"
+              className="w-28 h-28 md:w-40 md:h-40 lg:w-52 lg:h-52 rounded-full border-4 border-white/20 shadow-lg object-cover"
               priority
             />
           </div>
 
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:6xl font-bold text-white mb-3 md:mb-6">
+          {/* Judul */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 md:mb-6 drop-shadow-lg">
             Welcome to Sigaproductions
           </h1>
-          <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
+
+          {/* Deskripsi */}
+          <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-8 px-4">
             Your one-stop destination for local products, EO, Movie Art, and Music Studio
           </p>
 
-          <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto px-2">
+          {/* Search Form */}
+          <form
+            onSubmit={handleSearch}
+            className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto px-2"
+          >
             <Select onValueChange={handleCategoryChange}>
-              <SelectTrigger className="w-full sm:w-[180px] bg-black">
+              <SelectTrigger className="w-full sm:w-[180px] bg-black/30 border-white/30 text-white">
                 <SelectValue placeholder="Select Category" />
               </SelectTrigger>
               <SelectContent>
@@ -84,31 +96,65 @@ export default function HeroSection() {
               <Input
                 type="text"
                 placeholder="Search for products, services, or offers..."
-                className="w-full pl-10"
+                className="w-full pl-10 bg-white text-black rounded-md"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
             </div>
 
-            <Button type="submit" className="bg-emerald-700 hover:bg-emerald-800">
+            <Button
+              type="submit"
+              className="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold"
+            >
               Search
             </Button>
           </form>
 
-          <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-6 md:mt-8 px-2">
-            <Button asChild variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
+          {/* Tombol Aksi */}
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8 px-2">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-white/10 text-white border-white/30 hover:bg-white/20"
+            >
               <Link href="/products">Shop Sigamerch Products</Link>
             </Button>
-            <Button asChild variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-white/10 text-white border-white/30 hover:bg-white/20"
+            >
               <Link href="/services/taxi">Book a Sigaproduction</Link>
             </Button>
-            <Button asChild variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-white/10 text-white border-white/30 hover:bg-white/20"
+            >
               <Link href="/services/accommodations">Find Your Offer</Link>
             </Button>
           </div>
         </div>
       </div>
+
+      {/* Tambahkan style animasi */}
+      <style jsx global>{`
+        @keyframes gradientMove {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        .animate-gradient {
+          animation: gradientMove 12s ease infinite;
+        }
+      `}</style>
     </section>
   )
 }
