@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ShoppingCart, User, Home } from "lucide-react"
+import { User, Home } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
@@ -18,29 +18,34 @@ export function SiteHeader() {
             height={40}
             className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-muted"
           />
-          <span className="text-lg md:text-xl font-bold hidden md:inline-block ml-2 md:ml-3">Sigaproduction</span>
+          <span className="text-lg md:text-xl font-bold hidden md:inline-block ml-2 md:ml-3">
+            Sigaproduction
+          </span>
         </Link>
+
         <MainNav />
+
         <div className="ml-auto flex items-center space-x-1 sm:space-x-2 md:space-x-4">
+          {/* Tombol Rent */}
           <Button variant="outline" size="sm" asChild className="hidden sm:flex">
             <Link href="/properties">
               <Home className="h-4 w-4 mr-2" />
               Rent
             </Link>
           </Button>
+
+          {/* Tombol Theme */}
           <ThemeToggle />
-          <Button variant="ghost" size="icon" asChild className="hidden sm:flex">
-            <Link href="/cart">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="sr-only">Shopping cart</span>
-            </Link>
-          </Button>
+
+          {/* Tombol Account */}
           <Button variant="ghost" size="icon" asChild className="hidden sm:flex">
             <Link href="/dashboard/account">
               <User className="h-5 w-5" />
               <span className="sr-only">Account</span>
             </Link>
           </Button>
+
+          {/* Tombol Sign In */}
           <Button asChild size="sm" className="px-2 sm:px-4">
             <Link href="/signin">Sign In</Link>
           </Button>
