@@ -111,7 +111,7 @@ export default function SignInPage() {
   }
 
 return (
-  <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-br from-blue-600 to-purple-700">
+  <div className="flex items-center justify-center min-h-screen w-full">
     <div className="w-full max-w-md space-y-6 rounded-2xl bg-background/80 p-6 shadow-xl backdrop-blur-md">
       <div className="text-center space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">Sign In</h1>
