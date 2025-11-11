@@ -83,7 +83,7 @@ export default function AddPropertyPage() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-6">
           <h1 className="text-3xl font-bold tracking-tight">List Your Property</h1>
-          <p className="text-muted-foreground">Fill out the form below to list your property for rent or sale</p>
+          <p className="text-muted-foreground">Fill out the form below to list your property for rent</p>
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -96,7 +96,7 @@ export default function AddPropertyPage() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="title">Property Title</Label>
-                  <Input id="title" placeholder="e.g., Modern Villa with Mountain View" required />
+                  <Input id="title" placeholder="e.g., Modern Stage" required />
                 </div>
 
                 <div className="space-y-2">
@@ -112,11 +112,11 @@ export default function AddPropertyPage() {
                         <SelectValue placeholder="Select property type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="house">House</SelectItem>
-                        <SelectItem value="apartment">Apartment</SelectItem>
-                        <SelectItem value="villa">Villa</SelectItem>
-                        <SelectItem value="cottage">Cottage</SelectItem>
-                        <SelectItem value="commercial">Commercial Space</SelectItem>
+                        <SelectItem value="Stage">Stage</SelectItem>
+                        <SelectItem value="Gate">Gate</SelectItem>
+                        <SelectItem value="Barricade">Barricade</SelectItem>
+                        <SelectItem value="Sound System">Sound System</SelectItem>
+                        <SelectItem value="commercial Stage">Commercial Stage</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
