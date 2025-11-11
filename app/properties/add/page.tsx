@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Camera, Loader2, Plus, Trash } from "lucide-react"
@@ -12,7 +11,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { useToast } from "@/hooks/use-toast"
 
 export default function AddPropertyPage() {
@@ -27,19 +25,16 @@ export default function AddPropertyPage() {
     setIsLoading(true)
 
     try {
-      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500))
-
       toast({
-        title: "Property listed successfully!",
-        description: "Your property has been added to our listings.",
+        title: "Rental item listed successfully!",
+        description: "Your rental property has been added.",
       })
-
       router.push("/properties")
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was a problem listing your property. Please try again.",
+        description: "There was a problem adding your item. Please try again.",
         variant: "destructive",
       })
     } finally {
@@ -49,14 +44,9 @@ export default function AddPropertyPage() {
 
   const handleImageUpload = async () => {
     setUploadingImage(true)
-
     try {
-      // Simulate image upload
       await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      // Add a placeholder image
       setImages([...images, "/placeholder.svg?height=300&width=500"])
-
       toast({
         title: "Image uploaded",
         description: "Your image has been uploaded successfully.",
@@ -64,7 +54,7 @@ export default function AddPropertyPage() {
     } catch (error) {
       toast({
         title: "Upload failed",
-        description: "There was a problem uploading your image. Please try again.",
+        description: "There was a problem uploading your image.",
         variant: "destructive",
       })
     } finally {
@@ -82,133 +72,92 @@ export default function AddPropertyPage() {
     <div className="container py-8">
       <div className="max-w-4xl mx-auto">
         <div className="mb-6">
-          <h1 className="text-3xl font-bold tracking-tight">List Your Property</h1>
-          <p className="text-muted-foreground">Fill out the form below to list your property for rent</p>
+          <h1 className="text-3xl font-bold tracking-tight">Add Rental Property</h1>
+          <p className="text-muted-foreground">
+            Fill out the form below to list your equipment or property for rent.
+          </p>
         </div>
 
         <form onSubmit={handleSubmit}>
           <div className="space-y-6">
+            {/* PROPERTY DETAILS */}
             <Card>
               <CardHeader>
-                <CardTitle>Property Details</CardTitle>
-                <CardDescription>Provide basic information about your property</CardDescription>
+                <CardTitle>Rental Details</CardTitle>
+                <CardDescription>Provide basic information about your rental item</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="title">Property Title</Label>
-                  <Input id="title" placeholder="e.g., Modern Stage" required />
+                  <Label htmlFor="title">Rental Title</Label>
+                  <Input id="title" placeholder="e.g., Stage 8x10m" required />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="description">Description</Label>
-                  <Textarea id="description" placeholder="Describe your property in detail..." rows={5} required />
+                  <Textarea
+                    id="description"
+                    placeholder="Describe your rental item (size, material, specs, etc.)"
+                    rows={5}
+                    required
+                  />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="property-type">Property Type</Label>
-                    <Select required>
-                      <SelectTrigger id="property-type">
-                        <SelectValue placeholder="Select property type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="Stage">Stage</SelectItem>
-                        <SelectItem value="Gate">Gate</SelectItem>
-                        <SelectItem value="Barricade">Barricade</SelectItem>
-                        <SelectItem value="Sound System">Sound System</SelectItem>
-                        <SelectItem value="commercial Stage">Commercial Stage</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label>Listing Type</Label>
-                    <RadioGroup defaultValue="rent" className="flex gap-4">
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="rent" id="rent" />
-                        <Label htmlFor="rent">For Rent</Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="sale" id="sale" />
-                        <Label htmlFor="sale">For Sale</Label>
-                      </div>
-                    </RadioGroup>
-                  </div>
+                <div className="space-y-2">
+                  <Label htmlFor="type">Category</Label>
+                  <Select required>
+                    <SelectTrigger id="type">
+                      <SelectValue placeholder="Select category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Stage">Stage</SelectItem>
+                      <SelectItem value="Gate">Gate</SelectItem>
+                      <SelectItem value="Barricade">Barricade</SelectItem>
+                      <SelectItem value="Sound System">Sound System</SelectItem>
+                      <SelectItem value="Commercial Stage">Commercial Stage</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="bedrooms">Bedrooms</Label>
-                    <Select required>
-                      <SelectTrigger id="bedrooms">
-                        <SelectValue placeholder="Select" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="0">0 (Studio)</SelectItem>
-                        <SelectItem value="1">1</SelectItem>
-                        <SelectItem value="2">2</SelectItem>
-                        <SelectItem value="3">3</SelectItem>
-                        <SelectItem value="4">4</SelectItem>
-                        <SelectItem value="5+">5+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="bathrooms">Bathrooms</Label>
-                    <Select required>
-                      <SelectTrigger id="bathrooms">
-                        <SelectValue placeholder="Select" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="1">1</SelectItem>
-                        <SelectItem value="2">2</SelectItem>
-                        <SelectItem value="3">3</SelectItem>
-                        <SelectItem value="4">4</SelectItem>
-                        <SelectItem value="5+">5+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="area">Area (sq.ft)</Label>
-                    <Input id="area" type="number" placeholder="e.g., 1500" required />
-                  </div>
+                <div className="space-y-2">
+                  <Label htmlFor="area">Size / Dimension (optional)</Label>
+                  <Input id="area" type="text" placeholder="e.g., 10m x 6m" />
                 </div>
               </CardContent>
             </Card>
 
+            {/* LOCATION & PRICE */}
             <Card>
               <CardHeader>
                 <CardTitle>Location & Price</CardTitle>
-                <CardDescription>Provide location details and pricing information</CardDescription>
+                <CardDescription>Provide rental pricing and location details</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="location">Location</Label>
-                  <Input id="location" placeholder="e.g., Coonoor, The Nilgiris" required />
+                  <Input id="location" placeholder="e.g., Warehouse or Venue" required />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="address">Full Address</Label>
-                  <Textarea id="address" placeholder="Enter the complete address..." rows={3} required />
+                  <Textarea id="address" placeholder="Enter complete address..." rows={3} required />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="price">Price (₹)</Label>
-                    <Input id="price" type="number" placeholder="e.g., 45000" required />
+                    <Label htmlFor="price">Rental Price (Rp)</Label>
+                    <Input id="price" type="number" placeholder="e.g., 1000000" required />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="price-type">Price Type</Label>
+                    <Label htmlFor="price-type">Rental Duration</Label>
                     <Select required>
                       <SelectTrigger id="price-type">
-                        <SelectValue placeholder="Select price type" />
+                        <SelectValue placeholder="Select duration" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="month">Per Month (for Rent)</SelectItem>
-                        <SelectItem value="total">Total Price (for Sale)</SelectItem>
+                        <SelectItem value="day">Per Day</SelectItem>
+                        <SelectItem value="event">Per Event</SelectItem>
+                        <SelectItem value="week">Per Week</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -216,10 +165,11 @@ export default function AddPropertyPage() {
               </CardContent>
             </Card>
 
+            {/* IMAGES */}
             <Card>
               <CardHeader>
                 <CardTitle>Images</CardTitle>
-                <CardDescription>Upload images of your property (up to 10 images)</CardDescription>
+                <CardDescription>Upload images of your rental item (up to 10 images)</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -227,7 +177,7 @@ export default function AddPropertyPage() {
                     <div key={index} className="relative aspect-square rounded-md overflow-hidden border">
                       <img
                         src={image || "/placeholder.svg"}
-                        alt={`Property image ${index + 1}`}
+                        alt={`Image ${index + 1}`}
                         className="w-full h-full object-cover"
                       />
                       <Button
@@ -241,6 +191,7 @@ export default function AddPropertyPage() {
                       </Button>
                     </div>
                   ))}
+
                   {images.length < 10 && (
                     <Button
                       variant="outline"
@@ -260,16 +211,14 @@ export default function AddPropertyPage() {
                     </Button>
                   )}
                 </div>
-                <div className="text-sm text-muted-foreground">
-                  Tip: Upload high-quality images to attract more interest. First image will be used as the main image.
-                </div>
               </CardContent>
             </Card>
 
+            {/* CONTACT */}
             <Card>
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
-                <CardDescription>Provide your contact details for interested parties</CardDescription>
+                <CardDescription>Provide your contact details</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -291,11 +240,12 @@ export default function AddPropertyPage() {
 
                 <div className="space-y-2">
                   <Label htmlFor="contact-hours">Preferred Contact Hours</Label>
-                  <Input id="contact-hours" placeholder="e.g., 9 AM to 6 PM" />
+                  <Input id="contact-hours" placeholder="e.g., 9 AM – 6 PM" />
                 </div>
               </CardContent>
             </Card>
 
+            {/* BUTTONS */}
             <div className="flex justify-end gap-4">
               <Button variant="outline" type="button" onClick={() => router.back()}>
                 Cancel
@@ -309,7 +259,7 @@ export default function AddPropertyPage() {
                 ) : (
                   <>
                     <Plus className="mr-2 h-4 w-4" />
-                    List Property
+                    List Rental Item
                   </>
                 )}
               </Button>
