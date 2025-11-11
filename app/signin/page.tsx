@@ -1,3 +1,115 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import Link from "next/link"
+import { Eye, EyeOff, Loader2 } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useToast } from "@/hooks/use-toast"
+import { useAuth } from "@/contexts/auth-context"
+
+export default function SignInPage() {
+  const [activeTab, setActiveTab] = useState<string>("email")
+  const [isLoading, setIsLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [phone, setPhone] = useState("")
+  const [otpSent, setOtpSent] = useState(false)
+  const [otp, setOtp] = useState("")
+
+  const { toast } = useToast()
+  const { login, sendOtp, verifyOtp } = useAuth()
+
+  const handleEmailLogin = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    setIsLoading(true)
+    try {
+      await login(email, password)
+      toast({
+        title: "Welcome back!",
+        description: "You've successfully signed in.",
+      })
+    } catch (error) {
+      toast({
+        title: "Sign in failed",
+        description: "Invalid email or password.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleSendOtp = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!phone) {
+      toast({
+        title: "Phone number required",
+        description: "Please enter your phone number.",
+        variant: "destructive",
+      })
+      return
+    }
+
+    setIsLoading(true)
+    try {
+      await sendOtp(phone)
+      setOtpSent(true)
+      toast({
+        title: "OTP sent",
+        description: "A verification code has been sent to your phone.",
+      })
+    } catch (error) {
+      toast({
+        title: "Failed to send OTP",
+        description: "There was a problem sending the verification code.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleVerifyOtp = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    setIsLoading(true)
+    try {
+      const isValid = await verifyOtp(phone, otp)
+      if (isValid) {
+        // In a real app, you would fetch the user profile here
+        await login(phone, "")
+        toast({
+          title: "Welcome back!",
+          description: "You've successfully signed in.",
+        })
+      } else {
+        toast({
+          title: "Invalid OTP",
+          description: "The verification code is incorrect.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      toast({
+        title: "Verification failed",
+        description: "There was a problem verifying your phone.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
 return (
   <div className="flex items-center justify-center min-h-screen w-screen bg-background">
     <div className="flex flex-col w-full max-w-md space-y-6 p-6">
@@ -205,3 +317,4 @@ return (
     </div>
   </div>
 )
+}
