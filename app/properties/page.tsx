@@ -34,7 +34,7 @@ const properties = [
     price: 750000,
     priceType: "day",
     type: "Rent",
-    images: ["/bass1.jpg"],
+    images: ["/images/bass1.jpg"],
     featured: false,
   },
   {
@@ -44,7 +44,7 @@ const properties = [
     price: 350000,
     priceType: "day",
     type: "Rent",
-    images: ["/placeholder.svg?height=300&width=500"],
+    images: ["/images/drum1.jpg"],
     featured: true,
   },
   {
