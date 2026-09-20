@@ -24,7 +24,7 @@ const properties = [
     price: 450000,
     priceType: "day",
     type: "Rent",
-    images: ["/placeholder.svg?height=300&width=500"],
+    images: ["/images/gitar1.jpg"],
     featured: true,
   },
   {
