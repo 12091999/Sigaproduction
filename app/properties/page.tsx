@@ -54,7 +54,7 @@ const properties = [
     price: 125000,
     priceType: "day",
     type: "Rent",
-    images: ["/placeholder.svg?height=300&width=500"],
+    images: ["/images/keyboard1.jpg"],
     featured: true,
   },
   {
