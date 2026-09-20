@@ -2,7 +2,14 @@
     "editor.find.cursorMoveOnType": false,
     "editor.find.findOnType": false,
     "editor.detectIndentation": false,
-    "editor.dropIntoEditor.preferences": [
-        
-    ]
+    "editor.dropIntoEditor.preferences": [],
+
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".*",
+                "cmd": "git add . && git commit -m \"Auto update\" && git push"
+            }
+        ]
+    }
 }
