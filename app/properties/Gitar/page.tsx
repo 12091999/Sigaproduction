@@ -146,7 +146,7 @@ export default function RentInstrumentPage() {
           {/* IMAGE SLIDER */}
           <div className="relative aspect-video rounded-lg overflow-hidden">
             <Image
-              src={instrument.images[currentImageIndex] || "/placeholder.svg"}
+              src={instrument.images[currentImageIndex] || "/image/gitar1.jpg"}
               alt={`Instrument image ${currentImageIndex + 1}`}
               fill
               className="object-cover"
