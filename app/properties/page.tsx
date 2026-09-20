@@ -34,7 +34,7 @@ const properties = [
     price: 750000,
     priceType: "day",
     type: "Rent",
-    images: ["/placeholder.svg?height=300&width=500"],
+    images: ["/bass1.jpg"],
     featured: false,
   },
   {
