@@ -74,7 +74,7 @@ const properties = [
     price: 550000,
     priceType: "day",
     type: "Rent",
-    images: ["/placeholder.svg?height=300&width=500"],
+    images: ["/images/effect1.jpg"],
     featured: false,
   },
 ]
