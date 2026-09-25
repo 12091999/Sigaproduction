@@ -249,7 +249,7 @@ export default function PropertiesPage() {
 
       const matchesCategory =
         categoryFilter === "all" ||
-        property.category === categoryFilter
+        property.type === categoryFilter
 
 
       // -------------------------------
