@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { ShoppingBag, Book, Home, Plus } from "lucide-react"
 
@@ -16,25 +15,8 @@ import { RentList } from "@/components/dashboard/rent-list"
 import { TourismList } from "@/components/dashboard/tourism-list"
 
 export default function DashboardPage() {
-  const [mounted, setMounted] = useState(false)
   const { user, isLoading } = useAuth()
   const router = useRouter()
-
-  // Only run the effect after mounting to avoid hydration issues
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  useEffect(() => {
-    if (mounted && !isLoading && !user) {
-      router.push("/signin")
-    }
-  }, [user, isLoading, router, mounted])
-
-  // Don't render anything until client-side
-  if (!mounted) {
-    return null
-  }
 
   if (isLoading) {
     return (
@@ -48,7 +30,8 @@ export default function DashboardPage() {
   }
 
   if (!user) {
-    return null // Will redirect in useEffect
+    router.replace("/signin")
+    return null
   }
 
   return (
