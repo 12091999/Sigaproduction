@@ -1,8 +1,6 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { ShoppingBag, Book, Home, Plus } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -44,7 +42,7 @@ export default function DashboardPage() {
             <h1 className="text-3xl font-bold tracking-tight">Seller Dashboard</h1>
             <div className="flex items-center gap-2">
               <Button>
-                <Plus className="mr-2 h-4 w-4" />
+                <span className="mr-2" aria-hidden="true">+</span>
                 Add New Listing
               </Button>
             </div>
@@ -54,7 +52,7 @@ export default function DashboardPage() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Total Products</CardTitle>
-                <ShoppingBag className="h-4 w-4 text-muted-foreground" />
+                <span className="text-muted-foreground" aria-hidden="true">🛍️</span>
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">12</div>
@@ -65,7 +63,7 @@ export default function DashboardPage() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Services</CardTitle>
-                <Book className="h-4 w-4 text-muted-foreground" />
+                <span className="text-muted-foreground" aria-hidden="true">📖</span>
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">3</div>
@@ -76,7 +74,7 @@ export default function DashboardPage() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Rent</CardTitle>
-                <Home className="h-4 w-4 text-muted-foreground" />
+                <span className="text-muted-foreground" aria-hidden="true">🏠</span>
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">5</div>
