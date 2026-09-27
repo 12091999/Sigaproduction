@@ -51,7 +51,7 @@ export default function AccountPage() {
             <p className="text-gray-500">{user.email}</p>
           </div>
 
-          <Button variant="outline" onClick={() => router.push("dashboard/account/edit")}>
+          <Button variant="outline" onClick={() => router.push("/dashboard/account/edit")}>
             <Edit className="mr-2 h-4 w-4" />
             Edit Profile
           </Button>
