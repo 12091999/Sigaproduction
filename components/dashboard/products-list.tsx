@@ -149,10 +149,10 @@ export function ProductsList() {
                     <DropdownMenuLabel>Actions</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
-                      <Link href={`/dashboard/products/${product.id}`}>
+                    <Link href={`/dashboard/products?id=${product.id}`}>
                         <Edit className="mr-2 h-4 w-4" />
                         Edit
-                      </Link>
+                    </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={() => handleDelete(product.id)}
