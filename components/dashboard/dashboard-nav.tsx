@@ -18,70 +18,79 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
 interface DashboardNavProps {
-    activeTab: string
-    onTabChange: (tab: string) => void
+  activeTab: string
+  onTabChange: (tab: string) => void
 }
 
-export function DashboardNav({ activeTab, onTabChange }: DashboardNavProps) {
+export function DashboardNav({
+  activeTab,
+  onTabChange,
+}: DashboardNavProps) {
   const pathname = usePathname()
 
-  const routes: Array<{
-    label: string
-    icon: typeof LayoutDashboard
-    href: string
-    active: boolean
-    tab?: string
-  }> = [
+  const routes = [
     {
       label: "Dashboard",
       icon: LayoutDashboard,
       href: "/dashboard",
-      active: pathname === "/dashboard",
+      active: pathname === "/dashboard" && !activeTab,
     },
+
     {
       label: "Business Tracker",
       icon: LineChart,
       href: "/dashboard/business-tracker",
       active: pathname === "/dashboard/business-tracker",
     },
+
     {
       label: "Products",
       icon: ShoppingBag,
-      href: "/dashboard/",
-      active: pathname === "/dashboard/products-list" || pathname.startsWith("/dashboard/products-list/"),
-        tab: "products",
+      href: "/dashboard?tab=products",
+      tab: "products",
+      active:
+        pathname === "/dashboard" &&
+        activeTab === "products",
     },
+
     {
       label: "Services",
       icon: Book,
-      href: "/dashboard/",
-      active: pathname === "/dashboard/taxis" || pathname.startsWith("/dashboard/taxis/"),
-        tab: "services",
+      href: "/dashboard?tab=services",
+      tab: "services",
+      active:
+        pathname === "/dashboard" &&
+        activeTab === "services",
     },
+
     {
       label: "Orders",
       icon: Package,
       href: "/dashboard/orders",
       active: pathname === "/dashboard/orders",
     },
+
     {
       label: "Payments",
       icon: CreditCard,
       href: "/dashboard/payments",
       active: pathname === "/dashboard/payments",
     },
+
     {
       label: "Messages",
       icon: MessageSquare,
       href: "/dashboard/messages",
       active: pathname === "/dashboard/messages",
     },
+
     {
       label: "Analytics",
       icon: BarChart3,
       href: "/dashboard/analytics",
       active: pathname === "/dashboard/analytics",
     },
+
     {
       label: "Settings",
       icon: Settings,
@@ -95,34 +104,52 @@ export function DashboardNav({ activeTab, onTabChange }: DashboardNavProps) {
       <div className="flex h-full max-h-screen flex-col gap-2 p-4">
         <div className="flex-1 overflow-auto py-2">
           <div className="grid gap-1">
-                {routes.map((route) => (
-                <Button
+            {routes.map((route) => {
+              if (route.tab) {
+                return (
+                  <Button
                     key={route.label}
-                    variant={route.active ? "secondary" : "ghost"}
+                    type="button"
+                    variant={
+                      route.active
+                        ? "secondary"
+                        : "ghost"
+                    }
                     className={cn(
+                      "w-full justify-start",
+                      route.active && "bg-muted"
+                    )}
+                    onClick={() =>
+                      onTabChange(route.tab!)
+                    }
+                  >
+                    <route.icon className="mr-2 h-4 w-4" />
+                    {route.label}
+                  </Button>
+                )
+              }
+
+              return (
+                <Button
+                  key={route.label}
+                  variant={
+                    route.active
+                      ? "secondary"
+                      : "ghost"
+                  }
+                  className={cn(
                     "w-full justify-start",
                     route.active && "bg-muted"
-                    )}
-                    onClick={() => {
-                    if (route.tab) {
-                        onTabChange(route.tab)
-                    }
-                    }}
-                    asChild={!route.tab}
+                  )}
+                  asChild
                 >
-                    {route.tab ? (
-                    <span className="flex w-full items-center">
-                        <route.icon className="mr-2 h-4 w-4" />
-                        {route.label}
-                    </span>
-                    ) : (
-                    <Link href={route.href}>
-                        <route.icon className="mr-2 h-4 w-4" />
-                        {route.label}
-                    </Link>
-                    )}
+                  <Link href={route.href}>
+                    <route.icon className="mr-2 h-4 w-4" />
+                    {route.label}
+                  </Link>
                 </Button>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
