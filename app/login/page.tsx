@@ -102,7 +102,7 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
 
-      <Card className="w-full max-w-md shadow-lg">
+      <Card className="relative z-10 w-full max-w-md shadow-lg">
 
         {/* ===================================================
             HEADER
