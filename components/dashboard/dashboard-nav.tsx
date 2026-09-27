@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button"
 
 interface DashboardNavProps {
     activePath: string
-    onTabChange: (path: string) => void
+    onTabChange: (tab: string) => void
 }
 
 export function DashboardNav({ activePath, onTabChange }: DashboardNavProps) {
