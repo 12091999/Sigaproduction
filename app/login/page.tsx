@@ -100,7 +100,7 @@ export default function LoginPage() {
   // =========================================================
 
   return (
-    <main className="relative min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat p-6 bg-[url('/images/photo-collage.jpg')]">
+    <main className="relative min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat p-6 bg-[url('/images/photo-collage.png')]">
         <div className="absolute inset-0 bg-black/40" />
       <Card className="relative z-10 w-full max-w-md shadow-lg">
 
