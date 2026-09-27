@@ -104,6 +104,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setIsLoading(false)
     }
   }
+    const updateProfile = (name: string, email: string, phone: string) => {
+    if (!user) return
+
+    const updatedUser: User = {
+        ...user,
+        name,
+        email,
+        phone,
+    }
+
+    setUser(updatedUser)
+    localStorage.setItem("user", JSON.stringify(updatedUser))
+    }
 
   const logout = () => {
     setUser(null)
