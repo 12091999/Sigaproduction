@@ -25,7 +25,13 @@ interface DashboardNavProps {
 export function DashboardNav({ activeTab, onTabChange }: DashboardNavProps) {
   const pathname = usePathname()
 
-  const routes = [
+  const routes: Array<{
+    label: string
+    icon: typeof LayoutDashboard
+    href: string
+    active: boolean
+    tab?: string
+  }> = [
     {
       label: "Dashboard",
       icon: LayoutDashboard,
