@@ -47,14 +47,16 @@ export function DashboardNav({ activeTab, onTabChange }: DashboardNavProps) {
     {
       label: "Products",
       icon: ShoppingBag,
-      href: "/dashboard/products-list",
+      href: "/dashboard/",
       active: pathname === "/dashboard/products-list" || pathname.startsWith("/dashboard/products-list/"),
+        tab: "products",
     },
     {
       label: "Services",
       icon: Book,
-      href: "/dashboard/taxis",
+      href: "/dashboard/",
       active: pathname === "/dashboard/taxis" || pathname.startsWith("/dashboard/taxis/"),
+        tab: "services",
     },
     {
       label: "Orders",
