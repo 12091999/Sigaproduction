@@ -36,8 +36,8 @@ export function DashboardNav() {
     {
       label: "Products",
       icon: ShoppingBag,
-      href: "/dashboard/products",
-      active: pathname === "/dashboard/products" || pathname.startsWith("/dashboard/products-list/"),
+      href: "/dashboard/products-list",
+      active: pathname === "/dashboard/products-list" || pathname.startsWith("/dashboard/products-list/"),
     },
     {
       label: "Services",
