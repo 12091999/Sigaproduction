@@ -18,8 +18,17 @@ type AuthContextType = {
   user: User | null
   isLoading: boolean
   login: (email: string, password: string) => Promise<void>
-  signUp: (name: string, email: string, phone: string, password: string) => Promise<void>
-  updateProfile: (name: string, email: string) => Promise<void>
+  signUp: (
+    name: string,
+    email: string,
+    phone: string,
+    password: string
+  ) => Promise<void>
+  updateProfile: (
+    name: string,
+    email: string,
+    phone: string
+  ) => void
   logout: () => void
   sendOtp: (phone: string) => Promise<boolean>
   verifyOtp: (phone: string, otp: string) => Promise<boolean>
@@ -28,46 +37,83 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
+export function AuthProvider({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   const [user, setUser] = useState<User | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+
   const router = useRouter()
 
+  // =========================================================
+  // CHECK LOGIN USER
+  // =========================================================
+
   useEffect(() => {
-    // Check if user is logged in from localStorage
     try {
       const storedUser = localStorage.getItem("user")
+
       if (storedUser) {
         setUser(JSON.parse(storedUser))
       }
     } catch (error) {
-      console.error("Failed to parse user from localStorage:", error)
+      console.error(
+        "Failed to parse user from localStorage:",
+        error
+      )
+
+      localStorage.removeItem("user")
+    } finally {
+      setIsLoading(false)
     }
-    setIsLoading(false)
   }, [])
 
-  const login = async (email: string, password: string) => {
+  // =========================================================
+  // LOGIN
+  // =========================================================
+
+  const login = async (
+    email: string,
+    password: string
+  ) => {
     setIsLoading(true)
+
     try {
-      // In a real app, this would be an API call
-      // Simulating API call with timeout
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      // Simulasi API
+      await new Promise((resolve) =>
+        setTimeout(resolve, 1000)
+      )
 
-      // For demo purposes, if email contains "admin", set role as admin
-      const role: UserRole = email.includes("admin") ? "admin" : "customer"
+      // Demo role
+      const role: UserRole = email.includes("admin")
+        ? "admin"
+        : "customer"
 
-      // Mock user for demo purposes
-      const mockUser = {
+      const mockUser: User = {
         id: "user-123",
-        name: role === "admin" ? "Admin User" : "Sena User",
+        name:
+          role === "admin"
+            ? "Admin User"
+            : "Sena User",
         email,
         phone: "+254123456789",
         role,
       }
 
       setUser(mockUser)
-      localStorage.setItem("user", JSON.stringify(mockUser))
-      router.push(role === "admin" ? "/admin/dashboard" : "/dashboard")
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify(mockUser)
+      )
+
+      router.push(
+        role === "admin"
+          ? "/admin/dashboard"
+          : "/dashboard"
+      )
     } catch (error) {
       console.error("Login failed:", error)
       throw error
@@ -76,17 +122,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
-  const signUp = async (name: string, email: string, phone: string, password: string) => {
+  // =========================================================
+  // SIGN UP
+  // =========================================================
+
+  const signUp = async (
+    name: string,
+    email: string,
+    phone: string,
+    password: string
+  ) => {
     setIsLoading(true)
+
     try {
-      // In a real app, this would be an API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      // Simulasi API
+      await new Promise((resolve) =>
+        setTimeout(resolve, 1000)
+      )
 
-      // For demo purposes, if email contains "admin", set role as admin
-      const role: UserRole = email.includes("admin") ? "admin" : "customer"
+      const role: UserRole = email.includes("admin")
+        ? "admin"
+        : "customer"
 
-      // Mock user creation
-      const newUser = {
+      const newUser: User = {
         id: `user-${Date.now()}`,
         name,
         email,
@@ -95,8 +153,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
 
       setUser(newUser)
-      localStorage.setItem("user", JSON.stringify(newUser))
-      router.push(role === "admin" ? "/admin/dashboard" : "/dashboard")
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify(newUser)
+      )
+
+      router.push(
+        role === "admin"
+          ? "/admin/dashboard"
+          : "/dashboard"
+      )
     } catch (error) {
       console.error("Signup failed:", error)
       throw error
@@ -104,65 +171,140 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setIsLoading(false)
     }
   }
-    const updateProfile = (name: string, email: string, phone: string) => {
-    if (!user) return
+
+  // =========================================================
+  // UPDATE PROFILE
+  // =========================================================
+
+  const updateProfile = (
+    name: string,
+    email: string,
+    phone: string
+  ) => {
+    if (!user) {
+      return
+    }
 
     const updatedUser: User = {
-        ...user,
-        name,
-        email,
-        phone,
+      ...user,
+      name: name.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
     }
 
+    // Update React state
     setUser(updatedUser)
-    localStorage.setItem("user", JSON.stringify(updatedUser))
-    }
+
+    // Update localStorage
+    localStorage.setItem(
+      "user",
+      JSON.stringify(updatedUser)
+    )
+  }
+
+  // =========================================================
+  // LOGOUT
+  // =========================================================
 
   const logout = () => {
     setUser(null)
+
     localStorage.removeItem("user")
+
     router.push("/")
   }
 
+  // =========================================================
+  // SEND OTP
+  // =========================================================
+
   const sendOtp = async (phone: string) => {
     try {
-      // In a real app, this would send an OTP via SMS
       console.log(`Sending OTP to ${phone}`)
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      await new Promise((resolve) =>
+        setTimeout(resolve, 1000)
+      )
+
       return true
     } catch (error) {
-      console.error("Failed to send OTP:", error)
+      console.error(
+        "Failed to send OTP:",
+        error
+      )
+
       throw error
     }
   }
 
-  const verifyOtp = async (phone: string, otp: string) => {
+  // =========================================================
+  // VERIFY OTP
+  // =========================================================
+
+  const verifyOtp = async (
+    phone: string,
+    otp: string
+  ) => {
     try {
-      // In a real app, this would verify the OTP
-      console.log(`Verifying OTP ${otp} for ${phone}`)
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      // For demo purposes, any 6-digit OTP is valid
+      console.log(
+        `Verifying OTP ${otp} for ${phone}`
+      )
+
+      await new Promise((resolve) =>
+        setTimeout(resolve, 1000)
+      )
+
+      // Demo:
+      // OTP 6 digit dianggap valid
       return otp.length === 6
     } catch (error) {
-      console.error("OTP verification failed:", error)
+      console.error(
+        "OTP verification failed:",
+        error
+      )
+
       return false
     }
   }
 
-  // Check if the current user is an admin
+  // =========================================================
+  // ADMIN CHECK
+  // =========================================================
+
   const isAdmin = user?.role === "admin"
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, login, signUp, updateProfile, logout, sendOtp, verifyOtp, isAdmin }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        isLoading,
+        login,
+        signUp,
+        updateProfile,
+        logout,
+        sendOtp,
+        verifyOtp,
+        isAdmin,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   )
 }
 
+// =========================================================
+// USE AUTH
+// =========================================================
+
 export function useAuth() {
   const context = useContext(AuthContext)
+
   if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider")
+    throw new Error(
+      "useAuth must be used within an AuthProvider"
+    )
   }
+
   return context
 }
+
