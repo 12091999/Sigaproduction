@@ -36,7 +36,7 @@ export default function DashboardPage() {
     <div className="flex min-h-screen flex-col">
       <DashboardHeader />
       <div className="flex flex-1">
-        <DashboardNav />
+        <DashboardNav activePath="/dashboard" onTabChange={(path) => router.push(path)} />
         <main className="flex-1 p-6">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-3xl font-bold tracking-tight">Seller Dashboard</h1>
