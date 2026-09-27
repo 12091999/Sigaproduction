@@ -17,7 +17,12 @@ import {
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-export function DashboardNav() {
+interface DashboardNavProps {
+    activePath: string
+    onTabChange: (path: string) => void
+}
+
+export function DashboardNav({ activePath, onTabChange }: DashboardNavProps) {
   const pathname = usePathname()
 
   const routes = [
