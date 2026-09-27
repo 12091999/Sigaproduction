@@ -33,10 +33,6 @@ export default function EditProfilePage() {
     setIsSaving(true)
 
     try {
-      // TODO:
-      // Tambahkan proses menyimpan data ke database/API
-      // jika auth-context kamu sudah menggunakan backend.
-
       console.log({
         name,
         email,
@@ -44,7 +40,8 @@ export default function EditProfilePage() {
 
       alert("Profile berhasil diperbarui")
 
-      router.push("dashboard/account")
+      // Kembali ke halaman Account
+      router.push("/dashboard/account")
     } catch (error) {
       console.error("Gagal memperbarui profile:", error)
       alert("Gagal memperbarui profile")
@@ -59,7 +56,7 @@ export default function EditProfilePage() {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => router.push("dashboard/account")}
+          onClick={() => router.push("/dashboard/account")}
         >
           <ArrowLeft className="h-5 w-5" />
         </Button>
@@ -78,7 +75,6 @@ export default function EditProfilePage() {
         </CardHeader>
 
         <CardContent className="space-y-6">
-          {/* Name */}
           <div className="space-y-2">
             <Label htmlFor="name">Nama</Label>
             <Input
@@ -90,7 +86,6 @@ export default function EditProfilePage() {
             />
           </div>
 
-          {/* Email */}
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -102,11 +97,10 @@ export default function EditProfilePage() {
             />
           </div>
 
-          {/* Actions */}
           <div className="flex justify-end gap-3 pt-4">
             <Button
               variant="outline"
-              onClick={() => router.push("dashboard/account")}
+              onClick={() => router.push("/dashboard/account")}
               disabled={isSaving}
             >
               Batal
@@ -117,7 +111,6 @@ export default function EditProfilePage() {
               disabled={isSaving}
             >
               <Save className="mr-2 h-4 w-4" />
-
               {isSaving ? "Menyimpan..." : "Simpan Perubahan"}
             </Button>
           </div>
@@ -126,3 +119,4 @@ export default function EditProfilePage() {
     </div>
   )
 }
+
