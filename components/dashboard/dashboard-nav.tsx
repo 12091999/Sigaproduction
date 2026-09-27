@@ -44,10 +44,10 @@ export function DashboardNav() {
     {
       label: "Services",
       icon: Book,
-      href: "/dashboard/taxis",
+      href: "/dashboard/services-list",
       active:
-        pathname === "/dashboard/taxis" ||
-        pathname.startsWith("/dashboard/taxis/"),
+        pathname === "/dashboard/services-list" ||
+        pathname.startsWith("/dashboard/services-list/"),
     },
     {
       label: "Orders",
