@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Filter, Star } from "lucide-react"
 
+import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -82,6 +83,9 @@ const products = [
 ]
 
 export default function ProductsPage() {
+const searchParams = useSearchParams()
+const productId = searchParams.get("id")
+
   return (
     <div className="container py-8">
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between mb-6">
