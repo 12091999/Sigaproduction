@@ -44,7 +44,7 @@ export default function EditProfilePage() {
 
       alert("Profile berhasil diperbarui")
 
-      router.push("/dashboard/account")
+      router.push("dashboard/account")
     } catch (error) {
       console.error("Gagal memperbarui profile:", error)
       alert("Gagal memperbarui profile")
@@ -59,7 +59,7 @@ export default function EditProfilePage() {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => router.push("/dashboard/account")}
+          onClick={() => router.push("dashboard/account")}
         >
           <ArrowLeft className="h-5 w-5" />
         </Button>
@@ -106,7 +106,7 @@ export default function EditProfilePage() {
           <div className="flex justify-end gap-3 pt-4">
             <Button
               variant="outline"
-              onClick={() => router.push("/dashboard/account")}
+              onClick={() => router.push("dashboard/account")}
               disabled={isSaving}
             >
               Batal
