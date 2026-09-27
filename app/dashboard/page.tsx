@@ -74,8 +74,7 @@ export default function DashboardPage() {
       <DashboardHeader />
 
       <div className="flex flex-1">
-        <DashboardNav
-        />
+        <DashboardNav/>
 
         <main className="flex-1 p-6">
           <div className="flex items-center justify-between mb-6">
