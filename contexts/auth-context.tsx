@@ -19,6 +19,7 @@ type AuthContextType = {
   isLoading: boolean
   login: (email: string, password: string) => Promise<void>
   signUp: (name: string, email: string, phone: string, password: string) => Promise<void>
+  updateProfile: (name: string, email: string) => Promise<void>
   logout: () => void
   sendOtp: (phone: string) => Promise<boolean>
   verifyOtp: (phone: string, otp: string) => Promise<boolean>
