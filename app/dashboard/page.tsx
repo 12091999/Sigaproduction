@@ -88,7 +88,7 @@ export default function DashboardPage() {
             </Card>
           </div>
 
-          <Tabs defaultValue="products" className="space-y-4">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
             <TabsList>
               <TabsTrigger value="products">Products</TabsTrigger>
               <TabsTrigger value="taxis">Services</TabsTrigger>
