@@ -83,8 +83,8 @@ const products = [
 ]
 
 export default function ProductsPage() {
-const searchParams = useSearchParams()
-const productId = searchParams.get("id")
+        const searchParams = useSearchParams()
+        const productId = searchParams.get("id")
 
   return (
     <div className="container py-8">
