@@ -10,11 +10,12 @@ import { Label } from "@/components/ui/label"
 import { ArrowLeft, Save } from "lucide-react"
 
 export default function EditProfilePage() {
-  const { user } = useAuth()
+  const { user, updateProfile } = useAuth()
   const router = useRouter()
 
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
   const [isSaving, setIsSaving] = useState(false)
 
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function EditProfilePage() {
 
     setName(user.name || "")
     setEmail(user.email || "")
+    setPhone(user.phone || "")
   }, [user, router])
 
   if (!user) return null
@@ -36,6 +38,19 @@ export default function EditProfilePage() {
       console.log({
         name,
         email,
+        phone
+      })
+
+      await updateProfile(name, email, phone)
+    } catch (error) {
+      console.error("Gagal memperbarui profile:", error)
+      alert("Gagal memperbarui profile")
+    } finally {
+      setIsSaving(false)
+    }
+  }
+        email,
+        phone   
       })
 
       alert("Profile berhasil diperbarui")
