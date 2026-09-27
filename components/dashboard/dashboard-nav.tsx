@@ -93,6 +93,7 @@ export function DashboardNav({ activeTab, onTabChange }: DashboardNavProps) {
                 variant={route.active ? "secondary" : "ghost"}
                 className={cn("justify-start", route.active && "bg-muted")}
                 asChild
+                onClick={() => onTabChange(route.href)}
               >
                 <Link href={route.href}>
                   <route.icon className="mr-2 h-4 w-4" />
