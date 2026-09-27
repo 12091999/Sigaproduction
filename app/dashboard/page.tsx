@@ -75,8 +75,6 @@ export default function DashboardPage() {
 
       <div className="flex flex-1">
         <DashboardNav
-          activeTab={activeTab}
-          onTabChange={handleTabChange}
         />
 
         <main className="flex-1 p-6">
