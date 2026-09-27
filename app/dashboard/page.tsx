@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -15,6 +16,7 @@ import { TourismList } from "@/components/dashboard/tourism-list"
 export default function DashboardPage() {
   const { user, isLoading } = useAuth()
   const router = useRouter()
+  const [activeTab, setActiveTab] = useState("products")
 
   if (isLoading) {
     return (
@@ -36,7 +38,10 @@ export default function DashboardPage() {
     <div className="flex min-h-screen flex-col">
       <DashboardHeader />
       <div className="flex flex-1">
-        <DashboardNav activePath="/dashboard" onTabChange={(path) => router.push(path)} />
+        <DashboardNav 
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        />
         <main className="flex-1 p-6">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-3xl font-bold tracking-tight">Seller Dashboard</h1>
