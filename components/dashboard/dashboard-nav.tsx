@@ -87,18 +87,33 @@ export function DashboardNav({ activeTab, onTabChange }: DashboardNavProps) {
       <div className="flex h-full max-h-screen flex-col gap-2 p-4">
         <div className="flex-1 overflow-auto py-2">
           <div className="grid gap-1">
-            {routes.map((route) => (
-              <Button
-                key={route.href}
-                variant={route.active ? "secondary" : "ghost"}
-                className={cn("justify-start", route.active && "bg-muted")}
-                asChild
-              >
-                <Link href={route.href}>
-                  <route.icon className="mr-2 h-4 w-4" />
-                  {route.label}
-                </Link>
-              </Button>
+                {routes.map((route) => (
+                <Button
+                    key={route.label}
+                    variant={route.active ? "secondary" : "ghost"}
+                    className={cn(
+                    "w-full justify-start",
+                    route.active && "bg-muted"
+                    )}
+                    onClick={() => {
+                    if (route.tab) {
+                        onTabChange(route.tab)
+                    }
+                    }}
+                    asChild={!route.tab}
+                >
+                    {route.tab ? (
+                    <span className="flex w-full items-center">
+                        <route.icon className="mr-2 h-4 w-4" />
+                        {route.label}
+                    </span>
+                    ) : (
+                    <Link href={route.href}>
+                        <route.icon className="mr-2 h-4 w-4" />
+                        {route.label}
+                    </Link>
+                    )}
+                </Button>
             ))}
           </div>
         </div>
