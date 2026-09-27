@@ -106,7 +106,7 @@ export default function EditProfilePage() {
           <div className="flex justify-end gap-3 pt-4">
             <Button
               variant="outline"
-              onClick={() => router.push("account")}
+              onClick={() => router.push("/account")}
               disabled={isSaving}
             >
               Batal
