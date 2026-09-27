@@ -59,7 +59,7 @@ export default function EditProfilePage() {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => router.push("/account")}
+          onClick={() => router.push("/dashboard/account")}
         >
           <ArrowLeft className="h-5 w-5" />
         </Button>
