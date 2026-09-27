@@ -44,7 +44,7 @@ export default function EditProfilePage() {
 
       alert("Profile berhasil diperbarui")
 
-      router.push("/account")
+      router.push("/dashboard/account")
     } catch (error) {
       console.error("Gagal memperbarui profile:", error)
       alert("Gagal memperbarui profile")
