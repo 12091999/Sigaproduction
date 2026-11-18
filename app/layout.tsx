@@ -1,6 +1,5 @@
 import type React from "react"
 import type { Metadata, Viewport} from "next"
-import { Inter } from "next/font/google"
 import Link from "next/link"
 import "./globals.css"
 
@@ -9,9 +8,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { SiteHeader } from "@/components/site-header"
 import { Providers } from "@/components/providers"
 import { ThemeHandler } from "@/components/theme-handler"
-
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Sigaproduction",
@@ -30,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="scroll-smooth light">
-      <body className={inter.className}>
+      <body className="font-sans">
         <Providers>
             <SpeedInsights />
           <ThemeHandler>
