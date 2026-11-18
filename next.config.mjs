@@ -9,9 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export', // Menghasilkan file statis HTML/CSS/JS
+  output: 'export', 
   images: {
-    unoptimized: true, // Wajib agar komponen <Image> Next.js tidak error di WordPress
+    unoptimized: true, 
   },
 }
 
