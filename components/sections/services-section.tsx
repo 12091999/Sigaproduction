@@ -1,10 +1,15 @@
-import { Slide } from "@/components/slide"
+import CmsImagePageSection from "@/components/cms-image-page-section"
 
 export function ServicesSection() {
   return (
-    <section id="services" aria-label="Our Offered Services" className="relative">
-      <Slide src="/images/siga-services.jpeg" alt="Our Offered Services - SIGA PRO slide" priority />
-    </section>
+    <CmsImagePageSection
+      slug="offered-services"
+      id="services"
+      label="Our Offered Services"
+      fallbackSrc="/images/siga-services.jpeg"
+      fallbackAlt="Our Offered Services - SIGA PRO slide"
+      priority
+    />
   )
 }
 

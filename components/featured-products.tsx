@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Star } from "lucide-react"
@@ -5,11 +8,11 @@ import { Star } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { CmsProduct, mapCmsProduct, Product } from "@/lib/wordpress"
 
-// Update the featuredProducts array with HD images, improved descriptions, and rupee pricing
-
-const featuredProducts = [
+const fallbackProducts: Product[] = [
   {
+    id: 1,
     slug: "PerniciousHumaniora",
     name: "Pernicious Humaniora",
     category: "Products",
@@ -18,8 +21,10 @@ const featuredProducts = [
     image: "/images/siga1.jpeg",
     badge: "Popular",
     description: "Kerusakan atau bahaya bagai kesehatan mental manusia atau penderita psikologis manusia",
+    shopee: "https://shopee.co.id/",
   },
   {
+    id: 2,
     slug: "Agorophobia",
     name: "Agorophobia",
     category: "Product",
@@ -28,8 +33,10 @@ const featuredProducts = [
     image: "/images/siga2.jpg",
     badge: "Best Seller",
     description: "Ketakutan yang sangat kuat saat berada di tempat terbuka atau dalam situasi yang mungkin sulit untuk melarikan diri, atau di mana bantuan mungkin tidak tersedia",
+    shopee: "https://shopee.co.id/",
   },
   {
+    id: 3,
     slug: "Gandrung",
     name: "Gandrung",
     category: "Product",
@@ -38,8 +45,10 @@ const featuredProducts = [
     image: "/images/siga3.jpeg",
     badge: null,
     description: "Kata 'Gandrung' diartikan sebagai terpesonanya masyarakat Blambangan yang agraris kepada Dewi Sri sebagai Dewi Padi",
+    shopee: "https://shopee.co.id/",
   },
   {
+    id: 4,
     slug: "Seblang",
     name: "Seblang",
     category: "Product",
@@ -48,10 +57,28 @@ const featuredProducts = [
     image: "/images/siga4.jpeg",
     badge: "Reliable",
     description: "Ritual Seblang adalah salah satu ritual upacara masyarakat Osing yang hanya dapat dijumpai di dua desa dalam wilayah kecamatan Glagah Banyuwangi",
+    shopee: "https://shopee.co.id/",
   },
 ]
 
 export default function FeaturedProducts() {
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>(fallbackProducts)
+
+  useEffect(() => {
+    fetch("/api/wordpress/posts?per_page=4")
+      .then((response) => {
+        if (!response.ok) throw new Error("WordPress API unavailable")
+        return response.json()
+      })
+      .then((posts: CmsProduct[]) => {
+        if (!posts.length) return
+        setFeaturedProducts(posts.map(mapCmsProduct))
+      })
+      .catch((error: unknown) => {
+        console.error("Could not load featured products from WordPress:", error)
+      })
+  }, [])
+
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6">
       {featuredProducts.map((product) => (

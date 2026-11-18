@@ -8,6 +8,7 @@ import FeaturedProducts from "@/components/featured-products"
 import HeroSection from "@/components/hero-section"
 import ServiceCategories from "@/components/service-categories"
 import Footer from "@/components/footer"
+import CmsSectionHeading from "@/components/cms-section-heading"
 
 export default function HomePage() {
   return (
@@ -15,23 +16,25 @@ export default function HomePage() {
       <HeroSection />
 
       <section className="container py-8 md:py-12 space-y-4 md:space-y-6">
-        <div className="flex flex-col items-center text-center space-y-2 md:space-y-4 px-2">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Our Services</h2>
-          <p className="text-sm md:text-base text-muted-foreground max-w-[700px]">
-           Where needs meet solutions.
-          </p>
-        </div>
+        <CmsSectionHeading
+          slug="home-services"
+          fallbackTitle="Our Services"
+          fallbackDescription="Where needs meet solutions."
+          titleClassName="text-2xl md:text-3xl font-bold tracking-tight"
+          descriptionClassName="text-sm md:text-base text-muted-foreground max-w-[700px]"
+        />
 
         <ServiceCategories />
       </section>
 
       <section className="container py-8 md:py-12 space-y-4 md:space-y-6 bg-muted/30">
-        <div className="flex flex-col items-center text-center space-y-2 md:space-y-4 px-2">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Featured Products</h2>
-          <p className="text-sm md:text-base text-muted-foreground max-w-[700px]">
-            Explore our handpicked selection of the finest local products and services from the Sigaproduction.
-          </p>
-        </div>
+        <CmsSectionHeading
+          slug="home-featured-products"
+          fallbackTitle="Featured Products"
+          fallbackDescription="Explore our handpicked selection of the finest local products and services from the Sigaproduction."
+          titleClassName="text-2xl md:text-3xl font-bold tracking-tight"
+          descriptionClassName="text-sm md:text-base text-muted-foreground max-w-[700px]"
+        />
 
         <FeaturedProducts />
 

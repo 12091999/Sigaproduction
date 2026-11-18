@@ -10,8 +10,15 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useCmsServiceHero } from "@/hooks/use-cms-service-hero"
 
 export default function HeroSection() {
+  const hero = useCmsServiceHero("sigma", {
+    title: "Welcome to Sigma Bwx",
+    description: "Your one-stop destination for local products, EO, Movie Art, and Music Studio",
+    image: "/images/SIGMA.jpg",
+    imageAlt: "Sigma Bwx Logo",
+  })
   const [searchCategory, setSearchCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
   const router = useRouter()
@@ -56,8 +63,8 @@ export default function HeroSection() {
           {/* Logo */}
           <div className="flex justify-center mb-4 md:mb-6">
             <Image
-              src="/images/SIGMA.jpg"
-              alt="Sigma Bwx Logo"
+              src={hero.image}
+              alt={hero.imageAlt}
               width={160}
               height={160}
               className="w-28 h-28 md:w-40 md:h-40 lg:w-52 lg:h-52 rounded-full border-4 border-white/20 shadow-lg object-cover"
@@ -67,12 +74,12 @@ export default function HeroSection() {
 
           {/* Judul */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 md:mb-6 drop-shadow-lg">
-            Welcome to Sigma Bwx
+            {hero.title}
           </h1>
 
           {/* Deskripsi */}
           <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-8 px-4">
-            Your one-stop destination for local products, EO, Movie Art, and Music Studio
+            {hero.description}
           </p>
 
           {/* Form pencarian */}
@@ -120,21 +127,21 @@ export default function HeroSection() {
               variant="outline"
               className="bg-white/10 text-white border-white/30 hover:bg-white/20"
             >
-              <Link href="/products">Shop Sigamerch Products</Link>
+              <Link href={hero.ctas[0].url}>{hero.ctas[0].label}</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="bg-white/10 text-white border-white/30 hover:bg-white/20"
             >
-              <Link href="/services/taxi">Book a Sigaproduction</Link>
+              <Link href={hero.ctas[1].url}>{hero.ctas[1].label}</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="bg-white/10 text-white border-white/30 hover:bg-white/20"
             >
-              <Link href="/services/accommodations">Find Your Offer</Link>
+              <Link href={hero.ctas[2].url}>{hero.ctas[2].label}</Link>
             </Button>
           </div>
         </div>

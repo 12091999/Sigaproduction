@@ -17,26 +17,73 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { CmsServiceGroup, mapCmsServiceGroup, SiteNavigation } from "@/lib/wordpress"
 
 interface Route {
   href: string
   label: string
   active?: boolean
-  children?: {
-    href: string
-    label: string
-    icon: React.ElementType
-  }[]
+  children?: ServiceNavRoute[]
 }
 
-export function MainNav() {
+type ServiceNavRoute = {
+  href: string
+  label: string
+  icon: React.ElementType
+}
+
+type MainNavProps = {
+  navigation: SiteNavigation
+}
+
+const defaultServiceRoutes: ServiceNavRoute[] = [
+  { href: "/services/studiomusic", label: "Studio 3 Music Studio", icon: Music },
+  { href: "/services/sigaproEO", label: "Sigapro EO", icon: Home },
+  { href: "/services/merch", label: "Sigamerch", icon: Shirt },
+  { href: "/services/SIGMA", label: "SIGMA Bwx", icon: Home },
+  { href: "/services/areatiga", label: "Area Tiga", icon: Camera },
+]
+
+const serviceIcons: Record<string, React.ElementType> = {
+  studiomusic: Music,
+  sigaproeo: Home,
+  merch: Shirt,
+  sigma: Home,
+  areatiga: Camera,
+}
+
+export function MainNav({ navigation }: MainNavProps) {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [serviceRoutes, setServiceRoutes] = useState<ServiceNavRoute[]>(defaultServiceRoutes)
 
   useEffect(() => {
     const logged = localStorage.getItem("userLoggedIn") === "true"
     setIsLoggedIn(logged)
+  }, [])
+
+  useEffect(() => {
+    fetch("/api/wordpress/service-groups")
+      .then((response) => {
+        if (!response.ok) throw new Error("WordPress service categories unavailable")
+        return response.json()
+      })
+      .then((groups: CmsServiceGroup[]) => {
+        setServiceRoutes(
+          groups.map((group) => {
+            const category = mapCmsServiceGroup(group)
+            return {
+              href: category.routeUrl || defaultServiceRoutes.find((route) => route.href.toLowerCase().endsWith(group.slug))?.href || "/services",
+              label: category.title,
+              icon: serviceIcons[group.slug] || Home,
+            }
+          })
+        )
+      })
+      .catch((error: unknown) => {
+        console.error("Could not load service navigation from WordPress:", error)
+      })
   }, [])
 
   const handleLogout = () => {
@@ -45,27 +92,21 @@ export function MainNav() {
     window.location.href = "/"
   }
 
-  const primaryRoutes = [
-    { href: "/", label: "Home", active: pathname === "/" },
-    { href: "/products", label: "Products", active: pathname.startsWith("/products") },
+  const primaryRoutes: Route[] = [
+    { href: navigation.homeUrl, label: navigation.homeLabel, active: pathname === navigation.homeUrl },
+    { href: navigation.productsUrl, label: navigation.productsLabel, active: pathname.startsWith(navigation.productsUrl) },
     {
       href: "/services",
-      label: "Services",
+      label: navigation.servicesLabel,
       active: pathname.startsWith("/services"),
-      children: [
-        { href: "/services/studiomusic", label: "Studio 3 Music Studio", icon: Music },
-        { href: "/services/sigaproEO", label: "Sigapro EO", icon: Home },
-        { href: "/services/merch", label: "Sigamerch", icon: Shirt },
-        { href: "/services/SIGMA", label: "SIGMA Bwx", icon: Home },
-        { href: "/services/areatiga", label: "Area Tiga", icon: Camera },
-      ],
+      children: serviceRoutes,
     },
-    { href: "/properties", label: "Rent", active: pathname.startsWith("/properties") },
+    { href: navigation.rentUrl, label: navigation.rentLabel, active: pathname.startsWith(navigation.rentUrl) },
   ]
 
   const secondaryRoutes: Route[] = [
-    { href: "/about", label: "About", active: pathname === "/about" },
-    { href: "/contact", label: "Contact", active: pathname === "/contact" },
+    { href: navigation.aboutUrl, label: navigation.aboutLabel, active: pathname === navigation.aboutUrl },
+    { href: navigation.contactUrl, label: navigation.contactLabel, active: pathname === navigation.contactUrl },
   ]
 
   const allRoutes: Route[] = [...primaryRoutes, ...secondaryRoutes]
@@ -89,7 +130,7 @@ export function MainNav() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-48">
-                <DropdownMenuLabel>Service Categories</DropdownMenuLabel>
+                <DropdownMenuLabel>{navigation.servicesDropdownLabel}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {route.children.map((child) => (
                   <DropdownMenuItem key={child.href} asChild>
@@ -134,7 +175,7 @@ export function MainNav() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-48">
-                <DropdownMenuLabel>Service Categories</DropdownMenuLabel>
+                <DropdownMenuLabel>{navigation.servicesDropdownLabel}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {route.children.map((child) => (
                   <DropdownMenuItem key={child.href} asChild>
@@ -172,7 +213,7 @@ export function MainNav() {
         <SheetContent side="left" className="w-[85%] sm:w-[350px] max-w-[350px]">
           <SheetHeader className="mb-4">
             <div className="flex items-center gap-2">
-              <Image src="/images/SP.jpg" alt="sigaproductions Logo" width={40} height={40} className="rounded-full" />
+              <Image src={navigation.logoUrl} alt={navigation.logoAlt} width={40} height={40} unoptimized className="rounded-full" />
               <SheetTitle>Menu</SheetTitle>
             </div>
           </SheetHeader>
@@ -197,7 +238,7 @@ export function MainNav() {
               .filter((route) => route.children)
               .map((route) => (
                 <div key={route.href} className="space-y-3 mt-4">
-                  <div className="font-medium text-base">{route.label} Categories</div>
+                  <div className="font-medium text-base">{navigation.servicesDropdownLabel}</div>
                   <div className="grid gap-1 pl-4">
                     {route.children?.map((child) => (
                       <Link
@@ -218,12 +259,12 @@ export function MainNav() {
             <div className="mt-6 pt-6 border-t">
               <div className="grid gap-3">
                 <Link
-                  href="/dashboard/account"
+                  href={navigation.accountUrl}
                   className="flex items-center gap-2 py-2 text-base font-medium text-muted-foreground hover:text-primary"
                   onClick={() => setIsOpen(false)}
                 >
                   <User className="h-5 w-5" />
-                  Account
+                  {navigation.accountLabel}
                 </Link>
               </div>
             </div>

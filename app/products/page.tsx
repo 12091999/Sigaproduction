@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+"use client"
 import Link from "next/link"
 import Image from "next/image"
 import { Filter, Star } from "lucide-react"
@@ -7,11 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
-
-export const metadata: Metadata = {
-  title: "Products - Sigamerch",
-  description: "Browse our wide selection of products from the Sigamerch",
-}
+import { useEffect, useState } from "react"
+import { CmsProduct, mapCmsProduct, Product } from "@/lib/wordpress"
 
 // Update the products array with HD images, better descriptions, and rupee pricing
 
@@ -82,7 +79,20 @@ const products = [
 ]
 
 export default function ProductsPage() {
+  const [cmsProducts, setCmsProducts] = useState<Product[]>([])
 
+  useEffect(() => {
+    fetch("/api/wordpress/posts?per_page=100")
+      .then((response) => {
+        if (!response.ok) throw new Error("WordPress API unavailable")
+        return response.json()
+      })
+      .then((posts: CmsProduct[]) => setCmsProducts(posts.map(mapCmsProduct)))
+      .catch((error: unknown) => {
+        console.error("Could not load products from WordPress:", error)
+        setCmsProducts([])
+      })
+  }, [])
 
   return (
     <div className="container py-8">
@@ -114,7 +124,7 @@ export default function ProductsPage() {
       <Separator className="mb-8" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {(cmsProducts.length ? cmsProducts : products).map((product) => (
           <Card key={product.id} className="overflow-hidden group h-full flex flex-col">
             <CardHeader className="p-0">
               <div className="relative h-52 w-full overflow-hidden">

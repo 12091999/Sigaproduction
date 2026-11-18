@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
+import { CmsProperty, mapCmsProperty } from "@/lib/wordpress"
 import {
   Select,
   SelectContent,
@@ -178,39 +179,48 @@ export default function PropertiesPage() {
 
 
   // =======================================================
-  // LOAD PROPERTY DARI LOCAL STORAGE
+  // LOAD PROPERTY DARI WORDPRESS DAN LOCAL STORAGE
   // =======================================================
 
   useEffect(() => {
+    let active = true
+    let savedProperties: Property[] = []
+
     try {
-      const savedProperties =
-        localStorage.getItem("rentalProperties")
+      const storedProperties = localStorage.getItem("rentalProperties")
 
-      if (!savedProperties) {
-        setProperties(defaultProperties)
-        return
+      if (storedProperties) {
+        const parsedProperties = JSON.parse(storedProperties)
+        if (Array.isArray(parsedProperties)) savedProperties = parsedProperties
       }
-
-      const parsedProperties = JSON.parse(savedProperties)
-
-      if (!Array.isArray(parsedProperties)) {
-        setProperties(defaultProperties)
-        return
-      }
-
-      // Gabungkan property default + property baru
-      setProperties([
-        ...defaultProperties,
-        ...parsedProperties,
-      ])
-
     } catch (error) {
       console.error(
         "Failed to load rental properties:",
         error
       )
+    }
 
-      setProperties(defaultProperties)
+    fetch("/api/wordpress/properties")
+      .then((response) => {
+        if (!response.ok) throw new Error("WordPress rental properties unavailable")
+        return response.json()
+      })
+      .then((posts: CmsProperty[]) => {
+        if (!active) return
+        const cmsProperties = posts.map(mapCmsProperty)
+        const cmsSlugs = new Set(cmsProperties.map((property) => property.slug))
+        setProperties([
+          ...(cmsProperties.length ? cmsProperties : defaultProperties),
+          ...savedProperties.filter((property) => !cmsSlugs.has(property.slug)),
+        ])
+      })
+      .catch((error: unknown) => {
+        console.error("Could not load rental properties from WordPress:", error)
+        if (active) setProperties([...defaultProperties, ...savedProperties])
+      })
+
+    return () => {
+      active = false
     }
   }, [])
 
@@ -238,9 +248,7 @@ export default function PropertiesPage() {
         property.location
           .toLowerCase()
           .includes(searchText) ||
-        property.category
-          ?.toLowerCase()
-          .includes(searchText)
+        property.category?.toLowerCase().includes(searchText)
 
 
       // -------------------------------
@@ -249,7 +257,7 @@ export default function PropertiesPage() {
 
       const matchesCategory =
         categoryFilter === "all" ||
-        property.type === categoryFilter
+        property.category === categoryFilter
 
 
       // -------------------------------
@@ -390,33 +398,17 @@ export default function PropertiesPage() {
                       All Properties
                     </SelectItem>
 
-                    <SelectItem value="Guitar">
-                      Guitar
-                    </SelectItem>
-
-                    <SelectItem value="Bass">
-                      Bass
-                    </SelectItem>
-
-                    <SelectItem value="Keyboard">
-                      Keyboard
-                    </SelectItem>
-
-                    <SelectItem value="Drum Set">
-                      Drum Set
-                    </SelectItem>
-
-                    <SelectItem value="Amplifier for Event">
-                      Amplifier for Event
-                    </SelectItem>
-
-                    <SelectItem value="Effect">
-                      Effect
-                    </SelectItem>
-
-                    <SelectItem value="Fullset">
-                      Fullset
-                    </SelectItem>
+                    {Array.from(
+                      new Set(
+                        properties
+                          .map((property) => property.category)
+                          .filter((category): category is string => Boolean(category))
+                      )
+                    ).map((category) => (
+                      <SelectItem key={category} value={category}>
+                        {category}
+                      </SelectItem>
+                    ))}
 
                   </SelectContent>
 

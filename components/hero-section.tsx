@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Search } from "lucide-react"
@@ -10,35 +10,87 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { stripHtml } from "@/lib/wordpress"
+import { mapCmsServiceGroup } from "@/lib/wordpress"
+import type { CmsServiceGroup, ServiceGroup } from "@/lib/wordpress"
+
+const fallbackServiceGroups: ServiceGroup[] = [
+  { id: 1, slug: "studiomusic", title: "STUDIO 3 MUSIC STUDIO", description: "", pageTitle: "", pageDescription: "" },
+  { id: 2, slug: "sigaproeo", title: "SIGAPRO EO", description: "", pageTitle: "", pageDescription: "" },
+  { id: 3, slug: "sigma", title: "SIGMA", description: "", pageTitle: "", pageDescription: "" },
+  { id: 4, slug: "merch", title: "SIGAMERCH", description: "", pageTitle: "", pageDescription: "" },
+  { id: 5, slug: "areatiga", title: "AREATIGA", description: "", pageTitle: "", pageDescription: "" },
+]
+
+const servicePaths: Record<string, string> = {
+  studiomusic: "/services/studiomusic",
+  sigaproeo: "/services/sigaproEO",
+  sigma: "/services/SIGMA",
+  merch: "/services/merch",
+  areatiga: "/services/areatiga",
+}
 
 export default function HeroSection() {
   const [searchCategory, setSearchCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
+  const [heroTitle, setHeroTitle] = useState("CV. SIGA PRODUCTION")
+  const [heroDescription, setHeroDescription] = useState("Explore us. Enjoy the Best of What We Do.")
+  const [heroBackground, setHeroBackground] = useState("/images/photo-collage.png")
+  const [heroLogo, setHeroLogo] = useState("/images/SP.jpg")
+  const [serviceGroups, setServiceGroups] = useState(fallbackServiceGroups)
   const router = useRouter()
+
+  useEffect(() => {
+    fetch("/api/wordpress/pages?slug=home-hero")
+      .then((response) => {
+        if (!response.ok) throw new Error("WordPress home hero unavailable")
+        return response.json()
+      })
+      .then((page: {
+        title: { rendered: string }
+        content: { rendered: string }
+        featured_media_url: string | null
+      }) => {
+        setHeroTitle(stripHtml(page.title.rendered) || "CV. SIGA PRODUCTION")
+        setHeroDescription(
+          stripHtml(page.content.rendered) || "Explore us. Enjoy the Best of What We Do."
+        )
+        if (page.featured_media_url) setHeroBackground(page.featured_media_url)
+      })
+      .catch((error: unknown) => {
+        console.error("Could not load homepage hero content from WordPress:", error)
+      })
+
+    fetch("/api/wordpress/pages?slug=site-footer")
+      .then((response) => {
+        if (!response.ok) throw new Error("WordPress site logo unavailable")
+        return response.json()
+      })
+      .then((page: { featured_media_url: string | null }) => {
+        if (page.featured_media_url) setHeroLogo(page.featured_media_url)
+      })
+      .catch((error: unknown) => {
+        console.error("Could not load homepage logo from WordPress:", error)
+      })
+
+    fetch("/api/wordpress/service-groups")
+      .then((response) => {
+        if (!response.ok) throw new Error("WordPress service categories unavailable")
+        return response.json()
+      })
+      .then((groups: CmsServiceGroup[]) => {
+        if (groups.length) setServiceGroups(groups.map(mapCmsServiceGroup))
+      })
+      .catch((error: unknown) => {
+        console.error("Could not load search categories from WordPress:", error)
+      })
+  }, [])
 
   // Redirect saat memilih kategori
   const handleCategoryChange = (value: string) => {
     setSearchCategory(value)
 
-    switch (value) {
-      case "Studio 3 Music Studio":
-        router.push("services/studiomusic")
-        break
-      case "sigaproEO":
-        router.push("services/sigaproEO")
-        break
-      case "Sigamerch":
-        router.push("services/merch")
-        break
-      case "Sigma Bwx":
-        router.push("services/SIGMA")
-        break
-      case "Areatiga":
-        router.push("services/areatiga")
-        break
-      default:
-        router.push("/")
-    }
+    if (servicePaths[value]) router.push(servicePaths[value])
   }
 
   const handleSearch = (e: React.FormEvent) => {
@@ -52,7 +104,7 @@ export default function HeroSection() {
       <div
         className="relative bg-cover bg-center bg-no-repeat py-16 md:py-24 lg:py-32"
         style={{
-          backgroundImage: "url('/images/photo-collage.png')",
+          backgroundImage: `url('${heroBackground}')`,
         }}
       >
         {/* Lapisan overlay agar teks lebih jelas */}
@@ -63,7 +115,7 @@ export default function HeroSection() {
           {/* Logo */}
           <div className="flex justify-center mb-4 md:mb-6">
             <Image
-              src="/images/SP.jpg"
+              src={heroLogo}
               alt="sigaproeo Logo"
               width={160}
               height={160}
@@ -77,12 +129,12 @@ export default function HeroSection() {
             Welcome to
           </h1>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-500 mb-6 drop-shadow-lg">
-            CV. SIGA PRODUCTION
+            {heroTitle}
           </h1>
 
           {/* Deskripsi */}
           <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto mb-8 px-4">
-            Explore us. Enjoy the Best of What We Do.
+            {heroDescription}
           </p>
 
           {/* Form pencarian */}
@@ -96,11 +148,11 @@ export default function HeroSection() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
-                <SelectItem value="Studio 3 Music Studio">Studio 3 Music Studio</SelectItem>
-                <SelectItem value="sigaproEO">Sigapro EO</SelectItem>
-                <SelectItem value="Sigamerch">Sigamerch</SelectItem>
-                <SelectItem value="Sigma Bwx">Sigma Bwx</SelectItem>
-                <SelectItem value="Areatiga">Area Tiga</SelectItem>
+                {serviceGroups.map((group) => (
+                  <SelectItem key={group.id} value={group.slug}>
+                    {group.title}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 

@@ -6,17 +6,24 @@ import { Separator } from "@/components/ui/separator"
 import { Mail, Phone, MapPin, Clock, MessageSquare } from "lucide-react"
 import Link from "next/link"
 
-export function ContactInfo() {
-  const email = "Sigaproduction03@gmail.com"
-  const phone = "+62 819-3487-2954"
-  const whatsapp = "6281934872954"
-  const address = "Jl. Karimun Jawa No. 15 Lateng, Kec. Banyuwangi Kabpaten Banyuwangi, Jawa Timur 68413"
-  const hours = "Senin–Minggu, 10.00–23.00 WIB"
+export type ContactDetails = {
+  sectionTitle: string
+  email: string
+  phone: string
+  whatsapp: string
+  address: string
+  hours: string
+  emailButton: string
+  whatsappButton: string
+}
+
+export function ContactInfo({ details }: { details: ContactDetails }) {
+  const { email, phone, whatsapp, address, hours } = details
 
   return (
     <Card className="bg-card">
       <CardHeader>
-        <CardTitle className="text-pretty">Informasi Kontak</CardTitle>
+        <CardTitle className="text-pretty">{details.sectionTitle}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex items-start gap-3">
@@ -62,7 +69,13 @@ export function ContactInfo() {
 
         <div className="flex flex-wrap items-center gap-3">
           <Button asChild>
-            <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=Sigaproduction03@gmail.com" target="_blank">Kirim Email</Link>
+            <Link
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {details.emailButton}
+            </Link>
           </Button>
           <Button variant="secondary" asChild>
             <Link
@@ -72,7 +85,7 @@ export function ContactInfo() {
               className="inline-flex items-center gap-2"
             >
               <MessageSquare className="size-4" aria-hidden="true" />
-              Chat WhatsApp
+              {details.whatsappButton}
             </Link>
           </Button>
         </div>

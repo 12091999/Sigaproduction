@@ -6,6 +6,8 @@ import { useParams } from "next/navigation"
 import { Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { useEffect, useState } from "react"
+import { CmsProduct, mapCmsProduct, Product } from "@/lib/wordpress"
 
 // Data produk (bisa diganti dari database atau API nanti)
 const products = [
@@ -61,7 +63,24 @@ const products = [
 
 export default function ProductDetailPage() {
   const { slug } = useParams()
-  const product = products.find((p) => p.slug === slug)
+  const [cmsProducts, setCmsProducts] = useState<Product[]>([])
+
+  useEffect(() => {
+    fetch("/api/wordpress/posts?per_page=100")
+      .then((response) => {
+        if (!response.ok) throw new Error("WordPress API unavailable")
+        return response.json()
+      })
+      .then((posts: CmsProduct[]) => setCmsProducts(posts.map(mapCmsProduct)))
+      .catch((error: unknown) => {
+        console.error("Could not load product details from WordPress:", error)
+        setCmsProducts([])
+      })
+  }, [])
+
+  const currentSlug = Array.isArray(slug) ? slug[0] : slug
+  const product = cmsProducts.find((item) => item.slug === currentSlug)
+    || products.find((item) => item.slug.toLowerCase() === currentSlug?.toLowerCase())
 
   if (!product) {
     return (
@@ -76,7 +95,9 @@ export default function ProductDetailPage() {
   }
 
   // Rekomendasi produk selain produk yang sedang dilihat
-  const relatedProducts = products.filter((p) => p.slug !== product.slug).slice(0, 3)
+  const relatedProducts = (cmsProducts.length ? cmsProducts : products)
+    .filter((p) => p.slug !== product.slug)
+    .slice(0, 3)
 
   return (
     <div className="container py-8">
